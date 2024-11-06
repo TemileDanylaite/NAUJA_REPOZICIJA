@@ -13,3 +13,11 @@ obj/
 # Ignoruokite kitus temp failus
 *.tmp
 *.log
+
+# Kompiliacijos failai
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+*.tlog
