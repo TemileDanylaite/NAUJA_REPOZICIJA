@@ -39,7 +39,7 @@ void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas) 
 	}
 
 }
-void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas) {
+void nuskaitytiIsfailo(std::list<Stud>& list1, const std::string& failoVardas) {
 	try {
 		std::ifstream inFile(failoVardas);
 		if (!inFile) {
@@ -68,7 +68,7 @@ void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas) {
 			temp.ND.pop_back();
 
 
-			Vec1.push_back(temp);
+			list1.push_back(temp);
 		}
 		inFile.close();
 
