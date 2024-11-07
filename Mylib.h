@@ -34,6 +34,8 @@ using std::ofstream;
 using std::list;
 using std::remove_if;
 using std::partition;
+using std::copy_if;
+using std::back_inserter;
 
 
 

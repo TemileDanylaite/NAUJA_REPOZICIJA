@@ -208,10 +208,12 @@ int main()
 
 
 			vector<Stud> vargsiukai;
+			auto pradziaDalijimui = std::chrono::high_resolution_clock::now();
+			
+		
 			std::copy_if(Vec1.begin(), Vec1.end(), std::back_inserter(vargsiukai), [](const Stud& studentas) {
-				return studentas.GalutinisVid < 5.0
+				return studentas.GalutinisVid < 5.0;
 				});
-
 			
 			
 			auto pabaigaDalijimui = std::chrono::high_resolution_clock::now();
