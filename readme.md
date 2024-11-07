@@ -1,4 +1,5 @@
 #Studentų galutinio balo apskaičiavimo programa. (v1.0 versija)
+v1.0 verisjos tikslas -  konteinerių tipams (vector ir list) išmatuoti programos veikimo spartą priklausomai nuo studentų dalijimo į dvi kategorijas strategijos.
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
@@ -58,7 +59,7 @@ Pastaba. Apskaičiuotas vidutinis laikas(sekundėmis), kuris leidžia greičiau 
 | 1000000     | 9.277       | 3.051      |
 | 10000000    | 1275.484    | 206.538    |
 
-Rezultatas:kaip sparta priklauso nuo tipo?
+Rezultatas:Galima pastebėti, kad kad naudojant sąrašo konteinerį, dalijimas vyksta žymiai greičiau.
 
 2 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai". 
 
@@ -73,19 +74,31 @@ Pastaba.Apskaičiuotas vidutinis laikas(sekundėmis), kuris leidžia greičiau i
 | 1000000     | 5.161       | 2.436      |
 | 10000000    | 400.508     | 108.819    |
 
-Rezultatas:
+Rezultatas: Galima pastebėti, kad naudojant sąrašo konteinerį, dalijimas vyksta žymiai greičiau.
 
-Išvados:Palyginus pagal 1 ir 2 strategias gautus vidutinius dalijimo laikus esant tam tikram duomenų kiekiui, pastebėta, kad .....
+Išvados:Palyginus pagal 1 ir 2 strategias gautus vidutinius dalijimo laikus esant tam tikram duomenų kiekiui, pastebėta, kad dirbant su 2 strategiją, programos veikimo sparta atsižvelgiant į daljimo procesą yra greitesnė nei kai naudojama 1 strategija.
 
-Todėl toliau pasirinkus greičiau veikiančią strategiją -***** , įvykdysime 3 strategiją.
+Todėl toliau pasirinkus greičiau veikiančią strategiją 2 , įvykdysime 3 strategiją.
 
-3 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant greičiausiai veikianti 1 arba 2 strategiją  įtraukiant į ją "efektyvius" darbo su konteineriais metodus.
+3 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant greičiausiai veikianti 1 arba 2 strategiją  įtraukiant į ją "efektyvius" darbo su konteineriais metodus. Šiame tyrime pritaikyti tinkami algoritmai studentų dalijimo procedūrai paspartinti (optimizuoti) ant vieno fiksuoto konteinerio - vektoriaus.
 
+Naudoti kodo blokai tikrinti algortimų įtaka spartai:
+![Aprasymas](metodasPartition.PNG)
+![Aprasymas](metodasStable_partition.PNG)
+![Aprasymas](copy_ifmetodas.PNG)
+![Aprasymas](metodasRemove_copy_if+erase.PNG)
 
+Kadangi rezultatai skiriasi aiškiai, todėl buvo atliekama po viena bandymą kiekvienam įrašų kiekiui.
 
+| Įrašų dydis | std::partition | std::stable_partition | std::copy_if  | std::remove_copy_if  |
+|-------------|----------------|-----------------------|---------------|----------------------|
+| 1000        | 0.00194        | 0.00279               | 0.00314       | 0.00607              |
+| 10000       | 0.02222        | 0.03869               | 0.03782       | 0.05432              |       
+| 100000      | 0.25705        | 0.36236               | 0.44200       | 0.57982              |
+| 1000000     | 2.47309        | 3.85637               | 3.72332       | 5.86594              |
+| 10000000    | 176.45273      | 263.87251             | 188.99018     | 204.46178            |
 
-
-
+Rezultatas: Ištyrus gautą lentelę, pastebėta, kad po kiekvieno algortimo panaudojimom,programos veikimo sparta dalijimo atžvilgiu greičiausia buvo naudojant algortimą std::partition.
 
 
 #Efektyvumo tyrimai ir rezultatai: 
@@ -101,6 +114,7 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 - Vartotojo sąsajos paprastumas: programoje yra leidžiama lengvai įvesti duomenis ir gauti rezultatus. Aiškiai nurodyti visi privalomi įvedimai ir rezultatas gaunamas greitai.
 
 #Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
+
 
 #Naudotos bibliotekos:
 - `<iostream>`
