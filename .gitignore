@@ -5,19 +5,28 @@
 *.userprefs
 *.sln.ide
 *.sln.docstates
+*.filters
+*.vcxproj.user
 
-# Ignoruokite bin ir obj aplankus
+# Kompiliacijos ir laikinih failai
 bin/
 obj/
-
-# Ignoruokite kitus temp failus
-*.tmp
+x64/
+Debug/
+Release/
 *.log
-
-# Kompiliacijos failai
-*.obj
+*.tmp
 *.exe
+*.obj
 *.pdb
 *.ilk
 *.idb
 *.tlog
+
+# Ignoruokite Git tokenus ir kitus saugumo failus
+.git-token
+
+# Ignoruokite kitus laikinuosius failus
+*.bak
+*.swp
+*.DS_Store
