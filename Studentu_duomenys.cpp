@@ -166,7 +166,7 @@ int main()
 			cin >> rusiavimoKriterijus;
 
 			auto pradziaNuskaitymui = std::chrono::high_resolution_clock::now();
-			nuskaitytiIsFailo(Vec1, "studentai1000.txt");
+			nuskaitytiIsFailo(Vec1, "studentai10000000.txt");
 			auto pabaigaNuskaitymui = std::chrono::high_resolution_clock::now();
 
 			cout << "Failas uzdarytas" << endl;
@@ -208,16 +208,9 @@ int main()
 
 
 			vector<Stud> vargsiukai;
-			auto pradziaDalijimui = std::chrono::high_resolution_clock::now();
-			
-			auto it = std::remove_if(Vec1.begin(), Vec1.end(), [&](const Stud& studentas) {
-				if (studentas.GalutinisVid < 5.0) {
-					vargsiukai.push_back(studentas);
-					return true;
-				}
-				return false;
-			});	
-			Vec1.erase(it, Vec1.end());
+			std::copy_if(Vec1.begin(), Vec1.end(), std::back_inserter(vargsiukai), [](const Stud& studentas) {
+				return studentas.GalutinisVid < 5.0
+				});
 
 			
 			

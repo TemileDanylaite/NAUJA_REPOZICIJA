@@ -33,7 +33,7 @@ using std::runtime_error;
 using std::ofstream;
 using std::list;
 using std::remove_if;
-
+using std::partition;
 
 
 
