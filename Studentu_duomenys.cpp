@@ -289,7 +289,7 @@ int main()
 			list<Stud> vargsiukai;
 			auto pradziaDalijimui = std::chrono::high_resolution_clock::now();
 			
-			for (auto it = list1.begin(); it != list1.end();) {
+			/*for (auto it = list1.begin(); it != list1.end();) {
 				if (it->GalutinisVid < 5.0) {
 					vargsiukai.push_back(*it);
 					it = list1.erase(it);
@@ -297,8 +297,12 @@ int main()
 				else {
 					++it;
 				}
-			}
-
+			}*/
+			auto it = std::partition(list1.begin(), list1.end(), [](const Stud& studentas) {
+				return studentas.GalutinisVid >= 5.0;
+				});
+			vargsiukai = list<Stud>(it, list1.end());
+			list1.erase(it, list1.end());
 
 			auto pabaigaDalijimui = std::chrono::high_resolution_clock::now();
 			cout << list1.size() << " irasu dalijimo i dvi grupes laikas: "
