@@ -1,5 +1,5 @@
 # Ignoruokite Visual Studio konfigūraciją
-.vs/
+/.vs/
 *.suo
 *.user
 *.userprefs
@@ -10,7 +10,8 @@
 # Kompiliacijos ir laikinih failai
 bin/
 obj/
-x64/
+/x64/
+/build/
 Debug/
 Release/
 *.log
@@ -29,4 +30,3 @@ Release/
 *.bak
 *.swp
 *.DS_Store
-NAUJA_REPOZICIJA/
