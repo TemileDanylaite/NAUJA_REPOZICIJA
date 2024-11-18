@@ -1,0 +1,70 @@
+# Ignoruokite Visual Studio konfigūraciją
+/.vs/
+*.suo
+*.user
+*.userprefs
+
+*.filters
+
+
+# Kompiliacijos ir laikinih failai
+bin/
+obj/
+/x64/
+/build/
+Debug/
+Release/
+*.log
+*.tmp
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+# Ignoruokite Visual Studio konfigūraciją
+/.vs/
+*.suo
+*.user
+*.userprefs
+
+*.filters
+
+
+# Kompiliacijos ir laikinih failai
+bin/
+obj/
+x64/
+build/
+Debug/
+Release/
+*.log
+*.tmp
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+
+Studentu.2f6f1319/x64/Debug/
+x64/Debug/
+# Ignoruokite Git tokenus ir kitus saugumo failus
+.git-token
+
+# Ignoruokite kitus laikinuosius failus
+*.bak
+*.swp
+*.DS_Store
+Studentu.2f6f1319/x64/Debug/
+x64/Debug/
+
+Studentu.2f6f1319/x64/Debug/
+x64/Debug/
+# Ignoruokite Git tokenus ir kitus saugumo failus
+.git-token
+
+# Ignoruokite kitus laikinuosius failus
+*.bak
+*.swp
+*.DS_Store
