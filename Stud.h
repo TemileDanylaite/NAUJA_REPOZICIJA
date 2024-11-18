@@ -21,5 +21,7 @@ void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCo
 void apskaiciuotiGalutinius(Stud& Lok);
 void irasytiVargsiukusVector(const vector<Stud>& vargsiukai, const string& failoPavadinimas);
 void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPavadinimas);
+void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPavadinimas);
+void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
 
 #endif STUD_H_INCLUDED

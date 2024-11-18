@@ -153,7 +153,7 @@ int main()
 
 	if (pasirinkimas == "nuskaityti") {
 
-		cout << "Pasirinkti strategij?(1 - pirmoji, 2 - antroji, 3 - trecioji): ";
+		cout << "Pasirinkti strategija(1 - pirmoji, 2 - antroji, 3 - trecioji): ";
 		int strategija;
 		cin >> strategija;
 
@@ -211,10 +211,12 @@ int main()
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaRusiavimui - pradziaRusiavimui).count() << " s " << endl;
 
 			vector<Stud> vargsiukai;
+			vector<Stud> kietiakiai;
+
 			auto pradziaDalijimui = std::chrono::high_resolution_clock::now();
 
 			if (strategija == 1) {
-				vector<Stud> vargsiukai, kietiakiai;
+				
 				for (auto& studentas : Vec1) {
 					if (studentas.GalutinisVid < 5.0) {
 						vargsiukai.push_back(studentas);
@@ -223,9 +225,11 @@ int main()
 						kietiakiai.push_back(studentas);
 					}
 				}
+				
 			}
 			else if (strategija == 2) {
-				vector<Stud> vargsiukai;
+
+				
 				auto it = std::remove_if(Vec1.begin(), Vec1.end(), [](const Stud& studentas) {
 					return studentas.GalutinisVid >= 5.0;
 					});
@@ -235,14 +239,15 @@ int main()
 
 			}
 			else if (strategija == 3) {
-				vector<Stud> vargsiukai;
+
+				
 				auto it = std::partition(Vec1.begin(), Vec1.end(), [](const Stud& studentas) {
 					return studentas.GalutinisVid >= 5.0;
 					});
 				vargsiukai = vector<Stud>(it, Vec1.end());
 				Vec1.erase(it, Vec1.end());
 			}
-
+		
 			
 			auto pabaigaDalijimui = std::chrono::high_resolution_clock::now();
 			cout << Vec1.size() << " irasu dalijimo i dvi grupes laikas, panaikinant pradini Vektor: "
@@ -253,9 +258,7 @@ int main()
 			auto pabaigaVargsiukams = std::chrono::high_resolution_clock::now();
 			cout << vargsiukai.size() << " irasu  vargsiuku irasymo i faila laikas: "
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaVargsiukams - pradziaVargsiukams).count() << " s" << endl;
-
-		
-
+			
 			auto pabaigaTesto = std::chrono::high_resolution_clock::now();
 			cout << endl << Vec1.size() << " irasu testo laikas: "
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaTesto - pradziaNuskaitymui).count() << " s" << endl;
@@ -312,11 +315,10 @@ int main()
 
 
 
-			list<Stud> vargsiukai;
 			auto pradziaDalijimui = std::chrono::high_resolution_clock::now();
-
+			list<Stud> vargsiukai, kietiakiai;
 			if (strategija == 1) {
-				list<Stud> vargsiukai, kietiakiai;
+				
 				for (auto& studentas : list1) {
 					if (studentas.GalutinisVid < 5.0) {
 						vargsiukai.push_back(studentas);
@@ -325,9 +327,10 @@ int main()
 						kietiakiai.push_back(studentas);
 					}
 				}
+				
 			}
 			else if (strategija == 2) {
-				list<Stud> vargsiukai;
+				
 				auto it = std::remove_if(list1.begin(), list1.end(), [](const Stud& studentas) {
 					return studentas.GalutinisVid >= 5.0;
 					});
@@ -337,7 +340,7 @@ int main()
 
 			}
 			else if (strategija == 3) {
-				list<Stud> vargsiukai;
+				
 				auto it = std::partition(list1.begin(), list1.end(), [](const Stud& studentas) {
 					return studentas.GalutinisVid >= 5.0;
 					});
@@ -355,12 +358,11 @@ int main()
 			cout << vargsiukai.size() << " irasu  vargsiuku irasymo i faila laikas: "
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaVargsiukams - pradziaVargsiukams).count() << " s" << endl;
 
-	
+		
 
 			auto pabaigaTesto = std::chrono::high_resolution_clock::now();
 			cout << endl << list1.size() << " irasu testo laikas: "
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaTesto - pradziaNuskaitymui).count() << " s" << endl;
-
 
 		}
 
