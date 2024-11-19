@@ -4,7 +4,10 @@
 
 void ived(Stud& Lok) {
 	cout << "Ivesti varda ir pavarde: ";
-	cin >> Lok.vardas >> Lok.pavarde;
+	string vardas, pavarde;
+	cin >> vardas >> pavarde;
+	Lok.setVardas(vardas);
+	Lok.setPavarde(pavarde);
 
 	string pasirinkimas;
 	cout << "Ar reikia namu darbu ir egzamino rezultatus generuoti atsitiktinai?(taip/ne) ";
@@ -19,13 +22,11 @@ void ived(Stud& Lok) {
 		cout << "Ivesti namu darbu skaiciu: ";
 		cin >> ndCount;
 
-		Lok.ND.resize(ndCount);
 		for (int i = 0; i < ndCount; ++i) {
-			Lok.ND[i] = dist(gen);
-
+			Lok.addND(dist(gen));
 		}
 
-		Lok.egz = dist(gen);
+		Lok.setEgz(dist(gen));
 	}
 	else {
 		cout << "Ar zinai, koks yra namu darbu skaicius?(taip/ne): ";
@@ -35,12 +36,14 @@ void ived(Stud& Lok) {
 			int ndCount;
 			cout << "Ivesti namu darbu skaiciu: ";
 			cin >> ndCount;
-			Lok.ND.resize(ndCount);
+			
 
 
 			cout << "Ivesti namu darbu rezultatus(10-baleje sistemoje): ";
 			for (int i = 0; i < ndCount; ++i) {
-				cin >> Lok.ND[i];
+				int nd;
+				cin >> nd;
+				Lok.addND(nd);
 			
 			}
 		}
@@ -52,13 +55,15 @@ void ived(Stud& Lok) {
 				if (nd == -1) {
 					break;
 				}
-				Lok.ND.push_back(nd);
+				Lok.addND(nd);
 			}
 		}
 
 
 		cout << "Ivesti egzamino rezultata: ";
-		cin >> Lok.egz;
+		double egz;
+		cin >> egz;
+		Lok.setEgz(egz);
 		
 		}
 
@@ -67,14 +72,14 @@ void ived(Stud& Lok) {
 
 	void output(const Stud & Lok)
 {
-		cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
-		       <<setw(4) << right<< fixed << setprecision(2) << Lok.GalutinisVid
-			   << setw(16) << right << fixed << setprecision(2) << Lok.GalutinisMed << endl;
+		cout << setw(15) << left << Lok.getVardas() << setw(15) << left << Lok.getPavarde()
+		       <<setw(4) << right<< fixed << setprecision(2) << Lok.getGalutinisVid()
+			   << setw(16) << right << fixed << setprecision(2) << Lok.getGalutinisMed() << endl;
 
 }
 
 void val(Stud& Lok) {
-	Lok.vardas.clear();
-	Lok.pavarde.clear();
-	Lok.ND.clear();
+	Lok.setVardas("");
+	Lok.setPavarde("");
+	Lok.setND({});
 }

@@ -14,22 +14,22 @@ double apskaiciuotiMediana(std::vector<int>& nd) {
 }
 
 
-void apskaiciuotiGalutinius(Stud& Lok) {
-	if (Lok.ND.empty()) {
+void Stud::apskaiciuotiGalutinius() {
+	if (ND.empty()) {
 		cout << "Nd yra tuscias, negalima suskaiciuoti galutinio balo" << endl;
-		Lok.GalutinisVid = 0.0;
-		Lok.GalutinisMed = 0.0;
+		GalutinisVid = 0.0;
+		GalutinisMed = 0.0;
 		return;
 	}
 	double vidutinis = 0.0;
-	for (double nd : Lok.ND) {
+	for (double nd : ND) {
 		vidutinis += nd;
 	}
-	vidutinis /= Lok.ND.size();
-    Lok.GalutinisVid = 0.4 * vidutinis + 0.6 * Lok.egz;
+	vidutinis /= ND.size();
+    GalutinisVid = 0.4 * vidutinis + 0.6 * egz;
 
-	double mediana = apskaiciuotiMediana(Lok.ND);
-	Lok.GalutinisMed = 0.4 * mediana + 0.6 * Lok.egz;
+	double mediana = apskaiciuotiMediana(ND);
+	GalutinisMed = 0.4 * mediana + 0.6 * egz;
 }
 
 void irasytiVargsiukusVector(const vector<Stud>& vargsiukai, const string& failoPavadinimas) {
@@ -41,9 +41,9 @@ void irasytiVargsiukusVector(const vector<Stud>& vargsiukai, const string& failo
 
 
 		for (const auto& studentas : vargsiukai) {
-			failas << setw(15) << left << studentas.vardas
-				<< setw(15) << left << studentas.pavarde
-				<< setw(20) << left << fixed << setprecision(2) << studentas.GalutinisVid << endl;
+			failas << setw(15) << left << studentas.getVardas()
+				<< setw(15) << left << studentas.getPavarde()
+				<< setw(20) << left << fixed << setprecision(2) << studentas.getGalutinisVid() << endl;
 	
 		}
 		failas.close();
@@ -61,9 +61,9 @@ void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failo
 			<< setw(20) << left << "Galutinis(Vid.)" << endl;
 
 		for (const auto& studentas : kietiakiai) {
-			failas << setw(15) << left << studentas.vardas
-				<< setw(15) << left << studentas.pavarde
-				<< setw(20) << left << fixed << setprecision(2) << studentas.GalutinisVid << endl;
+			failas << setw(15) << left << studentas.getVardas()
+				<< setw(15) << left << studentas.getPavarde()
+				<< setw(20) << left << fixed << setprecision(2) << studentas.getGalutinisVid() << endl;
 		}
 		failas.close();
 
@@ -82,9 +82,9 @@ void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPava
 
 
 		for (const auto& studentas : vargsiukai) {
-			failas << setw(15) << left << studentas.vardas
-				<< setw(15) << left << studentas.pavarde
-				<< setw(20) << left << fixed << setprecision(2) << studentas.GalutinisVid << endl;
+			failas << setw(15) << left << studentas.getVardas()
+				<< setw(15) << left << studentas.getPavarde()
+				<< setw(20) << left << fixed << setprecision(2) << studentas.getGalutinisVid() << endl;
 
 		}
 		failas.close();
@@ -103,9 +103,9 @@ void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPava
 			<< setw(20) << left << "Galutinis(Vid.)" << endl;
 
 		for (const auto& studentas : kietiakiai) {
-			failas << setw(15) << left << studentas.vardas
-				<< setw(15) << left << studentas.pavarde
-				<< setw(20) << left << fixed << setprecision(2) << studentas.GalutinisVid << endl;
+			failas << setw(15) << left << studentas.getVardas()
+				<< setw(15) << left << studentas.getPavarde()
+				<< setw(20) << left << fixed << setprecision(2) << studentas.getGalutinisVid() << endl;
 		}
 		failas.close();
 
@@ -117,19 +117,17 @@ void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPava
 
 
 void output(const Stud& Lok, bool isFromFile = false) {
-	cout << setw(15) << left << Lok.vardas << setw(15) << left << Lok.pavarde
-		<< setw(5) << right << fixed << setprecision(2) << Lok.GalutinisVid;
+	cout << setw(15) << left << Lok.getVardas() << setw(15) << left << Lok.getPavarde()
+		<< setw(5) << right << fixed << setprecision(2) << Lok.getGalutinisVid();
 
 	if (!isFromFile) {
-		cout << setw(15) << right << fixed << setprecision(2) << Lok.GalutinisMed;
+		cout << setw(15) << right << fixed << setprecision(2) << Lok.getGalutinisMed();
 	}
 	cout << endl;
 }
 
 int main()
 {
-
-
 	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";
 	string generuotiFailoPasirinkima;
 	cin >> generuotiFailoPasirinkima;
@@ -179,30 +177,30 @@ int main()
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaNuskaitymui - pradziaNuskaitymui).count() << " s" << endl;
 
 			for (auto& studentas : Vec1) {
-				apskaiciuotiGalutinius(studentas);
+				studentas.apskaiciuotiGalutinius();
 			}
 
 			auto pradziaRusiavimui = std::chrono::high_resolution_clock::now();
 
 			if (rusiavimoKriterijus == 1) {
 				sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-					return a.vardas < b.vardas;
+					return a.getVardas() < b.getVardas();
 					});
 			}
 			else if (rusiavimoKriterijus == 2) {
 				sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-					return a.pavarde < b.pavarde;
+					return a.getPavarde() < b.getPavarde();
 					});
 			}
 			else if (rusiavimoKriterijus == 3) {
 				sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-					return a.GalutinisVid < b.GalutinisVid;
+					return a.getGalutinisVid() < b.getGalutinisVid();
 					});
 			}
 			else {
 				cout << "Netinkamas pasirinkimas. Rusiavimas pagal varda" << endl;
 				sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-					return a.vardas < b.vardas;
+					return a.getVardas() < b.getVardas();
 					});
 			}
 
@@ -218,7 +216,7 @@ int main()
 			if (strategija == 1) {
 				
 				for (auto& studentas : Vec1) {
-					if (studentas.GalutinisVid < 5.0) {
+					if (studentas.getGalutinisVid() < 5.0) {
 						vargsiukai.push_back(studentas);
 					}
 					else {
@@ -231,7 +229,7 @@ int main()
 
 				
 				auto it = std::remove_if(Vec1.begin(), Vec1.end(), [](const Stud& studentas) {
-					return studentas.GalutinisVid >= 5.0;
+					return studentas.getGalutinisVid() >= 5.0;
 					});
 
 				vargsiukai.assign(it, Vec1.end());
@@ -242,7 +240,7 @@ int main()
 
 				
 				auto it = std::partition(Vec1.begin(), Vec1.end(), [](const Stud& studentas) {
-					return studentas.GalutinisVid >= 5.0;
+					return studentas.getGalutinisVid() >= 5.0;
 					});
 				vargsiukai = vector<Stud>(it, Vec1.end());
 				Vec1.erase(it, Vec1.end());
@@ -282,30 +280,30 @@ int main()
 				<< fixed << setprecision(5) << std::chrono::duration<double>(pabaigaNuskaitymui - pradziaNuskaitymui).count() << " s" << endl;
 
 			for (auto& studentas : list1) {
-				apskaiciuotiGalutinius(studentas);
+				studentas.apskaiciuotiGalutinius();
 			}
 
 			auto pradziaRusiavimui = std::chrono::high_resolution_clock::now();
 
 			if (rusiavimoKriterijus == 1) {
 				list1.sort([](const Stud& a, const Stud& b) {
-					return a.vardas < b.vardas;
+					return a.getVardas() < b.getVardas();
 					});
 			}
 			else if (rusiavimoKriterijus == 2) {
 				list1.sort([](const Stud& a, const Stud& b) {
-					return a.pavarde < b.pavarde;
+					return a.getPavarde() < b.getPavarde();
 					});
 			}
 			else if (rusiavimoKriterijus == 3) {
 				list1.sort([](const Stud& a, const Stud& b) {
-					return a.GalutinisVid < b.GalutinisVid;
+					return a.getGalutinisVid() < b.getGalutinisVid();
 					});
 			}
 			else {
 				cout << "Netinkamas pasirinkimas. Rusiavimas pagal varda" << endl;
 				list1.sort([](const Stud& a, const Stud& b) {
-					return a.vardas < b.vardas;
+					return a.getVardas() < b.getVardas();
 					});
 			}
 
@@ -320,7 +318,7 @@ int main()
 			if (strategija == 1) {
 				
 				for (auto& studentas : list1) {
-					if (studentas.GalutinisVid < 5.0) {
+					if (studentas.getGalutinisVid() < 5.0) {
 						vargsiukai.push_back(studentas);
 					}
 					else {
@@ -332,7 +330,7 @@ int main()
 			else if (strategija == 2) {
 				
 				auto it = std::remove_if(list1.begin(), list1.end(), [](const Stud& studentas) {
-					return studentas.GalutinisVid >= 5.0;
+					return studentas.getGalutinisVid() >= 5.0;
 					});
 
 				vargsiukai.assign(it, list1.end());
@@ -342,7 +340,7 @@ int main()
 			else if (strategija == 3) {
 				
 				auto it = std::partition(list1.begin(), list1.end(), [](const Stud& studentas) {
-					return studentas.GalutinisVid >= 5.0;
+					return studentas.getGalutinisVid() >= 5.0;
 					});
 				vargsiukai = list<Stud>(it, list1.end());
 				list1.erase(it, list1.end());
@@ -385,8 +383,7 @@ int main()
 			for (int i = 0; i < n; i++) {
 				cout << "Please input user data: " << endl;
 				ived(Temp);
-
-				apskaiciuotiGalutinius(Temp);
+				Temp.apskaiciuotiGalutinius();
 				Vec1.push_back(Temp);
 				val(Temp);
 
@@ -394,7 +391,7 @@ int main()
 			}
 
 			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-				return a.vardas < b.vardas;
+				return a.getVardas() < b.getVardas();
 				});
 
 			cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"
@@ -413,9 +410,9 @@ int main()
 
 			for (int i = 0; i < n; i++) {
 				cout << "Please input user data: " << endl;
+				
 				ived(Temp);
-
-				apskaiciuotiGalutinius(Temp);
+				Temp.apskaiciuotiGalutinius();
 				list1.push_back(Temp);
 				val(Temp);
 
@@ -423,7 +420,7 @@ int main()
 			}
 
 			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
-				return a.vardas < b.vardas;
+				return a.getVardas() < b.getVardas();
 				});
 
 			cout << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde"

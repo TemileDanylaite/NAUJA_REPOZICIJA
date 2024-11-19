@@ -25,17 +25,25 @@ void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCo
 
 	for (int i = 1; i <= studentCount; ++i) {
 
-		string vardas = "Vardas" + std::to_string(i);
-		string pavarde = "Pavarde" + std::to_string(i);
-
-		outFile << setw(25) << left << vardas
-			<< setw(25) << left << pavarde;
+		Stud studentas("Vardas" + std::to_string(i), "Pavarde" + std::to_string(i));
 
 		for (int j = 0; j < ndCount; ++j) {
-			outFile << setw(10) << right << dist(gen);
+			studentas.addND(dist(gen));
+			
 		}
 
-		outFile << setw(10) << right << dist(gen) << endl;
+		studentas.setEgz(dist(gen));
+
+		outFile << setw(25) << left << studentas.getVardas()
+			<< setw(25) << left << studentas.getPavarde();
+
+		for (int nd : studentas.getND()) {
+			outFile << setw(10) << right << nd;
+		}
+
+		outFile << setw(10) << right << studentas.getEgz() << endl;
+
+		
 	}
 
 	outFile.close();

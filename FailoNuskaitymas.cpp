@@ -12,22 +12,25 @@ void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas) 
 
 			std::stringstream ss(line);
 			Stud temp;
-			temp.ND.clear();
+			temp.clearData();
 
-			if (!(ss >> temp.vardas >> temp.pavarde)) {
+			std::string vardas, pavarde;
+			if (!(ss >> vardas >> pavarde)) {
 				std::cerr << "Nepavyko nuskaityti studento vardo ir pavardes" << endl;
 				continue;
 			}
+			temp.setVardas(vardas);
+			temp.setPavarde(pavarde);
+
 			int nd;
 			while (ss >> nd) {
-				temp.ND.push_back(nd);
+				temp.addND(nd);
 			}
-			if (temp.ND.size() < 1) {
-	
+			if (temp.getND().size() < 1) {
 				continue;
 			}
-			temp.egz = temp.ND.back();
-			temp.ND.pop_back();
+			temp.setEgz(temp.getND().back());
+			temp.getND().pop_back();
 
 
 			Vec1.push_back(temp);
@@ -50,22 +53,25 @@ void nuskaitytiIsfailo(std::list<Stud>& list1, const std::string& failoVardas) {
 
 			std::stringstream ss(line);
 			Stud temp;
-			temp.ND.clear();
+			temp.clearData();
 
-			if (!(ss >> temp.vardas >> temp.pavarde)) {
+			std::string vardas, pavarde;
+			if (!(ss >> vardas >> pavarde)) {
 				std::cerr << "Nepavyko nuskaityti studento vardo ir pavardes" << endl;
 				continue;
 			}
+			temp.setVardas(vardas);
+			temp.setPavarde(pavarde);
+
 			int nd;
 			while (ss >> nd) {
-				temp.ND.push_back(nd);
+				temp.addND(nd);
 			}
-			if (temp.ND.size() < 1) {
-
+			if (temp.getND().size() < 1) {
 				continue;
 			}
-			temp.egz = temp.ND.back();
-			temp.ND.pop_back();
+			temp.setEgz(temp.getND().back());
+			temp.getND().pop_back();
 
 
 			list1.push_back(temp);
