@@ -8,11 +8,10 @@ void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas) 
 			throw runtime_error("Nepavyko atdiaryti failo:" + failoVardas);
 		}
 		string line;
-		while(getline(inFile, line)) {
+		while (getline(inFile, line)) {
 
 			std::stringstream ss(line);
 			Stud temp;
-<<<<<<< HEAD
 			temp.clearData();
 
 			std::string vardas, pavarde;
@@ -32,31 +31,14 @@ void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas) 
 			}
 			temp.setEgz(temp.getND().back());
 			temp.getND().pop_back();
-=======
-			temp.ND.clear();
-
-			if (!(ss >> temp.vardas >> temp.pavarde)) {
-				std::cerr << "Nepavyko nuskaityti studento vardo ir pavardes" << endl;
-				continue;
-			}
-			int nd;
-			while (ss >> nd) {
-				temp.ND.push_back(nd);
-			}
-			if (temp.ND.size() < 1) {
-	
-				continue;
-			}
-			temp.egz = temp.ND.back();
-			temp.ND.pop_back();
->>>>>>> old-branch
 
 
 			Vec1.push_back(temp);
 		}
 		inFile.close();
 
-	}catch (const std::exception& e) {
+	}
+	catch (const std::exception& e) {
 		std::cerr << "Klaida: " << e.what() << endl;
 	}
 
@@ -72,7 +54,6 @@ void nuskaitytiIsfailo(std::list<Stud>& list1, const std::string& failoVardas) {
 
 			std::stringstream ss(line);
 			Stud temp;
-<<<<<<< HEAD
 			temp.clearData();
 
 			std::string vardas, pavarde;
@@ -92,24 +73,6 @@ void nuskaitytiIsfailo(std::list<Stud>& list1, const std::string& failoVardas) {
 			}
 			temp.setEgz(temp.getND().back());
 			temp.getND().pop_back();
-=======
-			temp.ND.clear();
-
-			if (!(ss >> temp.vardas >> temp.pavarde)) {
-				std::cerr << "Nepavyko nuskaityti studento vardo ir pavardes" << endl;
-				continue;
-			}
-			int nd;
-			while (ss >> nd) {
-				temp.ND.push_back(nd);
-			}
-			if (temp.ND.size() < 1) {
-
-				continue;
-			}
-			temp.egz = temp.ND.back();
-			temp.ND.pop_back();
->>>>>>> old-branch
 
 
 			list1.push_back(temp);
