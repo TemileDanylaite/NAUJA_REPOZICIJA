@@ -2,14 +2,19 @@
 #define STUD_H_INCLUDED
 #include "Mylib.h"
 
+<<<<<<< HEAD
 class Stud {
 private:
+=======
+struct Stud {
+>>>>>>> old-branch
 	std::string vardas, pavarde;
 	std::vector<int> ND;
 	double egz;
 	double GalutinisVid;
 	double GalutinisMed;
 
+<<<<<<< HEAD
 public:
 	Stud(std::string v = "", std::string p = "", std::vector<int> nd = {}, double e = 0.0)
 		:vardas(v), pavarde(p), ND(nd), egz(e), GalutinisVid(0), GalutinisMed(0) {}
@@ -41,6 +46,8 @@ public:
 	void apskaiciuotiGalutinius();
 
 	
+=======
+>>>>>>> old-branch
 };
 
 void ived(Stud& Lok);
@@ -50,9 +57,15 @@ void val(Stud& Lok);
 void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
 void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas);
 void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCount);
+<<<<<<< HEAD
 void irasytiVargsiukusVector(const vector<Stud>& vargsiukai, const string& failoPavadinimas);
 void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPavadinimas);
 void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPavadinimas);
 void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
+=======
+void apskaiciuotiGalutinius(Stud& Lok);
+void irasytiVargsiukusVector(const vector<Stud>& vargsiukai, const string& failoPavadinimas);
+void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPavadinimas);
+>>>>>>> old-branch
 
 #endif STUD_H_INCLUDED

@@ -25,6 +25,7 @@ void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCo
 
 	for (int i = 1; i <= studentCount; ++i) {
 
+<<<<<<< HEAD
 		Stud studentas("Vardas" + std::to_string(i), "Pavarde" + std::to_string(i));
 
 		for (int j = 0; j < ndCount; ++j) {
@@ -44,6 +45,19 @@ void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCo
 		outFile << setw(10) << right << studentas.getEgz() << endl;
 
 		
+=======
+		string vardas = "Vardas" + std::to_string(i);
+		string pavarde = "Pavarde" + std::to_string(i);
+
+		outFile << setw(25) << left << vardas
+			<< setw(25) << left << pavarde;
+
+		for (int j = 0; j < ndCount; ++j) {
+			outFile << setw(10) << right << dist(gen);
+		}
+
+		outFile << setw(10) << right << dist(gen) << endl;
+>>>>>>> old-branch
 	}
 
 	outFile.close();

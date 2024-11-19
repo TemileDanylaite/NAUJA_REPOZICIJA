@@ -22,6 +22,7 @@ Release/
 *.ilk
 *.idb
 *.tlog
+<<<<<<< HEAD
 # Ignoruokite Visual Studio konfigūraciją
 /.vs/
 *.suo
@@ -61,6 +62,9 @@ x64/Debug/
 
 Studentu.2f6f1319/x64/Debug/
 x64/Debug/
+=======
+
+>>>>>>> old-branch
 # Ignoruokite Git tokenus ir kitus saugumo failus
 .git-token
 
