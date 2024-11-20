@@ -169,7 +169,7 @@ int main()
 			cin >> rusiavimoKriterijus;
 
 			auto pradziaNuskaitymui = std::chrono::high_resolution_clock::now();
-			nuskaitytiIsFailo(Vec1, "studentai1000.txt");
+			nuskaitytiIsFailo(Vec1, "studentai1000000.txt");
 			auto pabaigaNuskaitymui = std::chrono::high_resolution_clock::now();
 
 			cout << "Failas uzdarytas" << endl;

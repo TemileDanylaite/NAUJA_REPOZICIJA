@@ -14,6 +14,8 @@ public:
 	Stud(std::string v = "", std::string p = "", std::vector<int> nd = {}, double e = 0.0)
 		:vardas(v), pavarde(p), ND(nd), egz(e), GalutinisVid(0), GalutinisMed(0) {}
 
+	~Stud() {}
+
 	void clearData() {
 		vardas = "";
 		pavarde = "";
