@@ -52,7 +52,10 @@ Studentu.2f6f1319/x64/Debug/
 x64/Debug/
 # Ignoruokite Git tokenus ir kitus saugumo failus
 .git-token
-
+# Ignoruoti specifinius failus
+studentai*.txt
+metodas*.PNG
+OOB123
 # Ignoruokite kitus laikinuosius failus
 *.bak
 *.swp
