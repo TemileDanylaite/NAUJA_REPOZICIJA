@@ -12,7 +12,7 @@
 Jei pasirinksite, kad norite sugeneruoti, tuomet failai bus sukurti ir išvedime bus rodomas failų kūrimo laikas.
   
 - Atsakyti programai, ar norite įvesti studentų duomenis ar nuskaityti juos iš failo(ivesti/nuskaityti).
-- Pasirinkti dalijimo į dvi kategorijas strategiją(1 - pirmoji, 2 - antroji, 3 - trečioji).
+- Pasirinkti dalijimo į dvi kategorijas strategiją (1 - pirmoji, 2 - antroji, 3 - trečioji).
 - Pasirinkti norimo naudoti konteinerio tipą (1 - vector, 2 - list).
 - Pasirinkti rūšiavimo kritetijų (1 - pagal vardą, 2 - pagal pavardę, 3 - pagal galutinį balą).
   
@@ -32,14 +32,14 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 
 **#Palyginamos abiejų programų(versija v1.0 su struktūromis ir v1.1 su klasėmis) veikimo sparta**
 
-#Naudojamas vienas fiksuotas konteineris - vektorius, pati greičiausia dalijimo strategija - trečioji(su std::partition algoritmu) bei 100000 ir 1000000 dydžio failai.
+#Naudojamas vienas fiksuotas konteineris - vektorius ir pati greičiausia dalijimo strategija - trečioji(su std::partition algoritmu) bei 100000 ir 1000000 dydžio failai.
 
 
 #100000 įrašų failas
 
 ![Aprasymas](100000įrašųVeikimoLaikas.PNG)
 
-#100000 įrašų failas
+#1000000 įrašų failas
 
 ![Aprasymas](1000000ĮrašuVeikimoLaikas.PNG)
 
@@ -64,7 +64,7 @@ Gauti tokie rezultatai:
 
 ![Aprasymas](1000000OptimizavimoFlagai.PNG)
 
-Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojamos skirtingos struktūros priklausomai nuo kompiliatoriaus optimizavimo lygio
+Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojamos skirtingos struktūros priklausomai nuo kompiliatoriaus optimizavimo lygio.
 
 | Įrašų dydis | Tipas     | Optimizavimo lygis | Veikimo laikas | .exe failo dydis |
 |-------------|-----------|--------------------|----------------|------------------|
@@ -89,7 +89,7 @@ Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia gr
 - **Veikimo laiko matavimas:** Laiko matavimai buvo atlikti su 100000 ir 1000000 įrašų failais.
 - **'.exe' failo dydis:**Failo dydžiai priklauso nuo optimizavimo lygio.**
   
-  #Rezultatas: Naudojant struct ir class tipus su skirtingais optimizavimo lygiais, matome, kad optimizavimo lygiai turi teigiamą, poveikį veikimo laikui. Tačiau patys skirtumai tarp optimizavimo lygių(O1, O2, O3) yra maži ir perėjimas nuo vieno lygio į kitą neturi daug įtakos veikimo laikui. Optimizavimo lygiai turi įtakos ir .exe failo dydžiui. Su struct tipo duomenimis failo dydis pasikeičia nuo 69.5KB(O1) iki 81KB(O3), o su class - failo dydis didėja nuo 77.5KB(O1) iki 94.5KB(O3).
+  #Rezultatas: Naudojant struct ir class tipus su skirtingais optimizavimo lygiais, matome, kad optimizavimo lygiai turi teigiamą poveikį veikimo laikui. Tačiau patys skirtumai tarp optimizavimo lygių(O1, O2, O3) yra maži ir perėjimas nuo vieno lygio į kitą neturi daug įtakos veikimo laikui. Optimizavimo lygiai turi įtakos ir .exe failo dydžiui. Su struct tipo duomenimis failo dydis pasikeičia nuo 69.5KB(O1) iki 81KB(O3), o su class - failo dydis didėja nuo 77.5KB(O1) iki 94.5KB(O3).
 
 ##Išvada: Lyginant su rezultatais is aukščiau nurodytos lentelės, kur nebuvo tikrinami optimizavimo lygiai, matome, kad panaudoju optimizavimo lygius, veikimo laikas sumažėjo, programa pradėjo veikti greičiau.
 
@@ -110,7 +110,7 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 
 
 
-## Visų iki šios v1.1 versijos atliktų releasu apibendrinimas:
+##Visų iki šios v1.1 versijos atliktų releasu apibendrinimas:
 - 1 ir 2 releasai(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
 - 3 releasas(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
 - 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
