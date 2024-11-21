@@ -1,21 +1,18 @@
+#Studentų galutinio balo apskaičiavimo programa. (v1.1 versija) 
 
-
-#mano projektas
-sis failas apraso mano projekto informacija
-=======
-#Studentų galutinio balo apskaičiavimo programa. (v1.0 versija)
-v1.0 verisjos tikslas -  konteinerių tipams (vector ir list) išmatuoti programos veikimo spartą priklausomai nuo studentų dalijimo į dvi kategorijas strategijos.
+**#v1.1 verisjos tikslas -  Iki šiol naudotą struktūros(struct) realizaciją į klasės(class) realizaciją. Palyginti abiejų programų(v0.1 su struktūromis ir v1.1 su klasėmis) veikimo spartą, naudojant vieną fiksuotą konteinerį, pačią greičiausią dalijimo strategiją ir pasirinkto dydžio failus.**
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
 #Galutinis balas skaičiuojamas tokia formule: **Galutinis = 0.4 * vidurkis + 0.6 * egzaminas** (Kai reikia galutinio balo medianos pavidalu tai tiesiog vietoj vidurkio įstatoma mediana)
 
-#Norint naudotis programa, reikia atlikti šiuos veiksmus:
+**#Norint naudotis programa, reikia atlikti šiuos veiksmus:**
 - Pasirinkti, ar norite sugeneruoti failus(taip/ne).
 
 Jei pasirinksite, kad norite sugeneruoti, tuomet failai bus sukurti ir išvedime bus rodomas failų kūrimo laikas.
   
 - Atsakyti programai, ar norite įvesti studentų duomenis ar nuskaityti juos iš failo(ivesti/nuskaityti).
+- Pasirinkti dalijimo į dvi kategorijas strategiją(1 - pirmoji, 2 - antroji, 3 - trečioji).
 - Pasirinkti norimo naudoti konteinerio tipą (1 - vector, 2 - list).
 - Pasirinkti rūšiavimo kritetijų (1 - pagal vardą, 2 - pagal pavardę, 3 - pagal galutinį balą).
   
@@ -32,78 +29,69 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 - Galiausiai įvesti egzamino balą.
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
-**#Sistemos parametrai**
-1. Procesorius(CPU):
-- Modelis: AMD Ryzen 5 3500U
-- Dažnis: 2.10 GHz
-- Branduoliai: 4
-- Gijos: šiuo metu sistemoje yra apie 3700 gijų,taciau skaičius gali kisti. 
-- Cache atmintis: L1(384 KB), L2(2.0 MB), L3(4.0 MB)
 
-2. Operatyvioji atmintis(RAM):
-- Talpa: 8 GB
-- Dažnis: 2400 MHz
-- Naudojami lizdai: 2 iš 2
+**#Palyginamos abiejų programų(versija v1.0 su struktūromis ir v1.1 su klasėmis) veikimo sparta**
 
-3. Kietasis diskas(HDD/SSD):
-- Tipas: SSD
-- Talpa: 239 GB
+#Naudojamas vienas fiksuotas konteineris - vektorius, pati greičiausia dalijimo strategija - trečioji(su std::partition algoritmu) bei 100000 ir 1000000 dydžio failai.
 
-**Studentų dalijimo į dvi kategorijas strategijų bandymai**
 
-1 strategija: Bendro studentai konteinerio (vector ir list tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius: "vargšiukų" ir "kietiakų". Tokiu būdu tas pats studentas yra dvejuose konteineriuose: bendrame studentai ir viename iš suskaidytų (vargšiukai arba kietiakai). 
+#100000 įrašų failas
 
-![Aprasymas](1strategijosRezultatai.PNG)
+![Aprasymas](100000įrašųVeikimoLaikas.PNG)
 
-Pastaba. Apskaičiuotas vidutinis laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojami skirtingi konteinerių tipai(vector ir list).
-| Įrašų dydis | Vektorius   | Sąrašas    |
-|-------------|-------------|------------|
-| 1000        | 0.008       | 0.004      |
-| 10000       | 0.099       | 0.028      |
-| 100000      | 0.988       | 0.298      |
-| 1000000     | 9.277       | 3.051      |
-| 10000000    | 1275.484    | 206.538    |
+#100000 įrašų failas
 
-Rezultatas:Galima pastebėti, kad kad naudojant sąrašo konteinerį, dalijimas vyksta žymiai greičiau.
+![Aprasymas](1000000ĮrašuVeikimoLaikas.PNG)
 
-2 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai". 
 
-![Aprasymas](2strategijosRezultatai.PNG)
+Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojamos skirtingos struktūros.
+| Įrašų dydis | Struct | Class |
+|-------------|--------|-------|
+| 100000      | 10s    | 18s   |
+| 1000000     | 130s   | 217s  |
 
-Pastaba.Apskaičiuotas vidutinis laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus.
-| Įrašų dydis | Vektorius   | Sąrašas    |
-|-------------|-------------|------------|
-| 1000        | 0.011       | 0.002      |
-| 10000       | 0.048       | 0.023      |
-| 100000      | 0.568       | 0.218      |
-| 1000000     | 5.161       | 2.436      |
-| 10000000    | 400.508     | 108.819    |
+Rezultatas: Galima pastebėti, kad naudojant struct tipo duomenis, programos veikimo sparta yra žymiai greitesnė nei naudojant class tipo duomenis. Tai rodo, kad struct yra efektyvesnis tiek mažesniuose, tiek didesniuose duomenų kiekiuose.
 
-Rezultatas: Galima pastebėti, kad naudojant sąrašo konteinerį, dalijimas vyksta žymiai greičiau.
+**#Toliau atlikita eksperimentinė analizė priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3.**
 
-Išvados:Palyginus pagal 1 ir 2 strategias gautus vidutinius dalijimo laikus esant tam tikram duomenų kiekiui, pastebėta, kad dirbant su 2 strategiją, programos veikimo sparta atsižvelgiant į daljimo procesą yra greitesnė nei kai naudojama 1 strategija.
+Gauti tokie rezultatai:
 
-Todėl toliau pasirinkus greičiau veikiančią strategiją 2 , įvykdysime 3 strategiją.
+#100000 įrašų failas
 
-3 strategija: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant greičiausiai veikianti 1 arba 2 strategiją  įtraukiant į ją "efektyvius" darbo su konteineriais metodus. Šiame tyrime pritaikyti tinkami algoritmai studentų dalijimo procedūrai paspartinti (optimizuoti) ant vieno fiksuoto konteinerio - vektoriaus.
+![Aprasymas](100000OptimizavimoFlagai.PNG)
 
-Naudoti kodo blokai tikrinti algortimų įtaka spartai:
-![Aprasymas](metodasPartition.PNG)
-![Aprasymas](metodasStable_partition.PNG)
-![Aprasymas](copy_ifmetodas.PNG)
-![Aprasymas](metodasRemove_copy_if+erase.PNG)
+#1000000 įrašų failas
 
-Kadangi rezultatai skiriasi aiškiai, todėl buvo atliekama po viena bandymą kiekvienam įrašų kiekiui.
+![Aprasymas](1000000OptimizavimoFlagai.PNG)
 
-| Įrašų dydis | std::partition | std::stable_partition | std::copy_if  | std::remove_copy_if  |
-|-------------|----------------|-----------------------|---------------|----------------------|
-| 1000        | 0.00194        | 0.00279               | 0.00314       | 0.00607              |
-| 10000       | 0.02222        | 0.03869               | 0.03782       | 0.05432              |       
-| 100000      | 0.25705        | 0.36236               | 0.44200       | 0.57982              |
-| 1000000     | 2.47309        | 3.85637               | 3.72332       | 5.86594              |
-| 10000000    | 176.45273      | 263.87251             | 188.99018     | 204.46178            |
+Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojamos skirtingos struktūros priklausomai nuo kompiliatoriaus optimizavimo lygio
 
-Rezultatas: Ištyrus gautą lentelę, pastebėta, kad po kiekvieno algortimo panaudojimom,programos veikimo sparta dalijimo atžvilgiu greičiausia buvo naudojant algortimą std::partition.
+| Įrašų dydis | Tipas     | Optimizavimo lygis | Veikimo laikas | .exe failo dydis |
+|-------------|-----------|--------------------|----------------|------------------|
+| 100000      | struct    | O1                 | 1.54           | 69.5KB           |
+| 100000      | struct    | O2                 | 1.47           | 80KB             |
+| 100000      | struct    | O3                 | 1.47           | 81KB             |
+| 100000      | class     | O1                 | 1.30           | 77.5KB           |
+| 100000      | class     | O2                 | 1.28           | 93.5KB           |
+| 100000      | class     | O3                 | 1.25           | 94.5KB           |
+| 1000000     | struct    | O1                 | 15.69          | 69.5KB           |
+| 1000000     | struct    | O2                 | 15.35          | 80KB             |
+| 1000000     | struct    | O3                 | 15.12          | 81KB             |
+| 1000000     | class     | O1                 | 14.22          | 77.5KB           |
+| 1000000     | class     | O2                 | 14.07          | 93.5KB           |
+| 1000000     | class     | O3                 | 14.06          | 94.5KB           |
+
+#Paaiškinimai:
+- **Optimizavimo lygiai:**:
+  - O1 - Pagrindinė optimizacija, kurios tikslas pagerinti programos našumą, nepadidinus jos dydžio per daug.
+  - O2 - Aukštesnis optimizavimo lygis, kuris bando pasiekti dar geresnį našumą.
+  - O3 - Maksimalus optimizavimas, kuris žymiai pagerina našumą, bet taip pat gali padidinti '.exe' failo dydį.
+- **Veikimo laiko matavimas:** Laiko matavimai buvo atlikti su 100000 ir 1000000 įrašų failais.
+- **'.exe' failo dydis:**Failo dydžiai priklauso nuo optimizavimo lygio.**
+  
+  #Rezultatas: Naudojant struct ir class tipus su skirtingais optimizavimo lygiais, matome, kad optimizavimo lygiai turi teigiamą, poveikį veikimo laikui. Tačiau patys skirtumai tarp optimizavimo lygių(O1, O2, O3) yra maži ir perėjimas nuo vieno lygio į kitą neturi daug įtakos veikimo laikui. Optimizavimo lygiai turi įtakos ir .exe failo dydžiui. Su struct tipo duomenimis failo dydis pasikeičia nuo 69.5KB(O1) iki 81KB(O3), o su class - failo dydis didėja nuo 77.5KB(O1) iki 94.5KB(O3).
+
+##Išvada: Lyginant su rezultatais is aukščiau nurodytos lentelės, kur nebuvo tikrinami optimizavimo lygiai, matome, kad panaudoju optimizavimo lygius, veikimo laikas sumažėjo, programa pradėjo veikti greičiau.
 
 
 #Efektyvumo tyrimai ir rezultatai: 
@@ -118,8 +106,15 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
   
 - Vartotojo sąsajos paprastumas: programoje yra leidžiama lengvai įvesti duomenis ir gauti rezultatus. Aiškiai nurodyti visi privalomi įvedimai ir rezultatas gaunamas greitai.
 
-#Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
+#Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė. 
 
+
+
+## Visų iki šios v1.1 versijos atliktų releasu apibendrinimas:
+- 1 ir 2 releasai(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
+- 3 releasas(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
+- 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
+- 5 releasas(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
 
 #Naudotos bibliotekos:
 - `<iostream>`
@@ -132,5 +127,3 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 - `<sstream>`
 - `<chrono>`
 - `<list>`
-
->>>>>>> old-branch
