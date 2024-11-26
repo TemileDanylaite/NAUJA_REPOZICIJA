@@ -1,6 +1,7 @@
 #include "Stud.h"
 #include "Mylib.h"
 void ived(Stud& Lok) {
+
 	cout << "Ivesti varda ir pavarde: ";
 	string vardas, pavarde;
 	cin >> vardas >> pavarde;
