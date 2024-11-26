@@ -20,6 +20,17 @@ public:
 		:vardas(other.vardas), pavarde(other.pavarde), ND(other.ND), egz(other.egz),
 		GalutinisVid(other.GalutinisVid), GalutinisMed(other.GalutinisMed) {}
 
+	Stud& operator = (const Stud& other) {
+		if (this == &other) return *this;
+		vardas = other.vardas;
+		pavarde = other.pavarde;
+		ND = other.ND;
+		egz = other.egz;
+		GalutinisVid = other.GalutinisVid;
+		GalutinisMed = other.GalutinisMed;
+		return *this;
+	}
+
 	void clearData() {
 		vardas = "";
 		pavarde = "";
