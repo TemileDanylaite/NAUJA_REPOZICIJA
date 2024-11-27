@@ -382,7 +382,7 @@ int main()
 
 			for (int i = 0; i < n; i++) {
 				cout << "Please input user data: " << endl;
-				ived(Temp);
+				cin >> Temp;
 				Temp.apskaiciuotiGalutinius();
 				Vec1.push_back(Temp);
 				val(Temp);
@@ -410,8 +410,7 @@ int main()
 
 			for (int i = 0; i < n; i++) {
 				cout << "Please input user data: " << endl;
-
-				ived(Temp);
+				cin >> Temp;
 				Temp.apskaiciuotiGalutinius();
 				list1.push_back(Temp);
 				val(Temp);

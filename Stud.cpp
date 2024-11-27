@@ -1,16 +1,25 @@
 #include "Stud.h"
 #include "Mylib.h"
-void ived(Stud& Lok) {
 
+std::ostream& operator<<(std::ostream& os, const Stud& stud) {
+	os << setw(15) << left << stud.getVardas()
+		<< setw(15) << left << stud.getPavarde()
+		<< setw(4) << right << fixed << setprecision(2) << stud.getGalutinisVid()
+		<< setw(16) << right << fixed << setprecision(2) << stud.getGalutinisMed() << endl;
+	return os;
+}
+
+
+std::istream& operator>>(std::istream& is, Stud& stud) {
 	cout << "Ivesti varda ir pavarde: ";
 	string vardas, pavarde;
-	cin >> vardas >> pavarde;
-	Lok.setVardas(vardas);
-	Lok.setPavarde(pavarde);
+	is >> vardas >> pavarde;
+	stud.setVardas(vardas);
+	stud.setPavarde(pavarde);
 
 	string pasirinkimas;
 	cout << "Ar reikia namu darbu ir egzamino rezultatus generuoti atsitiktinai?(taip/ne) ";
-	cin >> pasirinkimas;
+	is >> pasirinkimas;
 
 	if (pasirinkimas == "taip") {
 		random_device rd;
@@ -19,17 +28,17 @@ void ived(Stud& Lok) {
 
 		int ndCount;
 		cout << "Ivesti namu darbu skaiciu: ";
-		cin >> ndCount;
+		is >> ndCount;
 
 		for (int i = 0; i < ndCount; ++i) {
-			Lok.addND(dist(gen));
+			stud.addND(dist(gen));
 		}
 
-		Lok.setEgz(dist(gen));
+		stud.setEgz(dist(gen));
 	}
 	else {
 		cout << "Ar zinai, koks yra namu darbu skaicius?(taip/ne): ";
-		cin >> pasirinkimas;
+		is >> pasirinkimas;
 
 		if (pasirinkimas == "taip") {
 			int ndCount;
@@ -41,8 +50,8 @@ void ived(Stud& Lok) {
 			cout << "Ivesti namu darbu rezultatus(10-baleje sistemoje): ";
 			for (int i = 0; i < ndCount; ++i) {
 				int nd;
-				cin >> nd;
-				Lok.addND(nd);
+				is >> nd;
+				stud.addND(nd);
 
 			}
 		}
@@ -50,21 +59,22 @@ void ived(Stud& Lok) {
 			double nd;
 			cout << "Ivesti namu darbu rezultatus(ivesti '-1',kad baigti):" << endl;
 			while (true) {
-				cin >> nd;
+				is >> nd;
 				if (nd == -1) {
 					break;
 				}
-				Lok.addND(nd);
+				stud.addND(nd);
 			}
 		}
 
 
 		cout << "Ivesti egzamino rezultata: ";
 		double egz;
-		cin >> egz;
-		Lok.setEgz(egz);
+		is >> egz;
+		stud.setEgz(egz);
 
 	}
+	return is;
 
 }
 

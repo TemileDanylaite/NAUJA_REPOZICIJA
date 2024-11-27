@@ -57,13 +57,12 @@ public:
 
 	void apskaiciuotiGalutinius();
 
-	friend std::istream& operator>>(std::istream& is, Stud& stud);
-	friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
-
+	friend std::istream& operator>>(std::istream& in, Stud& stud);
+	friend std::ostream& operator>>(std::ostream& out, Stud& stud);
 
 };
 
-void ived(Stud& Lok);
+//void ived(Stud& Lok);
 void output(const Stud& Lok);
 void val(Stud& Lok);
 
