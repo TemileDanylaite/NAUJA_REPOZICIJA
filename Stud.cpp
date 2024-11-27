@@ -81,10 +81,7 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 
 void output(const Stud& Lok)
 {
-	cout << setw(15) << left << Lok.getVardas() << setw(15) << left << Lok.getPavarde()
-		<< setw(4) << right << fixed << setprecision(2) << Lok.getGalutinisVid()
-		<< setw(16) << right << fixed << setprecision(2) << Lok.getGalutinisMed() << endl;
-
+	cout << Lok;
 }
 
 void val(Stud& Lok) {
