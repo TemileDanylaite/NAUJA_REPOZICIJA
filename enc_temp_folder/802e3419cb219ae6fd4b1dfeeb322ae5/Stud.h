@@ -60,8 +60,9 @@ public:
 	friend std::istream& operator>>(std::istream& is, Stud& stud);
 	friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
 
-
 };
+
+
 
 void ived(Stud& Lok);
 void output(const Stud& Lok);
@@ -75,4 +76,4 @@ void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPava
 void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPavadinimas);
 void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
 
-#endif STUD_H_INCLUDED#
+#endif STUD_H_INCLUDED
