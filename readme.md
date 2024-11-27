@@ -1,3 +1,4 @@
+
 #Studentų galutinio balo apskaičiavimo programa. (v1.1 versija) 
 
 **#v1.1 verisjos tikslas -  Iki šiol naudotą struktūros(struct) realizaciją į klasės(class) realizaciją. Palyginti abiejų programų(v0.1 su struktūromis ir v1.1 su klasėmis) veikimo spartą, naudojant vieną fiksuotą konteinerį, pačią greičiausią dalijimo strategiją ir pasirinkto dydžio failus.**
@@ -127,3 +128,4 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 - `<sstream>`
 - `<chrono>`
 - `<list>`
+
