@@ -60,6 +60,7 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 ![Nuotraukos aprašymas](isvestiesoperatorius.PNG)
 
 **Perdengtų metodų veikimas.**
+
 #Duomenų įvestis: 
 - Rankiniu būdu - Vartotojas gali įvesti duomenis klaviatūra, kai programa naudoja std::cin srautą. Naudojant operatorių operator>>, programa leidžia įvesti vardą, pavardę, namų darbų rezultatus, egzamino balą.
 - Automatiniu - Duomenys gali būti įvedami automatiškai pagal tam tikrą procesą(įvesti iš anksto paruoštus duomenis)
@@ -74,9 +75,6 @@ Išvadėlė:Perdengti metodai (operator>> ir operator<<) leidžia paprastai atli
 Operator>> leidžia nuskaityti duomenis (rankiniu būdu, automatiniu būdu arba iš failo), o operator<< padeda išvesti duomenis ekrane arba į failą.
 
 Išvadėlė:"Rule of three" taisyklė užtikrina, kad klasės objektai, kurie dirba su dinaminiais ištekliais, būtų teisingai kopijuojami, priskiriami ir sunaikinami, taip išvengiant atminties nutekėjimo ir kitų valdymo klaidų.
-
-
-##Išvada: Lyginant su rezultatais is aukščiau nurodytos lentelės, kur nebuvo tikrinami optimizavimo lygiai, matome, kad panaudoju optimizavimo lygius, veikimo laikas sumažėjo, programa pradėjo veikti greičiau.
 
 
 #Efektyvumo tyrimai ir rezultatai: 
