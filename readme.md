@@ -59,7 +59,12 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 
 ![Nuotraukos aprašymas](isvestiesoperatorius.PNG)
 
-**Perdengtų metodų veikimas.**
+
+#Programos output'as (tikrinama, kaip veikia programa įvedant du objektų duomenis)
+![Nuotraukos aprašymas](ouput'as.PNG)
+
+
+**#Perdengtų metodų veikimas.**
 
 #Duomenų įvestis: 
 - Rankiniu būdu - Vartotojas gali įvesti duomenis klaviatūra, kai programa naudoja std::cin srautą. Naudojant operatorių operator>>, programa leidžia įvesti vardą, pavardę, namų darbų rezultatus, egzamino balą.
