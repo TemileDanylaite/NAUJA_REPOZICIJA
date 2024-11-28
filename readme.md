@@ -47,7 +47,7 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 
 **#Perdengti įvesties ir išvesties metodai darbui su Studentų klasę. **
 
-#Operatorius deklaruojamas klasės viduje, kad suteikti tiesioginę prieigą prie klasės privačių ir apsaugotų narių. Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
+#Operatoriai deklaruojami klasės viduje kaip draugiškos funkcijos, kad turėtų tiesioginę prieigą prie klasės privačių ir apsaugotų narių. Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
 
 ![Nuotraukos aprašymas](studĮvestIšves.PNG)
 
@@ -73,7 +73,7 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 
 #Duomenų išvestis 
 - Į ekraną - Duomenys atspausdinami ekrane naudojant std::cout. Su perdengtu operatoriumi operator<< studento informacija bus gražiai suformuluota ir pateikta vartotojui tiesiogiai ekrane.
-- Į failą - Duomenys įrašomi į failą naudojant std::ofstream srautą. Operatorius operator<< užtikrina, kad studneto duomenys būtų įrašyti į failą, kurį vėliau vartotojas gali peržiūrėti.
+- Į failą - Duomenys įrašomi į failą naudojant std::ofstream srautą. Operatorius operator<< užtikrina, kad studento duomenys būtų įrašyti į failą, kurį vėliau vartotojas gali peržiūrėti.
 
 
 Išvadėlė: Perdengti metodai (operator>> ir operator<<) leidžia paprastai atlikti duomenų įvedimą ir išvedimą tiek interaktyviai su vartotoju, tiek automatiškai.
