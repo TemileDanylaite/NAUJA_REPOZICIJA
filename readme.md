@@ -1,7 +1,7 @@
 
-#Studentų galutinio balo apskaičiavimo programa. (v1.1 versija) 
+#Studentų galutinio balo apskaičiavimo programa. (v1.2 versija) 
 
-**#v1.1 verisjos tikslas -  Iki šiol naudotą struktūros(struct) realizaciją į klasės(class) realizaciją. Palyginti abiejų programų(v0.1 su struktūromis ir v1.1 su klasėmis) veikimo spartą, naudojant vieną fiksuotą konteinerį, pačią greičiausią dalijimo strategiją ir pasirinkto dydžio failus.**
+**#v1.2 verisjos tikslas -  Realizuoti visus reikiamus "Rule of three" ir įvesties/išvesties operatorius turimai Studentas klasei.
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
@@ -30,67 +30,51 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 - Galiausiai įvesti egzamino balą.
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
+**#"Rule of three" operatorių realizavimas Studentas klasei.**
 
-**#Palyginamos abiejų programų(versija v1.0 su struktūromis ir v1.1 su klasėmis) veikimo sparta**
+#Destrukrorius yra skirtas išvalyti objektui priskirtus išteklius.
 
-#Naudojamas vienas fiksuotas konteineris - vektorius ir pati greičiausia dalijimo strategija - trečioji(su std::partition algoritmu) bei 100000 ir 1000000 dydžio failai.
+![Nuotraukos aprašymas](destruktorius.PNG)
+
+#Kopijavimo operatorius užtikrina, kad objektai būtų tinkamai nukopijuoti, neprarandant jokių duomenų.
+
+![Nuotraukos aprašymas](kopijavimokonstruktorius.PNG)
+
+#Kopijavimo priskirimo operatorius leidžia priskirti vieną objektą kitam.
+
+![Nuotraukos aprašymas](priskyrimooperatorius.PNG)
 
 
-#100000 įrašų failas
+**#Perdengti įvesties ir išvesties metodai darbui su Studentų klasę. **
 
-![Aprasymas](100000įrašųVeikimoLaikas.PNG)
+#Operatorius deklaruojamas klasės viduje, kad suteikti tiesioginę prieigą prie klasės privačių ir apsaugotų narių.Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
 
-#1000000 įrašų failas
+![Nuotraukos aprašymas](studĮvestIšves.PNG)
 
-![Aprasymas](1000000ĮrašuVeikimoLaikas.PNG)
+#Įvesties operatorius realizutoas stud.cpp faile.
+
+![Nuotraukos aprašymas](ivestiesoperatorius(pradzia).PNG)
+
+#Išvesties operatorius realizutoas stud.cpp faile.
+
+![Nuotraukos aprašymas](isvestiesoperatorius.PNG)
+
+**Perdengtų metodų veikimas.**
+#Duomenų įvestis: 
+- Rankiniu būdu - Vartotojas gali įvesti duomenis klaviatūra, kai programa naudoja std::cin srautą. Naudojant operatorių operator>>, programa leidžia įvesti vardą, pavardę, namų darbų rezultatus, egzamino balą.
+- Automatiniu - Duomenys gali būti įvedami automatiškai pagal tam tikrą procesą(įvesti iš anksto paruoštus duomenis)
+- Iš failo - Duomenys gali būti nuskaityti iš failo naudojant std::ifstream srautą. Perdengtas  operator>> metodas leidžia nuskaityti duomenis iš failo, kurio turinys turi būti struktūrizuotas pagal tam tikrus reikalavimus ir užpildyti Stud objekto laukus.
+
+#Duomenų išvestis 
+- Į ekraną - Duomenys atspausdinami ekrane naudojant std::cout. Su perdengtu operatoriumi operator<< studento informacija bus gražiai suformuluota ir pateikta vartotojui tiesiogiai ekrane.
+- Į failą - Duomenys įrašomi į failą naudojant std::ofstream srautą. Operatorius operator<< užtikrina, kad studneto duomenys būtų įrašyti į failą, kurį vėliau vartotojas gali peržiūrėti.
 
 
-Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojamos skirtingos struktūros.
-| Įrašų dydis | Struct | Class |
-|-------------|--------|-------|
-| 100000      | 10s    | 18s   |
-| 1000000     | 130s   | 217s  |
+Išvadėlė:Perdengti metodai (operator>> ir operator<<) leidžia paprastai atlikti duomenų įvedimą ir išvedimą tiek interaktyviai su vartotoju, tiek automatiškai.
+Operator>> leidžia nuskaityti duomenis (rankiniu būdu, automatiniu būdu arba iš failo), o operator<< padeda išvesti duomenis ekrane arba į failą.
 
-Rezultatas: Galima pastebėti, kad naudojant struct tipo duomenis, programos veikimo sparta yra žymiai greitesnė nei naudojant class tipo duomenis. Tai rodo, kad struct yra efektyvesnis tiek mažesniuose, tiek didesniuose duomenų kiekiuose.
+Išvadėlė:"Rule of three" taisyklė užtikrina, kad klasės objektai, kurie dirba su dinaminiais ištekliais, būtų teisingai kopijuojami, priskiriami ir sunaikinami, taip išvengiant atminties nutekėjimo ir kitų valdymo klaidų.
 
-**#Toliau atlikita eksperimentinė analizė priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3.**
-
-Gauti tokie rezultatai:
-
-#100000 įrašų failas
-
-![Aprasymas](100000OptimizavimoFlagai.PNG)
-
-#1000000 įrašų failas
-
-![Aprasymas](1000000OptimizavimoFlagai.PNG)
-
-Pastaba. Apskaičiuotas vidutinis veikimo laikas(sekundėmis), kuris leidžia greičiau ir lengviau pastebėti skirtumus, kai naudojamos skirtingos struktūros priklausomai nuo kompiliatoriaus optimizavimo lygio.
-
-| Įrašų dydis | Tipas     | Optimizavimo lygis | Veikimo laikas | .exe failo dydis |
-|-------------|-----------|--------------------|----------------|------------------|
-| 100000      | struct    | O1                 | 1.54           | 69.5KB           |
-| 100000      | struct    | O2                 | 1.47           | 80KB             |
-| 100000      | struct    | O3                 | 1.47           | 81KB             |
-| 100000      | class     | O1                 | 1.30           | 77.5KB           |
-| 100000      | class     | O2                 | 1.28           | 93.5KB           |
-| 100000      | class     | O3                 | 1.25           | 94.5KB           |
-| 1000000     | struct    | O1                 | 15.69          | 69.5KB           |
-| 1000000     | struct    | O2                 | 15.35          | 80KB             |
-| 1000000     | struct    | O3                 | 15.12          | 81KB             |
-| 1000000     | class     | O1                 | 14.22          | 77.5KB           |
-| 1000000     | class     | O2                 | 14.07          | 93.5KB           |
-| 1000000     | class     | O3                 | 14.06          | 94.5KB           |
-
-#Paaiškinimai:
-- **Optimizavimo lygiai:**:
-  - O1 - Pagrindinė optimizacija, kurios tikslas pagerinti programos našumą, nepadidinus jos dydžio per daug.
-  - O2 - Aukštesnis optimizavimo lygis, kuris bando pasiekti dar geresnį našumą.
-  - O3 - Maksimalus optimizavimas, kuris žymiai pagerina našumą, bet taip pat gali padidinti '.exe' failo dydį.
-- **Veikimo laiko matavimas:** Laiko matavimai buvo atlikti su 100000 ir 1000000 įrašų failais.
-- **'.exe' failo dydis:**Failo dydžiai priklauso nuo optimizavimo lygio.**
-  
-  #Rezultatas: Naudojant struct ir class tipus su skirtingais optimizavimo lygiais, matome, kad optimizavimo lygiai turi teigiamą poveikį veikimo laikui. Tačiau patys skirtumai tarp optimizavimo lygių(O1, O2, O3) yra maži ir perėjimas nuo vieno lygio į kitą neturi daug įtakos veikimo laikui. Optimizavimo lygiai turi įtakos ir .exe failo dydžiui. Su struct tipo duomenimis failo dydis pasikeičia nuo 69.5KB(O1) iki 81KB(O3), o su class - failo dydis didėja nuo 77.5KB(O1) iki 94.5KB(O3).
 
 ##Išvada: Lyginant su rezultatais is aukščiau nurodytos lentelės, kur nebuvo tikrinami optimizavimo lygiai, matome, kad panaudoju optimizavimo lygius, veikimo laikas sumažėjo, programa pradėjo veikti greičiau.
 
@@ -111,11 +95,12 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 
 
 
-##Visų iki šios v1.1 versijos atliktų releasu apibendrinimas:
+##Visų iki šios v1.2 versijos atliktų releasu apibendrinimas:
 - 1 ir 2 releasai(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
 - 3 releasas(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
 - 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
 - 5 releasas(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
+- 6 realisas(v1.1) - Perijimas iš struktūros į klasę.
 
 #Naudotos bibliotekos:
 - `<iostream>`
