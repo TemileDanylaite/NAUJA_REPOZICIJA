@@ -32,22 +32,22 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 
 **#"Rule of three" operatorių realizavimas Studentas klasei.**
 
-#Destrukrorius yra skirtas išvalyti objektui priskirtus išteklius.
+#Destruktorius yra skirtas atlaisvinti dinaminę atmintį, kuri buvo priskirta objektui per jo gyvavimo laikotarpį. Jis automatiškai kviečiamas, kai objektas išeina iš veikimo srities, užtikrindamas, kad nebūtų atminties nutekėjimų.
 
 ![Nuotraukos aprašymas](destruktorius.PNG)
 
-#Kopijavimo operatorius užtikrina, kad objektai būtų tinkamai nukopijuoti, neprarandant jokių duomenų.
+#Kopijavimo konstruktorius yra naudojamas kuriant naują objektą, kuris tampa esamo objekto kopija. Tinkama kopija užtikrina, kad kiekvienas objektas turi savo atskirą duomenų kopiją.
 
 ![Nuotraukos aprašymas](kopijavimokonstruktorius.PNG)
 
-#Kopijavimo priskirimo operatorius leidžia priskirti vieną objektą kitam.
+#Kopijavimo priskirimo operatorius leidžia priskirti vieną objektą kitam. Svarbu įsitikinti, kad priskyrimas į save yra tinkamai valdomas ir kad seni objekto ištekliai yra tinkamai atlaisvinami prieš priskiriant naujas reikšmes.
 
 ![Nuotraukos aprašymas](priskyrimooperatorius.PNG)
 
 
 **#Perdengti įvesties ir išvesties metodai darbui su Studentų klasę. **
 
-#Operatorius deklaruojamas klasės viduje, kad suteikti tiesioginę prieigą prie klasės privačių ir apsaugotų narių.Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
+#Operatorius deklaruojamas klasės viduje, kad suteikti tiesioginę prieigą prie klasės privačių ir apsaugotų narių. Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
 
 ![Nuotraukos aprašymas](studĮvestIšves.PNG)
 
@@ -60,7 +60,7 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 ![Nuotraukos aprašymas](isvestiesoperatorius.PNG)
 
 
-#Programos output'as (tikrinama, kaip veikia programa įvedant du objektų duomenis)
+#Programos output'as (tikrinama, kaip veikia programa įvedant dviejų objektų duomenis)
 ![Nuotraukos aprašymas](ouput'as.PNG)
 
 
