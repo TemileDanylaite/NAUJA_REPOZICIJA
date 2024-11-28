@@ -1,5 +1,5 @@
 
-#Studentų galutinio balo apskaičiavimo programa. (v1.2 versija) 
+#Studentų galutinio balo apskaičiavimo programa. **(v1.2 versija)**
 
 **#v1.2 verisjos tikslas -  Realizuoti visus reikiamus "Rule of three" ir įvesties/išvesties operatorius turimai Studentas klasei.
 
@@ -45,7 +45,7 @@ Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą
 ![Nuotraukos aprašymas](priskyrimooperatorius.PNG)
 
 
-**#Perdengti įvesties ir išvesties metodai darbui su Studentų klasę. **
+**#Perdengti įvesties ir išvesties metodai darbui su Studentų klasę.**
 
 #Operatoriai deklaruojami klasės viduje kaip draugiškos funkcijos, kad turėtų tiesioginę prieigą prie klasės privačių ir apsaugotų narių. Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
 
@@ -103,7 +103,7 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 - 3 releasas(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
 - 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
 - 5 releasas(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
-- 6 realisas(v1.1) - Perijimas iš struktūros į klasę.
+- 6 realisas(v1.1) - Perėjimas iš struktūros į klasę.
 
 #Naudotos bibliotekos:
 - `<iostream>`
