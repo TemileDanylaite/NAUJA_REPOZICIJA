@@ -16,20 +16,19 @@ public:
 		
 	}
 
-	Stud(const Stud& other) {
-		vardas = other.vardas;
-		pavarde = other.pavarde;
-		ND = other.ND;
-		egz = other.egz;
-		GalutinisVid = other.GalutinisVid;
-		GalutinisMed = other.GalutinisMed;
+	Stud(const Stud& other) noexcept
+		:vardas (other.vardas),
+		pavarde (other.pavarde),
+		ND (other.ND),
+		egz (other.egz),
+		GalutinisVid(other.GalutinisVid),
+		GalutinisMed(other.GalutinisMed) {
 		cout << "Kopijavimo konstruktorius: " << vardas << " " << pavarde << endl;
 	}
 		
 
-	Stud& operator = (const Stud& other) {
+	Stud& operator = (const Stud& other) noexcept{
 		if (this == &other) return *this;
-
 		vardas = other.vardas;
 		pavarde = other.pavarde;
 		ND = other.ND;
@@ -71,13 +70,8 @@ public:
 	void apskaiciuotiGalutinius();
 
 	~Stud() {
-		if (!vardas.empty() && !pavarde.empty()) {
-			cout << "Destruktorius:Objekto " << vardas << " " << pavarde << " sunaikinimas." << endl;
-		}
-		else {
-			
-		}
-
+		
+		clearData();
 	}
 
 
@@ -100,4 +94,4 @@ void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPava
 void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPavadinimas);
 void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
 
-#endif STUD_H_INCLUDED#
+#endif STUD_H_INCLUDED

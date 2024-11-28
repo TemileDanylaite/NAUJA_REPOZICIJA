@@ -1,13 +1,6 @@
 #include "Stud.h"
 #include "Mylib.h"
 
-std::ostream& operator<<(std::ostream& os, const Stud& stud) {
-	os << setw(15) << left << stud.getVardas()
-		<< setw(15) << left << stud.getPavarde()
-		<< setw(4) << right << fixed << setprecision(2) << stud.getGalutinisVid()
-		<< setw(16) << right << fixed << setprecision(2) << stud.getGalutinisMed() << endl;
-	return os;
-}
 
 
 std::istream& operator>>(std::istream& is, Stud& stud) {
@@ -81,6 +74,14 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 
 	return is;
 
+}
+
+std::ostream& operator<<(std::ostream& os, const Stud& stud) {
+	os << setw(15) << left << stud.getVardas()
+		<< setw(15) << left << stud.getPavarde()
+		<< setw(4) << right << fixed << setprecision(2) << stud.getGalutinisVid()
+		<< setw(16) << right << fixed << setprecision(2) << stud.getGalutinisMed() << endl;
+	return os;
 }
 
 void output(const Stud& Lok){
