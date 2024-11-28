@@ -14,8 +14,11 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 	cout << "Ivesti varda ir pavarde: ";
 	string vardas, pavarde;
 	is >> vardas >> pavarde;
+
 	stud.setVardas(vardas);
 	stud.setPavarde(pavarde);
+
+	cout << "Konstruktoriu: Objekto " << vardas << " " << pavarde << " sukurimas" << endl;
 
 	string pasirinkimas;
 	cout << "Ar reikia namu darbu ir egzamino rezultatus generuoti atsitiktinai?(taip/ne) ";
@@ -43,7 +46,7 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 		if (pasirinkimas == "taip") {
 			int ndCount;
 			cout << "Ivesti namu darbu skaiciu: ";
-			cin >> ndCount;
+			is >> ndCount;
 
 
 
@@ -73,14 +76,14 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 		is >> egz;
 		stud.setEgz(egz);
 
+
 	}
+
 	return is;
 
 }
 
-
-void output(const Stud& Lok)
-{
+void output(const Stud& Lok){
 	cout << Lok;
 }
 

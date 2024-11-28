@@ -128,6 +128,8 @@ void output(const Stud& Lok, bool isFromFile = false) {
 
 int main()
 {
+
+
 	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";
 	string generuotiFailoPasirinkima;
 	cin >> generuotiFailoPasirinkima;
@@ -367,6 +369,7 @@ int main()
 
 	}
 	else {
+
 		cout << "Kiek yra studentu ?";
 		int n;
 		cin >> n;
@@ -381,13 +384,15 @@ int main()
 		if (konteineris == "vector") {
 
 			for (int i = 0; i < n; i++) {
+				Stud Temp;
 				cout << "Please input user data: " << endl;
 				cin >> Temp;
 				Temp.apskaiciuotiGalutinius();
-				Vec1.push_back(Temp);
-				val(Temp);
 
-				cout << "Objekto saugojimo atmintyje adresas: " << &Vec1.back() << endl;
+				Vec1.push_back(Temp);
+
+
+				
 			}
 
 			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
@@ -406,19 +411,20 @@ int main()
 
 		}
 		else if (konteineris == "list") {
-			list<Stud> list1;
+
 
 			for (int i = 0; i < n; i++) {
+				Stud Temp;
 				cout << "Please input user data: " << endl;
 				cin >> Temp;
 				Temp.apskaiciuotiGalutinius();
 				list1.push_back(Temp);
-				val(Temp);
 
-				cout << "Objekto saugojimo atmintyje adresas: " << &list1.back() << endl;
+
+				
 			}
 
-			sort(Vec1.begin(), Vec1.end(), [](const Stud& a, const Stud& b) {
+			list1.sort([](const Stud& a, const Stud& b) {
 				return a.getVardas() < b.getVardas();
 				});
 
@@ -435,8 +441,9 @@ int main()
 		else {
 			cout << "Neteisingas konteinerio pasirinkimas." << endl;
 		}
-
-		system("pause");
+		
+		
+		cout << "Programos pabaiga, sunaikinami visi objektai" << endl;
 		return 0;
 	}
 }

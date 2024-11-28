@@ -12,23 +12,38 @@ private:
 
 public:
 	Stud(std::string v = "", std::string p = "", std::vector<int> nd = {}, double e = 0.0)
-		:vardas(v), pavarde(p), ND(nd), egz(e), GalutinisVid(0), GalutinisMed(0) {}
+		:vardas(v), pavarde(p), ND(nd), egz(e), GalutinisVid(0), GalutinisMed(0) {
+		
+	}
 
-	~Stud() { clearData(); }
-
-	Stud(const Stud& other)
-		:vardas(other.vardas), pavarde(other.pavarde), ND(other.ND), egz(other.egz),
-		GalutinisVid(other.GalutinisVid), GalutinisMed(other.GalutinisMed) {}
-
-	Stud& operator = (const Stud& other) {
-		if (this == &other) return *this;
+	Stud(const Stud& other) {
 		vardas = other.vardas;
 		pavarde = other.pavarde;
 		ND = other.ND;
 		egz = other.egz;
 		GalutinisVid = other.GalutinisVid;
 		GalutinisMed = other.GalutinisMed;
+		cout << "Kopijavimo konstruktorius: " << vardas << " " << pavarde << endl;
+	}
+		
+
+	Stud& operator = (const Stud& other) {
+		if (this == &other) return *this;
+
+		vardas = other.vardas;
+		pavarde = other.pavarde;
+		ND = other.ND;
+		egz = other.egz;
+		GalutinisVid = other.GalutinisVid;
+		GalutinisMed = other.GalutinisMed;
+
+		cout << "Priskyrimo operatorius: " << vardas << " " << pavarde << endl;
 		return *this;
+	}
+
+
+	void addND(int nd) {
+		ND.push_back(nd);
 	}
 
 	void clearData() {
@@ -39,9 +54,7 @@ public:
 		GalutinisVid = 0.0;
 		GalutinisMed = 0.0;
 	}
-	void addND(int nd) {
-		ND.push_back(nd);
-	}
+	
 
 	std::string getVardas() const { return vardas; }
 	std::string getPavarde() const { return pavarde; }
@@ -57,14 +70,27 @@ public:
 
 	void apskaiciuotiGalutinius();
 
+	~Stud() {
+		if (!vardas.empty() && !pavarde.empty()) {
+			cout << "Destruktorius:Objekto " << vardas << " " << pavarde << " sunaikinimas." << endl;
+		}
+		else {
+			
+		}
+
+	}
+
+
 	friend std::istream& operator>>(std::istream& is, Stud& stud);
 	friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
+
+
 
 };
 
 //void ived(Stud& Lok);
-void output(const Stud& Lok);
-void val(Stud& Lok);
+//void output(const Stud& Lok);
+//void val(Stud& Lok);
 
 void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
 void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas);
