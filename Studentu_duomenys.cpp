@@ -127,6 +127,7 @@ void output(const Stud& Lok, bool isFromFile = false) {
 
 int main()
 {
+	zmogus 1("Jonas", "Jonaitis");
 	/*Stud stud1;
 	cin >> stud1;
 	Stud stud2;
