@@ -1,6 +1,10 @@
 #include "Stud.h"
 #include "Mylib.h"
 
+void Stud::atvaizduoti() const {
+	cout << "Vardas:" << getVardas() << ", Pavarde" << getPavarde() << ", Galutinis:" << GalutinisVid
+		<< ", GalutinisMed:" << GalutinisMed << endl;
+};
 
 
 std::istream& operator>>(std::istream& is, Stud& stud) {
