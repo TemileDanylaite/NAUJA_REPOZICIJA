@@ -117,8 +117,7 @@ void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPava
 
 
 void output(const Stud& Lok, bool isFromFile = false) {
-	cout << setw(15) << left << Lok.getVardas() << setw(15) << left << Lok.getPavarde()
-		<< setw(5) << right << fixed << setprecision(2) << Lok.getGalutinisVid();
+	cout << Lok;
 
 	if (!isFromFile) {
 		cout << setw(15) << right << fixed << setprecision(2) << Lok.getGalutinisMed();
@@ -128,6 +127,13 @@ void output(const Stud& Lok, bool isFromFile = false) {
 
 int main()
 {
+	Stud stud1;
+	cin >> stud1;
+	Stud stud2;
+	stud2 = stud1;
+	Stud stud3(stud2);
+	cout << stud1 << "\n" << stud2 << "\n" << stud3 << endl;
+
 
 
 	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";
@@ -443,6 +449,9 @@ int main()
 		}
 		
 		
+
+		
+
 		cout << "Programos pabaiga, sunaikinami visi objektai" << endl;
 		return 0;
 	}

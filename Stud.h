@@ -23,7 +23,7 @@ public:
 		egz (other.egz),
 		GalutinisVid(other.GalutinisVid),
 		GalutinisMed(other.GalutinisMed) {
-		cout << "Kopijavimo konstruktorius: " << vardas << " " << pavarde << endl;
+		//cout << "Kopijavimo konstruktorius: " << vardas << " " << pavarde << endl;
 	}
 		
 
@@ -36,7 +36,7 @@ public:
 		GalutinisVid = other.GalutinisVid;
 		GalutinisMed = other.GalutinisMed;
 
-		cout << "Priskyrimo operatorius: " << vardas << " " << pavarde << endl;
+		//cout << "Priskyrimo operatorius: " << vardas << " " << pavarde << endl;
 		return *this;
 	}
 
@@ -44,6 +44,8 @@ public:
 	void addND(int nd) {
 		ND.push_back(nd);
 	}
+
+	~Stud() {clearData();}
 
 	void clearData() {
 		vardas = "";
@@ -69,10 +71,7 @@ public:
 
 	void apskaiciuotiGalutinius();
 
-	~Stud() {
-		
-		clearData();
-	}
+	
 
 
 	friend std::istream& operator>>(std::istream& is, Stud& stud);
