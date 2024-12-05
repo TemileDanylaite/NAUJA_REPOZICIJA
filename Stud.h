@@ -16,9 +16,13 @@ public:
 	std::string getPavarde() const { return pavarde; }
 
 	virtual void setVardas(const std::string& v) { vardas = v; }
-	virtual void setPavarde(const std::string& p) { vardas = p; }
+	virtual void setPavarde(const std::string& p) { pavarde = p; }
 
-	virtual void atvaizduoti() const = 0;
+	virtual void atvaizduoti(std::ostream& os) const = 0;
+	friend std::ostream& operator <<(std::ostream& os, const zmogus& zmog) {
+		zmog.atvaizduoti(os);
+		return os;
+	}
 };
 
 class Stud : public zmogus{
@@ -40,7 +44,7 @@ public:
 		egz (other.egz),
 		GalutinisVid(other.GalutinisVid),
 		GalutinisMed(other.GalutinisMed) {
-		//cout << "Kopijavimo konstruktorius: " << vardas << " " << pavarde << endl;
+		
 	}
 		
 
@@ -52,7 +56,7 @@ public:
 		GalutinisVid = other.GalutinisVid;
 		GalutinisMed = other.GalutinisMed;
 
-		//cout << "Priskyrimo operatorius: " << vardas << " " << pavarde << endl;
+		
 		return *this;
 	}
 	void addND(int nd) {
@@ -81,7 +85,7 @@ public:
 
 	void apskaiciuotiGalutinius();
 
-	void atvaizduoti() const override ;
+	void atvaizduoti(std::ostream& os) const override ;
 
 
 	friend std::istream& operator>>(std::istream& is, Stud& stud);
@@ -103,4 +107,4 @@ void irasytivargsiukusList(const list<Stud>& vargsiukai, const string& failoPava
 void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPavadinimas);
 void irasytiKietiakiaiVector(const vector<Stud>& kietiakiai, const string& failoPavadinimas);
 
-#endif ZMOGUS_H_INCLUDED;
+#endif //ZMOGUS_H_INCLUDED;

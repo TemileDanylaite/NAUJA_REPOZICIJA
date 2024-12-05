@@ -116,24 +116,27 @@ void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPava
 }
 
 
-void output(const Stud& Lok, bool isFromFile = false) {
-	cout << Lok;
+//void output(const Stud& Lok, bool isFromFile = false) {
+//	cout << 
+//
+//	if (!isFromFile) {
+//		cout << setw(15) << right << fixed << setprecision(2) << Lok.getGalutinisMed();
+//	}
+//	cout << endl;
+//}
 
-	if (!isFromFile) {
-		cout << setw(15) << right << fixed << setprecision(2) << Lok.getGalutinisMed();
-	}
-	cout << endl;
-}
+
 
 int main()
 {
-	zmogus 1("Jonas", "Jonaitis");
-	/*Stud stud1;
+
+	Stud stud1;
 	cin >> stud1;
 	Stud stud2;
 	stud2 = stud1;
 	Stud stud3(stud2);
-	cout << stud1 << "\n" << stud2 << "\n" << stud3 << endl;*/
+	cout << stud1 << "\n" << stud2 << "\n" << stud3 << endl;
+
 
 
 
@@ -397,8 +400,6 @@ int main()
 				Temp.apskaiciuotiGalutinius();
 
 				Vec1.push_back(Temp);
-
-
 				
 			}
 
@@ -413,7 +414,7 @@ int main()
 			cout << string(60, '-') << endl;
 
 			for (const auto& studentas : Vec1) {
-				output(studentas, false);
+				cout << studentas << endl;
 			}
 
 		}
@@ -426,8 +427,6 @@ int main()
 				cin >> Temp;
 				Temp.apskaiciuotiGalutinius();
 				list1.push_back(Temp);
-
-
 				
 			}
 
@@ -442,7 +441,7 @@ int main()
 			cout << string(60, '-') << endl;
 
 			for (const auto& studentas : list1) {
-				output(studentas, false);
+				cout << studentas << endl;
 			}
 		}
 		else {

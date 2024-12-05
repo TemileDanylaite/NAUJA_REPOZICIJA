@@ -1,8 +1,8 @@
 #include "Stud.h"
 #include "Mylib.h"
 
-void Stud::atvaizduoti() const {
-	cout << "Vardas:" << getVardas() << ", Pavarde" << getPavarde() << ", Galutinis:" << GalutinisVid
+void Stud::atvaizduoti(std::ostream& os) const {
+	os << "Vardas:" << getVardas() << ", Pavarde:" << getPavarde() << ", GalutinisVid:" << GalutinisVid
 		<< ", GalutinisMed:" << GalutinisMed << endl;
 };
 
@@ -36,6 +36,7 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 
 		stud.setEgz(dist(gen));
 		stud.apskaiciuotiGalutinius();
+
 	}
 	else {
 		cout << "Ar zinai, koks yra namu darbu skaicius?(taip/ne): ";
@@ -82,16 +83,14 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Stud& stud) {
-	os << setw(15) << left << stud.getVardas()
-		<< setw(15) << left << stud.getPavarde()
-		<< setw(4) << right << fixed << setprecision(2) << stud.getGalutinisVid()
-		<< setw(16) << right << fixed << setprecision(2) << stud.getGalutinisMed() << endl;
+	stud.atvaizduoti(os);
 	return os;
+
 }
 
-void output(const Stud& Lok){
-	cout << Lok;
-}
+//void output(const Stud& Lok){
+//	cout << Lok;
+//}
 
 void val(Stud& Lok) {
 	Lok.setVardas("");
