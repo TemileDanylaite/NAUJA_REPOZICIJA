@@ -1,7 +1,8 @@
 
-#Studentų galutinio balo apskaičiavimo programa. **(v1.2 versija)**
+#Studentų galutinio balo apskaičiavimo programa. **(v1.5 versija)**
 
-**#v1.2 verisjos tikslas -  Realizuoti visus reikiamus "Rule of three" ir įvesties/išvesties operatorius turimai Studentas klasei.
+**#v1.5 verisjos tikslas -  Vietoje turimos Studentas klasės sukurti dvi: bazinę (abstrakti) klasę,
+ skirtą bendrai aprašyti žmogų ir tuomet iš jos išvestinę (derived) klasę - Studentas.
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
@@ -30,39 +31,18 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 - Galiausiai įvesti egzamino balą.
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
-**#"Rule of three" operatorių realizavimas Studentas klasei.**
+**#Abstrakčios klasės Žmogus realizavimas**
+![Aprašymas](abstraktiKlase.PNG)
 
-#Destruktorius yra skirtas atlaisvinti dinaminę atmintį, kuri buvo priskirta objektui per jo gyvavimo laikotarpį. Jis automatiškai kviečiamas, kai objektas išeina iš veikimo srities, užtikrindamas, kad nebūtų atminties nutekėjimų.
+Rezultatas: Turi bendrą informaciją apie žmogų (vardas, pavardė). Ji negali būti naudojama tiesiogiai objektų kūrimui. Vietoj to, ji veikia kaip bazinė klasė, kuria remiasi kitos išvestinės klasės. Mūsų atvėju - **Studentas**. virtual ~zmogus() - destruktorius yra virtualus, nes klasė paveldima. virtual void atvaizduoti() - tai grynai virtuali funkcija, todėl kiekviena išvestinė klasė privalo ją įgyvendinti. Tai leidžia naudoti polimorfizmą, nes funkcijos implementacija priklauso nuo objekto tipo.
 
-![Nuotraukos aprašymas](destruktorius.PNG)
+**#Studento klasė išvestinė (derived) iš Žmogaus, kuri palaiko 1.2 versijoje realizuotą trejų metodų taisyklę.**
+![Aprašymas](studentoKlaseIšvestine1.PNG)
+![Aprašymas](studentoKlaseIšvestine2.PNG)
 
-#Kopijavimo konstruktorius yra naudojamas kuriant naują objektą, kuris tampa esamo objekto kopija. Tinkama kopija užtikrina, kad kiekvienas objektas turi savo atskirą duomenų kopiją.
+Rezultatas: Klasė Studuentas paveldi bazinę klasę **žmogus** ir įgyvendina jos metodus. Ji prideda studento specifinius duomenis. Ši klasė privalo įgyvendinti visus grynai virtualius metodus iš bazinės klasės. Taip pat ji įgyvendina metodą atvaizduoti(), kad galėtų parodyti visą informaciją apie studentą.
 
-![Nuotraukos aprašymas](kopijavimokonstruktorius.PNG)
-
-#Kopijavimo priskirimo operatorius leidžia priskirti vieną objektą kitam. Svarbu įsitikinti, kad priskyrimas į save yra tinkamai valdomas ir kad seni objekto ištekliai yra tinkamai atlaisvinami prieš priskiriant naujas reikšmes.
-
-![Nuotraukos aprašymas](priskyrimooperatorius.PNG)
-
-
-**#Perdengti įvesties ir išvesties metodai darbui su Studentų klasę.**
-
-#Operatoriai deklaruojami klasės viduje kaip draugiškos funkcijos, kad turėtų tiesioginę prieigą prie klasės privačių ir apsaugotų narių. Jie leidžia įvesti duomenis į Stud objekto kintamuosius naudojant std::istream, bei išvesti Stud objekto duomenis į std::ostream.
-
-![Nuotraukos aprašymas](studĮvestIšves.PNG)
-
-#Įvesties operatorius realizutoas stud.cpp faile.
-
-![Nuotraukos aprašymas](ivestiesoperatorius(pradzia).PNG)
-
-#Išvesties operatorius realizutoas stud.cpp faile.
-
-![Nuotraukos aprašymas](isvestiesoperatorius.PNG)
-
-
-#Programos output'as (tikrinama, kaip veikia programa įvedant dviejų objektų duomenis)
-![Nuotraukos aprašymas](ouput'as.PNG)
-
+Išvadėlė: Žmogus klasė suteikia bendrą šabloną, o Studentas prideda konkrečius duomenis ir funkcionalumą.
 
 **#Perdengtų metodų veikimas.**
 
@@ -98,12 +78,13 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 
 
 
-##Visų iki šios v1.2 versijos atliktų releasu apibendrinimas:
+##Visų iki šios v1.5 versijos atliktų releasu apibendrinimas:
 - 1 ir 2 releasai(v.pradinė ir v0.1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
 - 3 releasas(v0.2) - Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
 - 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
 - 5 releasas(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
 - 6 realisas(v1.1) - Perėjimas iš struktūros į klasę.
+- 7 realisas(v1.2) - Realizuoti visi reikiami "Rule of three" ir įvesties/išvesties operatoriai turimai Studentas klasei. 
 
 #Naudotos bibliotekos:
 - `<iostream>`
