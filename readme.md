@@ -32,15 +32,26 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
 **#Abstrakčios klasės Žmogus realizavimas**
+
 ![Aprašymas](abstraktiKlase.PNG)
 
 Rezultatas: Turi bendrą informaciją apie žmogų (vardas, pavardė). Ji negali būti naudojama tiesiogiai objektų kūrimui. Vietoj to, ji veikia kaip bazinė klasė, kuria remiasi kitos išvestinės klasės. Mūsų atvėju - **Studentas**. virtual ~zmogus() - destruktorius yra virtualus, nes klasė paveldima. virtual void atvaizduoti() - tai grynai virtuali funkcija, todėl kiekviena išvestinė klasė privalo ją įgyvendinti. Tai leidžia naudoti polimorfizmą, nes funkcijos implementacija priklauso nuo objekto tipo.
 
+#Abstrakčios klasės Žmogus objektų kūrimas negalimas (Demonstracija).
+Bandant sukurti zmogus objektą išmetama klaida:
+
+![Aprašymas](klaidosDemonstracija.PNG)
+
+Rezultatas:Ši klaida rodo, kad bandoma sukurti abstrakčios klasės **zmogus** objektą, o tai negalima, nes ji turi grynai virtualią funkciją.
+
 **#Studento klasė išvestinė (derived) iš Žmogaus, kuri palaiko 1.2 versijoje realizuotą trejų metodų taisyklę.**
+
 ![Aprašymas](studentoKlaseIšvestine1.PNG)
+
 ![Aprašymas](studentoKlaseIšvestine2.PNG)
 
 Rezultatas: Klasė Studuentas paveldi bazinę klasę **žmogus** ir įgyvendina jos metodus. Ji prideda studento specifinius duomenis. Ši klasė privalo įgyvendinti visus grynai virtualius metodus iš bazinės klasės. Taip pat ji įgyvendina metodą atvaizduoti(), kad galėtų parodyti visą informaciją apie studentą.
+
 
 Išvadėlė: Žmogus klasė suteikia bendrą šabloną, o Studentas prideda konkrečius duomenis ir funkcionalumą.
 
