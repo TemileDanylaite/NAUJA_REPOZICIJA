@@ -463,7 +463,7 @@ int main()
 
 			/**< Įveda studentų duomenis ir prideda juos į sąrašą */
 			for (int i = 0; i < n; i++) {
-				Stud Temp; **< Laikinas studento objektas* /
+				Stud Temp; /**< Laikinas studento objektas */
 				cout << "Please input user data: " << endl;
 				cin >> Temp;
 				Temp.apskaiciuotiGalutinius(); /**< Apskaičiuojami galutiniai balai */
