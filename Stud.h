@@ -85,7 +85,7 @@ public:
 
 	void apskaiciuotiGalutinius();
 
-	void atvaizduoti(std::ostream& os) const override ;
+	void atvaizduoti(std::ostream& os) const;
 
 
 	friend std::istream& operator>>(std::istream& is, Stud& stud);

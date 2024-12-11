@@ -130,14 +130,12 @@ void irasytikietiakiaiList(const list<Stud>& kietiakiai, const string& failoPava
 int main()
 {
 
-	Stud stud1;
+	/*Stud stud1;
 	cin >> stud1;
 	Stud stud2;
 	stud2 = stud1;
 	Stud stud3(stud2);
-	cout << stud1 << "\n" << stud2 << "\n" << stud3 << endl;
-
-
+	cout << stud1 << "\n" << stud2 << "\n" << stud3 << endl;*/
 
 
 	cout << "Ar norite sugeneruoti studentu failus?(taip/ne): ";

@@ -36,7 +36,7 @@ std::istream& operator>>(std::istream& is, Stud& stud) {
 
 		stud.setEgz(dist(gen));
 		stud.apskaiciuotiGalutinius();
-
+	
 	}
 	else {
 		cout << "Ar zinai, koks yra namu darbu skaicius?(taip/ne): ";
