@@ -1,8 +1,5 @@
 
-#Studentų galutinio balo apskaičiavimo programa. **(v1.5 versija)**
-
-**#v1.5 verisjos tikslas -  Vietoje turimos Studentas klasės sukurti dvi: bazinę (abstrakti) klasę,
- skirtą bendrai aprašyti žmogų ir tuomet iš jos išvestinę (derived) klasę - Studentas.
+#Studentų galutinio balo apskaičiavimo programa. **(v2.0 versija)**
 
 #Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
 
@@ -31,46 +28,10 @@ Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama 
 - Galiausiai įvesti egzamino balą.
 Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
 
-**#Abstrakčios klasės Žmogus realizavimas**
-
-![Aprašymas](abstraktiKlase.PNG)
-
-Rezultatas: Turi bendrą informaciją apie žmogų (vardas, pavardė). Ji negali būti naudojama tiesiogiai objektų kūrimui. Vietoj to, ji veikia kaip bazinė klasė, kuria remiasi kitos išvestinės klasės. Mūsų atvėju - **Studentas**. virtual ~zmogus() - destruktorius yra virtualus, nes klasė paveldima. virtual void atvaizduoti() - tai grynai virtuali funkcija, todėl kiekviena išvestinė klasė privalo ją įgyvendinti. Tai leidžia naudoti polimorfizmą, nes funkcijos implementacija priklauso nuo objekto tipo.
-
-#Abstrakčios klasės Žmogus objektų kūrimas negalimas (Demonstracija).
-Bandant sukurti zmogus objektą išmetama klaida:
-
-![Aprašymas](klaidosDemonstracija.PNG)
-
-Rezultatas:Ši klaida rodo, kad bandoma sukurti abstrakčios klasės **zmogus** objektą, o tai negalima, nes ji turi grynai virtualią funkciją.
-
-**#Studento klasė išvestinė (derived) iš Žmogaus, kuri palaiko 1.2 versijoje realizuotą trejų metodų taisyklę.**
-
-![Aprašymas](studentoKlaseIšvestine1.PNG)
-
-![Aprašymas](studentoKlaseIšvestine2.PNG)
-
-Rezultatas: Klasė Studentas paveldi bazinę klasę **žmogus** ir įgyvendina jos metodus. Ji prideda studento specifinius duomenis. Ši klasė privalo įgyvendinti visus grynai virtualius metodus iš bazinės klasės. Taip pat ji įgyvendina metodą atvaizduoti(), kad galėtų parodyti visą informaciją apie studentą.
 
 
-Išvadėlė: Žmogus klasė suteikia bendrą šabloną, o Studentas prideda konkrečius duomenis ir funkcionalumą.
-
-**#Perdengtų metodų veikimas.**
-
-#Duomenų įvestis: 
-- Rankiniu būdu - Vartotojas gali įvesti duomenis klaviatūra, kai programa naudoja std::cin srautą. Naudojant operatorių operator>>, programa leidžia įvesti vardą, pavardę, namų darbų rezultatus, egzamino balą.
-- Automatiniu - Duomenys gali būti įvedami automatiškai pagal tam tikrą procesą(įvesti iš anksto paruoštus duomenis)
-- Iš failo - Duomenys gali būti nuskaityti iš failo naudojant std::ifstream srautą. Perdengtas  operator>> metodas leidžia nuskaityti duomenis iš failo, kurio turinys turi būti struktūrizuotas pagal tam tikrus reikalavimus ir užpildyti Stud objekto laukus.
-
-#Duomenų išvestis 
-- Į ekraną - Duomenys atspausdinami ekrane naudojant std::cout. Su perdengtu operatoriumi operator<< studento informacija bus gražiai suformuluota ir pateikta vartotojui tiesiogiai ekrane.
-- Į failą - Duomenys įrašomi į failą naudojant std::ofstream srautą. Operatorius operator<< užtikrina, kad studento duomenys būtų įrašyti į failą, kurį vėliau vartotojas gali peržiūrėti.
 
 
-Išvadėlė: Perdengti metodai (operator>> ir operator<<) leidžia paprastai atlikti duomenų įvedimą ir išvedimą tiek interaktyviai su vartotoju, tiek automatiškai.
-Operator>> leidžia nuskaityti duomenis (rankiniu būdu, automatiniu būdu arba iš failo), o operator<< padeda išvesti duomenis ekrane arba į failą.
-
-Išvadėlė: "Rule of three" taisyklė užtikrina, kad klasės objektai, kurie dirba su dinaminiais ištekliais, būtų teisingai kopijuojami, priskiriami ir sunaikinami, taip išvengiant atminties nutekėjimo ir kitų valdymo klaidų.
 
 
 #Efektyvumo tyrimai ir rezultatai: 
@@ -95,7 +56,9 @@ Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl at
 - 4 releasas(v0.3) -  Išmatuojama patobulintos v0.2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
 - 5 releasas(v1.0) - Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("vargšiukų" ir "kietiakų") realizacija (v0.3)
 - 6 realisas(v1.1) - Perėjimas iš struktūros į klasę.
-- 7 realisas(v1.2) - Realizuoti visi reikiami "Rule of three" ir įvesties/išvesties operatoriai turimai Studentas klasei. 
+- 7 realisas(v1.2) - Realizuoti visi reikiami "Rule of three" ir įvesties/išvesties operatoriai turimai Studentas klasei.
+- 8 realisas(v1.5) -  Vietoje turimos Studentas klasės sukurtos dvi: bazinė (abstrakti) klasė,
+ skirta bendrai aprašyti žmogų ir tuomet iš jos išvestinė (derived) klasė - Studentas.
 
 #Naudotos bibliotekos:
 - `<iostream>`
