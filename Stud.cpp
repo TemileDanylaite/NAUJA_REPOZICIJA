@@ -3,8 +3,20 @@
  * @brief Studentų objektų realizacija.
  *
  * Šiame faile įgyvendinamos studento duomenų struktūros ir metodai,
- * tokie kaip duomenų įvedimas, išvedimas ir skaičiavimai.
+ * leidžiantys apdoroti studentų informaciją. Tai apima tokius veiksmus,
+ * kaip duomenų įvedimas, išvedimas, skaičiavimai, taip pat vidurkių ir
+ * medianų apskaičiavimas pagal studentų namų darbų ir egzamino rezultatus.
+ *
+ * @details
+ * Failas įgyvendina funkcijas, kurios leidžia nustatyti studento duomenis,
+ * pavyzdžiui, vardą, pavardę, namų darbų rezultatus ir egzamino rezultatą,
+ * bei atlikti atitinkamus skaičiavimus, tokius kaip galutinio įvertinimo
+ * apskaičiavimas (vidurkis ir mediana). Taip pat realizuoti įvedimo ir
+ * išvedimo metodai, kurie leidžia vartotojui bendrauti su studentų objektais.
+ * 
+ * @details Failas naudoja „mylib“ biblioteką.
  */
+
 
 #include "Stud.h"
 #include "Mylib.h"

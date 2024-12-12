@@ -5,6 +5,25 @@
  * Šiame faile aprašoma studentų duomenų struktūra, jos
  * kintamieji ir pagrindiniai metodai, kurie bus naudojami
  * „stud.cpp“ faile.
+ *
+ * Šiame faile aprašomos dvi pagrindinės klasės:
+ * - **Abstrakti klasė `zmogus`**, kuri aprašo žmogaus duomenis, įskaitant vardą ir pavardę.
+ * - **Išvestinė klasė `Stud`**, kuri paveldi klasę `zmogus` ir praplečia ją pridėdama studentų specifinius duomenis ir metodus, tokius kaip namų darbų rezultatai, egzaminas ir galutiniai įvertinimai.
+ *
+ * **`zmogus` klasė**:
+ * - Tai **abstrakti klasė**, nes ji turi **grynąją virtualią funkciją** `atvaizduoti()`, kuri nėra įgyvendinta šioje klasėje ir turi būti įgyvendinta išvestinėse klasėse.
+ * - Ši klasė aprašo bendrą žmogaus informaciją, tokią kaip vardas ir pavardė, ir pateikia metodus jų nustatymui bei gavimui.
+ * - Klasė `zmogus` negali būti tiesiogiai instancijuojama, tačiau ji suteikia pagrindą kitoms klasėms, pvz., `Stud`, paveldėti ir įgyvendinti savo specifinius metodus.
+ * - Naudojami operatoriai, leidžiantys lengvai įvesti ir išvesti žmogaus duomenis į/iš srauto.
+ *
+ * **`Stud` klasė**:
+ * - Tai **išvestinė klasė**, paveldinti klasę `zmogus`. Ji prideda papildomus duomenis ir funkcijas, susijusias su studentų rezultatais.
+ * - Klasė turi metodus, skirtus apdoroti studentų namų darbų rezultatus (`addND()`), apskaičiuoti galutinius įvertinimus (vidurkį ir medianą), taip pat atvaizduoti studento informaciją (`atvaizduoti()`).
+ * - `Stud` klasė įgyvendina grynąją virtualią funkciją `atvaizduoti()` iš bazinės klasės `zmogus`, todėl ši funkcija tampa specifinė studentui.
+ * - Pateikiami operatoriai, leidžiantys įvesti ir išvesti studentų duomenis į/iš srauto.
+ * - Klasė turi ir papildomas funkcijas, kaip duomenų kopijavimas, destruktorius, skirtas duomenų valymui, bei papildomos funkcijos studentų duomenims apdoroti.
+ *
+ * @details Failas naudoja „mylib“ biblioteką.
  */
 
 

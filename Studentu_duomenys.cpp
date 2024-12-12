@@ -2,9 +2,24 @@
  * @file Studentu_duomenys.cpp
  * @brief Pagrindinis programos vykdymo failas.
  *
- * Šis failas sujungia visas bibliotekas ir paleidžia programą. Jame
- * vykdomas studentų duomenų apdorojimas: duomenų generavimas,
- * nuskaitymas ir apdorojimas.
+ * Šis failas sujungia visas reikalingas bibliotekas ir paleidžia programą,
+ * koordinuodamas studentų duomenų apdorojimą. Jame atliekami veiksmai, tokie kaip
+ * atsitiktinių studentų duomenų generavimas, studentų duomenų nuskaitymas iš failo,
+ * jų apdorojimas ir galutinių įvertinimų apskaičiavimas.
+ *
+ * @details
+ * Failas vykdo programos logiką, įskaitant šiuos pagrindinius veiksmus:
+ * - Atsitiktinių studentų duomenų generavimas ir įrašymas į failą.
+ * - Studentų duomenų nuskaitymas iš failo į atitinkamas duomenų struktūras.
+ * - Studentų rezultatų apdorojimas, įskaitant galutinių įvertinimų (vidurkio ir medianos)
+ *   apskaičiavimą.
+ * - Studentų rezultatų klasifikavimas ir įrašymas į atskirus failus pagal jų pasiekimus.
+ *
+ * Šis failas taip pat valdys vartotojo sąsają, leidžiančią pasirinkti norimus veiksmus,
+ * pavyzdžiui, generuoti duomenis, nuskaityti juos iš failo arba išvesti studentų
+ * rezultatus į failą.
+ * 
+ * @details Failas naudoja „mylib“ biblioteką.
  */
 
 #include "Mylib.h"

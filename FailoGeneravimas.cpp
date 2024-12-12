@@ -3,7 +3,10 @@
  * @brief Studentų duomenų generavimas į failą.
  *
  * Šiame faile įgyvendinamas atsitiktinių studentų duomenų
- * generavimas ir išsaugojimas į tekstinį failą.
+ * generavimas ir išsaugojimas į tekstinį failą. Kiekvienam studentui
+ * sugeneruojami atsitiktiniai vardai, pavardės, namų darbų rezultatai,
+ * egzamino rezultatas, kurie vėliau įrašomi į tekstinį failą nurodytu
+ * formatu.
  *
  * @details Failas naudoja „mylib“ biblioteką ir susijusius metodus
  * efektyviam duomenų rašymui.

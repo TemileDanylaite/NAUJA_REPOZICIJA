@@ -2,9 +2,13 @@
  * @file FailoNuskaitymas.cpp
  * @brief Studentų duomenų nuskaitymas iš failo.
  *
- * Šiame faile apdorojamas tekstinio failo nuskaitymas, kur
- * laikomi studentų duomenys. Nuskaityti duomenys apdorojami
- * ir saugomi struktūrose.
+ 
+ * Šiame faile apdorojamas tekstinio failo nuskaitymas, kuriame saugomi
+ * studentų duomenys. Nuskaityti duomenys apdorojami ir įrašomi į atitinkamus
+ * struktūrų konteinerius (pvz., vektorius arba sąrašus), kuriuose saugomi
+ * studentų vardai, pavardės, namų darbų ir egzamino rezultatai.
+ * 
+ * @details Failas naudoja „mylib“ biblioteką.
  */
 
 #include "Stud.h"
@@ -114,3 +118,4 @@ void nuskaitytiIsfailo(std::list<Stud>& list1, const std::string& failoVardas) {
         std::cerr << "Klaida: " << e.what() << endl; /**< Jei įvyko klaida, išvedame klaidos pranešimą */
     }
 }
+
