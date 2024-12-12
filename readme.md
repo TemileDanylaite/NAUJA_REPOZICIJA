@@ -146,7 +146,7 @@ Išvadėlė: "Rule of three" taisyklė užtikrina, kad klasės objektai, kurie d
 
  Išvadėlė: Žmogus klasė suteikia bendrą šabloną, o Studentas prideda konkrečius duomenis ir funkcionalumą.
  
- **#9 realisas(v2.0) - Sukurta dokumentacija panaudojant Doxygen.
+ **#9 realisas(v2.0)** - Sukurta dokumentacija panaudojant Doxygen.
  ![Aprasymas](filelist.PNG)
 
  Išvadėlė: Doxygen yra įrankis, skirtas generuoti dokumentacijai iš šaltinio kode. Naudojant specialius komponentus kode, Doxygen generuoja HTML, LaTex ar kitais formatais.
