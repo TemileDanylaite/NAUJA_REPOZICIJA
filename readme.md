@@ -145,10 +145,15 @@ Išvadėlė: "Rule of three" taisyklė užtikrina, kad klasės objektai, kurie d
  Studento klasė išvestinė (derived) iš Žmogaus, kuri palaiko 1.2 versijoje realizuotą trejų metodų taisyklę. Rezultatas: Klasė Studentas paveldi bazinę klasę žmogus ir įgyvendina jos metodus. Ji prideda studento specifinius duomenis. Ši klasė privalo įgyvendinti visus grynai virtualius metodus iš bazinės klasės. Taip pat ji įgyvendina metodą atvaizduoti(), kad galėtų parodyti visą informaciją apie studentą.
 
  Išvadėlė: Žmogus klasė suteikia bendrą šabloną, o Studentas prideda konkrečius duomenis ir funkcionalumą.
+ 
+ **#9 realisas(v2.0) - Sukurta dokumentacija panaudojant Doxygen.
+ ![Aprasymas](filelist.PNG)
+
+ Išvadėlė: Doxygen yra įrankis, skirtas generuoti dokumentacijai iš šaltinio kode. Naudojant specialius komponentus kode, Doxygen generuoja HTML, LaTex ar kitais formatais.
 
 
 
-#Rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė. 
+#Programos rezultatas - Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė. 
 
 
 
@@ -161,6 +166,7 @@ Išvadėlė: "Rule of three" taisyklė užtikrina, kad klasės objektai, kurie d
 - 7 realisas(v1.2) - Realizuoti visi reikiami "Rule of three" ir įvesties/išvesties operatoriai turimai Studentas klasei.
 - 8 realisas(v1.5) -  Vietoje turimos Studentas klasės sukurtos dvi: bazinė (abstrakti) klasė,
  skirta bendrai aprašyti žmogų ir tuomet iš jos išvestinė (derived) klasė - Studentas.
+- 9 realisas(v2.0) - Sukurta dokumentacija panaudojant Doxygen. Įkelta dokumentacija (kaip atskiras doxygen HTML katalogas) į repozicija.
 
 **##Diegimas**
 
