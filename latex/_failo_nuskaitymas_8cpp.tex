@@ -1,0 +1,93 @@
+\doxysection{Failo\+Nuskaitymas.\+cpp File Reference}
+\hypertarget{_failo_nuskaitymas_8cpp}{}\label{_failo_nuskaitymas_8cpp}\index{FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}}
+{\ttfamily \#include "{}Stud.\+h"{}}\newline
+{\ttfamily \#include "{}Mylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07}{nuskaityti\+Is\+Failo}} (std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&Vec1, const std\+::string \&failo\+Vardas)
+\begin{DoxyCompactList}\small\item\em Nuskaityti student? duomenis iš failo ir ?kelti ? vektori?. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596}{nuskaityti\+Isfailo}} (std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&list1, const std\+::string \&failo\+Vardas)
+\begin{DoxyCompactList}\small\item\em Nuskaityti student? duomenis iš failo ir ?kelti ? s?raš?. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07}\index{FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}!nuskaitytiIsFailo@{nuskaitytiIsFailo}}
+\index{nuskaitytiIsFailo@{nuskaitytiIsFailo}!FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiIsFailo()}{nuskaitytiIsFailo()}}
+{\footnotesize\ttfamily \label{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07} 
+void nuskaityti\+Is\+Failo (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{Vec1}{, }\item[{const std\+::string \&}]{failo\+Vardas}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaityti student? duomenis iš failo ir ?kelti ? vektori?. 
+
+Nuskaityti studentus iÅ¡ failo ir Ä¯raÅ¡yti juos Ä¯ vektoriÅ³.
+
+Ši funkcija atidaro nurodyt? fail?, nuskaityti kiekvien? eilut? ir iš jos sukuria studento objekt?, kurio vardas, pavard?, nam? darb? ir egzamino rezultatai yra ?rašomi ? perduot? {\ttfamily std\+::vector}. Jeigu duomen? eilut?je yra klaida arba tr?ksta reikaling? duomen?, studentas ignoruojamas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Vec1} & Nuoroda ? {\ttfamily std\+::vector}, kuriame bus saugomi nuskaityti student? duomenys. \\
+\hline
+{\em failo\+Vardas} & Failo, iš kurio bus nuskaityti student? duomenys, pavadinimas. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Atidarome fail? su nurodytu pavadinimu
+
+\texorpdfstring{$<$}{<} Išvalome ankstesnius duomenis
+
+\texorpdfstring{$<$}{<} Jei vardo ir pavard?s nuskaityti nepavyko, pereiname prie kitos eilut?s
+
+\texorpdfstring{$<$}{<} Pridedame nam? darb? balus
+
+\texorpdfstring{$<$}{<} Jei ND tr?ksta, ignoruojame student?
+
+\texorpdfstring{$<$}{<} Paskutin? nam? darb? bal? priskiriame egzamino rezultatui
+
+\texorpdfstring{$<$}{<} Pašaliname paskutin? ND, kad likt? tik nam? darb? rezultatai
+
+\texorpdfstring{$<$}{<} Pridedame student? ? vektori?
+
+\texorpdfstring{$<$}{<} Uždaromas failas po nuskaitymo
+
+\texorpdfstring{$<$}{<} Jei ?vyko klaida, išvedame klaidos pranešim?\Hypertarget{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596}\index{FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}!nuskaitytiIsfailo@{nuskaitytiIsfailo}}
+\index{nuskaitytiIsfailo@{nuskaitytiIsfailo}!FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiIsfailo()}{nuskaitytiIsfailo()}}
+{\footnotesize\ttfamily \label{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596} 
+void nuskaityti\+Isfailo (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{list1}{, }\item[{const std\+::string \&}]{failo\+Vardas}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaityti student? duomenis iš failo ir ?kelti ? s?raš?. 
+
+Nuskaityti studentus iÅ¡ failo ir Ä¯raÅ¡yti juos Ä¯ sÄ…raÅ¡Ä….
+
+Ši funkcija atidaro nurodyt? fail?, nuskaityti kiekvien? eilut? ir iš jos sukuria studento objekt?, kurio vardas, pavard?, nam? darb? ir egzamino rezultatai yra ?rašomi ? perduot? {\ttfamily std\+::list}. Jeigu duomen? eilut?je yra klaida arba tr?ksta reikaling? duomen?, studentas ignoruojamas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list1} & Nuoroda ? {\ttfamily std\+::list}, kuriame bus saugomi nuskaityti student? duomenys. \\
+\hline
+{\em failo\+Vardas} & Failo, iš kurio bus nuskaityti student? duomenys, pavadinimas. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Atidarome fail? su nurodytu pavadinimu
+
+\texorpdfstring{$<$}{<} Išvalome ankstesnius duomenis
+
+\texorpdfstring{$<$}{<} Jei vardo ir pavard?s nuskaityti nepavyko, pereiname prie kitos eilut?s
+
+\texorpdfstring{$<$}{<} Pridedame nam? darb? balus
+
+\texorpdfstring{$<$}{<} Jei ND tr?ksta, ignoruojame student?
+
+\texorpdfstring{$<$}{<} Paskutin? nam? darb? bal? priskiriame egzamino rezultatui
+
+\texorpdfstring{$<$}{<} Pašaliname paskutin? ND, kad likt? tik nam? darb? rezultatai
+
+\texorpdfstring{$<$}{<} Pridedame student? ? s?raš?
+
+\texorpdfstring{$<$}{<} Uždaromas failas po nuskaitymo
+
+\texorpdfstring{$<$}{<} Jei ?vyko klaida, išvedame klaidos pranešim?

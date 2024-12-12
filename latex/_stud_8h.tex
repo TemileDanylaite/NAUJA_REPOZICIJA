@@ -1,0 +1,209 @@
+\doxysection{Stud.\+h File Reference}
+\hypertarget{_stud_8h}{}\label{_stud_8h}\index{Stud.h@{Stud.h}}
+{\ttfamily \#include "{}Mylib.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classzmogus}{zmogus}}
+\begin{DoxyCompactList}\small\item\em Klasė, kuri aprašo žmogų su vardu ir pavarde. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_stud}{Stud}}
+\begin{DoxyCompactList}\small\item\em Klasė, kuri aprašo studentą, paveldintį iš žmogaus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_stud_8h_a2776c7be31cf2693c1cc6362a0dd9d07}{nuskaityti\+Is\+Failo}} (std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&Vec1, const std\+::string \&failo\+Vardas)
+\begin{DoxyCompactList}\small\item\em Nuskaityti studentus iš failo ir įrašyti juos į vektorių. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_stud_8h_a06c973dd3daf04824b5e94c374e289f9}{nuskaityti\+Isfailo}} (std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&Vec1, const std\+::string \&failo\+Vardas)
+\begin{DoxyCompactList}\small\item\em Nuskaityti studentus iš failo ir įrašyti juos į sąrašą. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_stud_8h_a6c911052dc41c163ca4661e22ac44d45}{sugeneruoti\+Studento\+Faila}} (const std\+::string \&file\+Name, int student\+Count, int nd\+Count)
+\begin{DoxyCompactList}\small\item\em Sugeneruoti studentų failą su atsitiktiniais duomenimis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_stud_8h_a117f097645405f2b7cb47681801013f5}{irasyti\+Vargsiukus\+Vector}} (const std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, const std\+::string \&failo\+Pavadinimas)
+\begin{DoxyCompactList}\small\item\em Įrašyti "{}vargsiukus"{} į failą iš vektoriaus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_stud_8h_ace8bd296f11e33b0fb6479e35ff659fc}{irasytivargsiukus\+List}} (const std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, const std\+::string \&failo\+Pavadinimas)
+\begin{DoxyCompactList}\small\item\em Įrašyti "{}vargsiukus"{} į failą iš sąrašo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_stud_8h_a6706aa7810b8105128f894240535faa6}{irasytikietiakiai\+List}} (const std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&kietiakiai, const std\+::string \&failo\+Pavadinimas)
+\begin{DoxyCompactList}\small\item\em Įrašyti "{}kietiakiai"{} į failą iš sąrašo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_stud_8h_a6572128673cc2167475f7e85774f0f07}{irasyti\+Kietiakiai\+Vector}} (const std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&kietiakiai, const std\+::string \&failo\+Pavadinimas)
+\begin{DoxyCompactList}\small\item\em Įrašyti "{}kietiakiai"{} į failą iš vektoriaus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_stud_8h_a6706aa7810b8105128f894240535faa6}\index{Stud.h@{Stud.h}!irasytikietiakiaiList@{irasytikietiakiaiList}}
+\index{irasytikietiakiaiList@{irasytikietiakiaiList}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{irasytikietiakiaiList()}{irasytikietiakiaiList()}}
+{\footnotesize\ttfamily \label{_stud_8h_a6706aa7810b8105128f894240535faa6} 
+void irasytikietiakiai\+List (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{kietiakiai}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+
+
+Įrašyti "{}kietiakiai"{} į failą iš sąrašo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kietiakiai} & Kietiakiai (studentai). \\
+\hline
+{\em failo\+Pavadinimas} & Failo pavadinimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_stud_8h_a6572128673cc2167475f7e85774f0f07}\index{Stud.h@{Stud.h}!irasytiKietiakiaiVector@{irasytiKietiakiaiVector}}
+\index{irasytiKietiakiaiVector@{irasytiKietiakiaiVector}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{irasytiKietiakiaiVector()}{irasytiKietiakiaiVector()}}
+{\footnotesize\ttfamily \label{_stud_8h_a6572128673cc2167475f7e85774f0f07} 
+void irasyti\+Kietiakiai\+Vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{kietiakiai}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+
+
+Įrašyti "{}kietiakiai"{} į failą iš vektoriaus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kietiakiai} & Kietiakiai (studentai). \\
+\hline
+{\em failo\+Pavadinimas} & Failo pavadinimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_stud_8h_ace8bd296f11e33b0fb6479e35ff659fc}\index{Stud.h@{Stud.h}!irasytivargsiukusList@{irasytivargsiukusList}}
+\index{irasytivargsiukusList@{irasytivargsiukusList}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{irasytivargsiukusList()}{irasytivargsiukusList()}}
+{\footnotesize\ttfamily \label{_stud_8h_ace8bd296f11e33b0fb6479e35ff659fc} 
+void irasytivargsiukus\+List (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{vargsiukai}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+
+
+Įrašyti "{}vargsiukus"{} į failą iš sąrašo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vargsiukai} & Vargsiukai (studentai). \\
+\hline
+{\em failo\+Pavadinimas} & Failo pavadinimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_stud_8h_a117f097645405f2b7cb47681801013f5}\index{Stud.h@{Stud.h}!irasytiVargsiukusVector@{irasytiVargsiukusVector}}
+\index{irasytiVargsiukusVector@{irasytiVargsiukusVector}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{irasytiVargsiukusVector()}{irasytiVargsiukusVector()}}
+{\footnotesize\ttfamily \label{_stud_8h_a117f097645405f2b7cb47681801013f5} 
+void irasyti\+Vargsiukus\+Vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{vargsiukai}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+
+
+Įrašyti "{}vargsiukus"{} į failą iš vektoriaus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vargsiukai} & Vargsiukai (studentai). \\
+\hline
+{\em failo\+Pavadinimas} & Failo pavadinimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_stud_8h_a2776c7be31cf2693c1cc6362a0dd9d07}\index{Stud.h@{Stud.h}!nuskaitytiIsFailo@{nuskaitytiIsFailo}}
+\index{nuskaitytiIsFailo@{nuskaitytiIsFailo}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiIsFailo()}{nuskaitytiIsFailo()}}
+{\footnotesize\ttfamily \label{_stud_8h_a2776c7be31cf2693c1cc6362a0dd9d07} 
+void nuskaityti\+Is\+Failo (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{Vec1}{, }\item[{const std\+::string \&}]{failo\+Vardas}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaityti studentus iš failo ir įrašyti juos į vektorių. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Vec1} & Vektorius, kuriame bus saugomi studentai. \\
+\hline
+{\em failo\+Vardas} & Failo pavadinimas.\\
+\hline
+\end{DoxyParams}
+Nuskaityti studentus iš failo ir įrašyti juos į vektorių.
+
+�i funkcija atidaro nurodyt? fail?, nuskaityti kiekvien? eilut? ir i� jos sukuria studento objekt?, kurio vardas, pavard?, nam? darb? ir egzamino rezultatai yra ?ra�omi ? perduot? {\ttfamily std\+::vector}. Jeigu duomen? eilut?je yra klaida arba tr?ksta reikaling? duomen?, studentas ignoruojamas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Vec1} & Nuoroda ? {\ttfamily std\+::vector}, kuriame bus saugomi nuskaityti student? duomenys. \\
+\hline
+{\em failo\+Vardas} & Failo, i� kurio bus nuskaityti student? duomenys, pavadinimas. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Atidarome fail? su nurodytu pavadinimu
+
+\texorpdfstring{$<$}{<} I�valome ankstesnius duomenis
+
+\texorpdfstring{$<$}{<} Jei vardo ir pavard?s nuskaityti nepavyko, pereiname prie kitos eilut?s
+
+\texorpdfstring{$<$}{<} Pridedame nam? darb? balus
+
+\texorpdfstring{$<$}{<} Jei ND tr?ksta, ignoruojame student?
+
+\texorpdfstring{$<$}{<} Paskutin? nam? darb? bal? priskiriame egzamino rezultatui
+
+\texorpdfstring{$<$}{<} Pa�aliname paskutin? ND, kad likt? tik nam? darb? rezultatai
+
+\texorpdfstring{$<$}{<} Pridedame student? ? vektori?
+
+\texorpdfstring{$<$}{<} U�daromas failas po nuskaitymo
+
+\texorpdfstring{$<$}{<} Jei ?vyko klaida, i�vedame klaidos prane�im?\Hypertarget{_stud_8h_a06c973dd3daf04824b5e94c374e289f9}\index{Stud.h@{Stud.h}!nuskaitytiIsfailo@{nuskaitytiIsfailo}}
+\index{nuskaitytiIsfailo@{nuskaitytiIsfailo}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiIsfailo()}{nuskaitytiIsfailo()}}
+{\footnotesize\ttfamily \label{_stud_8h_a06c973dd3daf04824b5e94c374e289f9} 
+void nuskaityti\+Isfailo (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{list1}{, }\item[{const std\+::string \&}]{failo\+Vardas}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaityti studentus iš failo ir įrašyti juos į sąrašą. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Vec1} & Sąrašas, kuriame bus saugomi studentai. \\
+\hline
+{\em failo\+Vardas} & Failo pavadinimas.\\
+\hline
+\end{DoxyParams}
+Nuskaityti studentus iš failo ir įrašyti juos į sąrašą.
+
+�i funkcija atidaro nurodyt? fail?, nuskaityti kiekvien? eilut? ir i� jos sukuria studento objekt?, kurio vardas, pavard?, nam? darb? ir egzamino rezultatai yra ?ra�omi ? perduot? {\ttfamily std\+::list}. Jeigu duomen? eilut?je yra klaida arba tr?ksta reikaling? duomen?, studentas ignoruojamas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list1} & Nuoroda ? {\ttfamily std\+::list}, kuriame bus saugomi nuskaityti student? duomenys. \\
+\hline
+{\em failo\+Vardas} & Failo, i� kurio bus nuskaityti student? duomenys, pavadinimas. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Atidarome fail? su nurodytu pavadinimu
+
+\texorpdfstring{$<$}{<} I�valome ankstesnius duomenis
+
+\texorpdfstring{$<$}{<} Jei vardo ir pavard?s nuskaityti nepavyko, pereiname prie kitos eilut?s
+
+\texorpdfstring{$<$}{<} Pridedame nam? darb? balus
+
+\texorpdfstring{$<$}{<} Jei ND tr?ksta, ignoruojame student?
+
+\texorpdfstring{$<$}{<} Paskutin? nam? darb? bal? priskiriame egzamino rezultatui
+
+\texorpdfstring{$<$}{<} Pa�aliname paskutin? ND, kad likt? tik nam? darb? rezultatai
+
+\texorpdfstring{$<$}{<} Pridedame student? ? s?ra�?
+
+\texorpdfstring{$<$}{<} U�daromas failas po nuskaitymo
+
+\texorpdfstring{$<$}{<} Jei ?vyko klaida, i�vedame klaidos prane�im?\Hypertarget{_stud_8h_a6c911052dc41c163ca4661e22ac44d45}\index{Stud.h@{Stud.h}!sugeneruotiStudentoFaila@{sugeneruotiStudentoFaila}}
+\index{sugeneruotiStudentoFaila@{sugeneruotiStudentoFaila}!Stud.h@{Stud.h}}
+\doxysubsubsection{\texorpdfstring{sugeneruotiStudentoFaila()}{sugeneruotiStudentoFaila()}}
+{\footnotesize\ttfamily \label{_stud_8h_a6c911052dc41c163ca4661e22ac44d45} 
+void sugeneruoti\+Studento\+Faila (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{, }\item[{int}]{student\+Count}{, }\item[{int}]{nd\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoti studentų failą su atsitiktiniais duomenimis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Failo pavadinimas. \\
+\hline
+{\em student\+Count} & Kiek studentų bus sugeneruota. \\
+\hline
+{\em nd\+Count} & Kiek namų darbų bus sugeneruota kiekvienam studentui. \\
+\hline
+\end{DoxyParams}
