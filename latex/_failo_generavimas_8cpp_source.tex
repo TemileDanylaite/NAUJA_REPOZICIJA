@@ -1,0 +1,73 @@
+\doxysection{Failo\+Generavimas.\+cpp}
+\hypertarget{_failo_generavimas_8cpp_source}{}\label{_failo_generavimas_8cpp_source}\mbox{\hyperlink{_failo_generavimas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_stud_8h}{Stud.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mylib_8h}{Mylib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00030}\mbox{\hyperlink{_failo_generavimas_8cpp_a27e4889bef3a654b4582d6f464a6aca4}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_failo_generavimas_8cpp_a27e4889bef3a654b4582d6f464a6aca4}{sugeneruotiStudentoFaila}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ fileName,\ \textcolor{keywordtype}{int}\ studentCount,\ \textcolor{keywordtype}{int}\ ndCount)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{auto}\ pradzia\ =\ std::chrono::high\_resolution\_clock::now();\ \ \textcolor{comment}{//\ Laiko\ pradžia}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00034}00034\ \ \ \ \ ofstream\ outFile(fileName);\ \textcolor{comment}{//\ Sukuriame\ failą\ su\ nurodytu\ pavadinimu\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (!outFile)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Nepavyko\ sukurti\ failo:\ "{}}\ <<\ fileName\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Pirmos\ eilutės\ su\ antraštėmis\ įrašymas\ į\ failą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00041}00041\ \ \ \ \ outFile\ <<\ setw(25)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ <<\ setw(25)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}};}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Generuojame\ ND\ antraštes\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ ndCount;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ \textcolor{stringliteral}{"{}ND"{}}\ +\ std::to\_string(i);}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00048}00048\ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ \textcolor{stringliteral}{"{}Egz."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Atsitiktinių\ skaičių\ generatorius(1\ -\/\ 10\ balai).\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00053}00053\ \ \ \ \ random\_device\ rd;\ \ \textcolor{comment}{//\ Atsitiktinių\ skaičių\ generatorius.\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00054}00054\ \ \ \ \ mt19937\ gen(rd());\ \ \textcolor{comment}{//\ Inicializuojame\ generatorių.\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00055}00055\ \ \ \ \ uniform\_int\_distribution<>\ dist(1,\ 10);\ \ \textcolor{comment}{//\ Skaičių\ intervalas\ nuo\ 1\ iki\ 10}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Generuojame\ duomenis\ kiekvienam\ studentui\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ studentCount;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sukuriame\ studentą\ su\ vardu\ ir\ pavarde\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stud}{Stud}}\ studentas(\textcolor{stringliteral}{"{}Vardas"{}}\ +\ std::to\_string(i),\ \textcolor{stringliteral}{"{}Pavarde"{}}\ +\ std::to\_string(i));}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generuojame\ ND\ balus\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ ndCount;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ studentas.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(dist(gen));\ \textcolor{comment}{//\ Pridedame\ atsitiktinį\ ND\ balą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generuojame\ egzamino\ balą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ studentas.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(dist(gen));}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Įrašome\ studento\ duomenis\ į\ failą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ outFile\ <<\ setw(25)\ <<\ left\ <<\ studentas.\mbox{\hyperlink{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1}{getVardas}}()}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(25)\ <<\ left\ <<\ studentas.\mbox{\hyperlink{classzmogus_a802999a845a7fd3549a882f8b92a1381}{getPavarde}}();}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Įrašome\ ND\ rezultatus\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ nd\ :\ studentas.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ nd;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Įrašome\ egzamino\ rezultatą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ studentas.\mbox{\hyperlink{class_stud_a0e73b9a86f3d9e0150fb336cab468632}{getEgz}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//Uždaromas\ failas\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00085}00085\ \ \ \ \ outFile.close();}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00086}00086\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failas\ sukurtas:\ "{}}\ <<\ fileName\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ Apskaičiuojame\ ir\ išvedame\ failo\ kūrimo\ trukmę\ }}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{auto}\ pabaiga\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00090}00090\ \ \ \ \ std::chrono::duration<double>\ elapsed\ =\ pabaiga\ -\/\ pradzia;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00091}00091\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failo\ kurimo\ trukme:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ elapsed.count()\ <<\ \textcolor{stringliteral}{"{}\ s"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_generavimas_8cpp_source_l00092}00092\ \}}
+
+\end{DoxyCode}

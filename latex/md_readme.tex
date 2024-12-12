@@ -1,0 +1,190 @@
+\chapter{readme}
+\hypertarget{md_readme}{}\label{md_readme}\index{readme@{readme}}
+\#\+Studentų galutinio balo apskaičiavimo programa. {\bfseries{(v2.\+0 versija)}}
+
+\#Ši programa skirta apskaičiuoti galutiniams balams, įvedant arba nuskaitant iš failo studento vardą, pavardę, namų darbų rezultatus bei egzamino balą.
+
+\#\+Galutinis balas skaičiuojamas tokia formule\+: {\bfseries{Galutinis = 0.\+4 \texorpdfstring{$\ast$}{*} vidurkis + 0.\+6 \texorpdfstring{$\ast$}{*} egzaminas}} (Kai reikia galutinio balo medianos pavidalu tai tiesiog vietoj vidurkio įstatoma mediana)
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#\+Norint naudotis programa, reikia atlikti šiuos veiksmus\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\begin{DoxyItemize}
+\item Pasirinkti, ar norite sugeneruoti failus(taip/ne).
+\end{DoxyItemize}
+
+Jei pasirinksite, kad norite sugeneruoti, tuomet failai bus sukurti ir išvedime bus rodomas failų kūrimo laikas.
+
+
+\begin{DoxyItemize}
+\item Atsakyti programai, ar norite įvesti studentų duomenis ar nuskaityti juos iš failo(ivesti/nuskaityti).
+\item Pasirinkti dalijimo į dvi kategorijas strategiją (1 -\/ pirmoji, 2 -\/ antroji, 3 -\/ trečioji).
+\item Pasirinkti norimo naudoti konteinerio tipą (1 -\/ vector, 2 -\/ list).
+\item Pasirinkti rūšiavimo kritetijų (1 -\/ pagal vardą, 2 -\/ pagal pavardę, 3 -\/ pagal galutinį balą).
+\end{DoxyItemize}
+
+Jei pasirenkate nuskaityti, tai programa tiesiogiai nuskaitys failą, naudodama pasirinktą konteinerio tipą, surušiuos studentus pagal galutinį balą(pagal vidurkį) į dvi grupes\+:Vargšiukai(galutinis balas $<$ 5) ir Kietiakiai(galutinis balas \texorpdfstring{$>$}{>}= 5), surušiuos pagal pasirinktą kriterijų ir išves į du naujus failus.
+
+{\bfseries{Jei pasirenkate įvesti, tuomet toliau reikes atlikti šiuos veiksmus\+:}}
+\begin{DoxyItemize}
+\item Įvesti studentų skaičių.
+\item Pasirinkti norimą naudoti konteinerį.
+\item Įvesti studento vardą ir pavardę.
+\item Pasirinkti ar namų darbų ir egzamino rezultatus reikia generuoti atsitiktinai(taip/ne).
+\item Atsakyti programai, ar žinai koks yra namų darbų skaičius(taip/ne).
+\item Įvesti namų darbų skaičių.
+\item Įvesti namų darbų visus rezultatus(10-\/balėje sistemoje).
+\item Galiausiai įvesti egzamino balą. Išvedime prie studento duomenų matysite ir objekto saugojimo atmintyje adresą.
+\end{DoxyItemize}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#\+Realisai\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#1 ir 2 releasai(v.\+pradinė ir v0.\+1)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis. Tyrimai ir rezultatai\+:
+
+Laiko efektyvumas\+: programa greitai apdoroja nuskaitytus studentų duomenis, tačiau kai yra didesnis studentų skaičius, pastebimas ilgesnis laukimo laikas, kol programa pateikia rezultatus. Jei buvo pasirinkta įvesti duomenis, tuomet programoje įvedant mažą studentų skaičių(tarkim du), ji apdoroja įvestus studentų duomenis gana greitai. Tačiau kai yra didesnis studentų skaičius(tarkim dešimt), įvedimas užtrunka žymiai ilgiau.
+
+Atminties efektyvumas\+: programoje naudojama struktūra(std\+::vector), kuri leidžia efektyviai saugoti ir tvarkyti studentų namų darbų rezultatus. Užtikrinama, kad programa galėtų veikti su dideliu studentų skaičiumi.
+
+Vartotojo sąsajos paprastumas\+: programoje yra leidžiama lengvai įvesti duomenis ir gauti rezultatus. Aiškiai nurodyti visi privalomi įvedimai ir rezultatas gaunamas greitai.
+
+\#\+Rezultatas -\/ Failai nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu).
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#3 releasas(v0.\+2)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ Programa patobulinta, kad generuotu failus, surušiuotu nuskaitytus duomenis ir įrašytų į atskirus failus. Efektyvumo tyrimai ir rezultatai\+:
+
+Laiko efektyvumas\+: Programa greitai apdoroja nuskaitytus studentų duomenis, tačiau kai yra didesnis studentų skaičius, pastebimas ilgesnis laukimo laikas, kol programa pateikia rezultatus. Galima pamatyti,kad didėjant failo dydžiui, apdorojimo laikas ilgėja, ypač nuskaitymo ir rūšiavimo etapuose. Rūšiavimo laikas augo dramatiškai nuo 0.\+01251s(1000 įrašų) iki 544.\+98148s(10000000 įrašų), o dalijimo laikas taip pat didėjo, bet išlieka gerokai greitesnis už rūšiavimo laiką. Bendras testo laikas nuosekliai didėja, atspindėdamas procesų sudėtingumą. Kai buvo pasirinkta įvesti duomenis, tuomet programoje įvedant mažą studentų skaičių(tarkim du), ji apdoroja įvestus studentų duomenis gana greitai. Tačiau kai yra didesnis studentų skaičius(tarkim dešimt), įvedimas užtrunka žymiai ilgiau. Failų kūrimo efektyvumas mažėja didėjant duomenų kiekiui. Pastaba. Nors kiekvieno testavimo metu rezultatai gali nežymiai skirtis dėl atsitiktinių veiksnių, bendros laiko tendencijos išlieka tos pačios.
+
+Atminties efektyvumas\+: programoje naudojama struktūra(std\+::vector), kuri leidžia efektyviai saugoti ir tvarkyti studentų namų darbų rezultatus. Užtikrinama, kad programa galėtų veikti su dideliu studentų skaičiumi.
+
+Vartotojo sąsajos paprastumas\+: programoje yra leidžiama lengvai įvesti duomenis ir gauti rezultatus. Aiškiai nurodyti visi privalomi įvedimai ir rezultatas gaunamas greitai.
+
+\#\+Rezultatas -\/ Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#4 releasas(v0.\+3)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ Išmatuojama patobulintos v0.\+2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list).
+
+Konteinerių testavimas. Buvo atlikta po 5 bandymus su kiekvieno dydžio failu. Matavimas sekundėmis.
+
+Tyrimo rezultatai rodo, kad naudojant sąrašo tipo konteinerį, nuskaitymo, rūšiavimo bei dalijimo į dvi grupes laikai yra žymiai mažesni nei su vektoriaus konteineriu. Įrašymo laikai nesiskiria, o bendra testo trukmė yra gerokai mažesnė su sąrašo konteineriu, kas pabręžia šio konteinerio efektyvumą. Taip pat pastebėta, kad didėjant duomenų kiekiui, skirtumas tarp laikų rezultatų dar labiau išryškėja.
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#5 releasas(v1.\+0)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("{}vargšiukų"{} ir "{}kietiakų"{}) realizacija (v0.\+3).
+
+Buvo atlikti studentų dalijimo į dvi kategorijas strategijų bandymai
+
+1 strategija\+: Bendro studentai konteinerio (vector ir list tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius\+: "{}vargšiukų"{} ir "{}kietiakų"{}. Tokiu būdu tas pats studentas yra dvejuose konteineriuose\+: bendrame studentai ir viename iš suskaidytų (vargšiukai arba kietiakai). 2 strategija\+: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį\+: "{}vargšiukai"{}. 3 strategija\+: Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant greičiau veikiančia 2 strategiją įtraukiant į ją "{}efektyvius"{} darbo su konteineriais metodus. Šiame tyrime pritaikyti tinkami algoritmai studentų dalijimo procedūrai paspartinti (optimizuoti) ant vieno fiksuoto konteinerio -\/ vektoriaus.
+
+Išvadele\+:Palyginus pagal 1 ir 2 strategias gautus vidutinius dalijimo laikus esant tam tikram duomenų kiekiui, pastebėta, kad dirbant su 2 strategiją, programos veikimo sparta atsižvelgiant į daljimo procesą yra greitesnė nei kai naudojama 1 strategija.
+
+Rezultatas\+: Atlikus tyrimą naudojant 3 strategiją, pastebėta, kad po kiekvieno algortimo panaudojimo,programos veikimo sparta dalijimo atžvilgiu greičiausia buvo naudojant algortimą std\+::partition.
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#6 realisas(v1.\+1)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ Perėjimas iš struktūros į klasę. \#\+Palyginamos abiejų programų(versija v1.\+0 su struktūromis ir v1.\+1 su klasėmis) veikimo sparta.
+
+\#\+Naudojamas vienas fiksuotas konteineris -\/ vektorius ir pati greičiausia dalijimo strategija -\/ trečioji(su std\+::partition algoritmu) bei 100000 ir 1000000 dydžio failai. Rezultatas\+: Galima pastebėti, kad naudojant struct tipo duomenis, programos veikimo sparta yra žymiai greitesnė nei naudojant class tipo duomenis. Tai rodo, kad struct yra efektyvesnis tiek mažesniuose, tiek didesniuose duomenų kiekiuose.
+
+\#\+Toliau atlikita eksperimentinė analizė priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag\textquotesingle{}us\+: O1, O2, O3. \#\+Paaiškinimai\+:
+\begin{DoxyItemize}
+\item {\bfseries{Optimizavimo lygiai\+:}}\+:
+\begin{DoxyItemize}
+\item O1 -\/ Pagrindinė optimizacija, kurios tikslas pagerinti programos našumą, nepadidinus jos dydžio per daug.
+\item O2 -\/ Aukštesnis optimizavimo lygis, kuris bando pasiekti dar geresnį našumą.
+\item O3 -\/ Maksimalus optimizavimas, kuris žymiai pagerina našumą, bet taip pat gali padidinti \textquotesingle{}.exe\textquotesingle{} failo dydį.
+\end{DoxyItemize}
+\item {\bfseries{Veikimo laiko matavimas\+:}} Laiko matavimai buvo atlikti su 100000 ir 1000000 įrašų failais.
+\item {\bfseries{\textquotesingle{}.exe\textquotesingle{} failo dydis\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Failo dydžiai priklauso nuo optimizavimo lygio.}}
+
+\#\+Rezultatas\+: Naudojant struct ir class tipus su skirtingais optimizavimo lygiais, matome, kad optimizavimo lygiai turi teigiamą poveikį veikimo laikui. Tačiau patys skirtumai tarp optimizavimo lygių(\+O1, O2, O3) yra maži ir perėjimas nuo vieno lygio į kitą neturi daug įtakos veikimo laikui. Optimizavimo lygiai turi įtakos ir .exe failo dydžiui. Su struct tipo duomenimis failo dydis pasikeičia nuo 69.\+5\+KB(O1) iki 81KB(\+O3), o su class -\/ failo dydis didėja nuo 77.\+5\+KB(O1) iki 94.\+5\+KB(O3).
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md0}{}\doxysubsection{\texorpdfstring{Išvada\+: Lyginant su rezultatais is aukščiau nurodytos lentelės, kur nebuvo tikrinami optimizavimo lygiai, matome, kad panaudoju optimizavimo lygius, veikimo laikas sumažėjo, programa pradėjo veikti greičiau.}{Išvada\+: Lyginant su rezultatais is aukščiau nurodytos lentelės, kur nebuvo tikrinami optimizavimo lygiai, matome, kad panaudoju optimizavimo lygius, veikimo laikas sumažėjo, programa pradėjo veikti greičiau.}}\label{md_readme_autotoc_md0}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#7 realisas(v1.\+2)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ Realizuoti visi reikiami "{}\+Rule of three"{} ir įvesties/išvesties operatoriai turimai Studentas klasei.
+
+\#"{}\+Rule of three"{} operatorių realizavimas Studentas klasei.
+
+-\/Destruktorius yra skirtas atlaisvinti dinaminę atmintį, kuri buvo priskirta objektui per jo gyvavimo laikotarpį. Jis automatiškai kviečiamas, kai objektas išeina iš veikimo srities, užtikrindamas, kad nebūtų atminties nutekėjimų.
+
+-\/Kopijavimo konstruktorius yra naudojamas kuriant naują objektą, kuris tampa esamo objekto kopija. Tinkama kopija užtikrina, kad kiekvienas objektas turi savo atskirą duomenų kopiją.
+
+-\/Kopijavimo priskirimo operatorius leidžia priskirti vieną objektą kitam. Svarbu įsitikinti, kad priskyrimas į save yra tinkamai valdomas ir kad seni objekto ištekliai yra tinkamai atlaisvinami prieš priskiriant naujas reikšmes.\hypertarget{md_readme_autotoc_md1}{}\doxysubsection{\texorpdfstring{Perdengti įvesties ir išvesties metodai darbui su Studentų klasę.}{Perdengti įvesties ir išvesties metodai darbui su Studentų klasę.}}\label{md_readme_autotoc_md1}
+-\/Operatoriai deklaruojami klasės viduje kaip draugiškos funkcijos, kad turėtų tiesioginę prieigą prie klasės privačių ir apsaugotų narių. Jie leidžia įvesti duomenis į \doxylink{class_stud}{Stud} objekto kintamuosius naudojant std\+::istream, bei išvesti \doxylink{class_stud}{Stud} objekto duomenis į std\+::ostream.
+
+-\/Įvesties operatorius realizutoas \doxylink{_stud_8cpp}{stud.\+cpp} faile.
+
+-\/Išvesties operatorius realizutoas \doxylink{_stud_8cpp}{stud.\+cpp} faile.\hypertarget{md_readme_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Perdengtų metodų veikimas.}{Perdengtų metodų veikimas.}}\label{md_readme_autotoc_md2}
+\#\+Duomenų įvestis\+:
+
+Rankiniu būdu -\/ Vartotojas gali įvesti duomenis klaviatūra, kai programa naudoja std\+::cin srautą. Naudojant operatorių operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}, programa leidžia įvesti vardą, pavardę, namų darbų rezultatus, egzamino balą.
+
+Automatiniu -\/ Duomenys gali būti įvedami automatiškai pagal tam tikrą procesą(įvesti iš anksto paruoštus duomenis)
+
+Iš failo -\/ Duomenys gali būti nuskaityti iš failo naudojant std\+::ifstream srautą. Perdengtas operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} metodas leidžia nuskaityti duomenis iš failo, kurio turinys turi būti struktūrizuotas pagal tam tikrus reikalavimus ir užpildyti \doxylink{class_stud}{Stud} objekto laukus.
+
+\#\+Duomenų išvestis
+
+Į ekraną -\/ Duomenys atspausdinami ekrane naudojant std\+::cout. Su perdengtu operatoriumi operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} studento informacija bus gražiai suformuluota ir pateikta vartotojui tiesiogiai ekrane.
+
+Į failą -\/ Duomenys įrašomi į failą naudojant std\+::ofstream srautą. Operatorius operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} užtikrina, kad studento duomenys būtų įrašyti į failą, kurį vėliau vartotojas gali peržiūrėti.
+
+Išvadėlė\+: Perdengti metodai (operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} ir operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}) leidžia paprastai atlikti duomenų įvedimą ir išvedimą tiek interaktyviai su vartotoju, tiek automatiškai. Operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} leidžia nuskaityti duomenis (rankiniu būdu, automatiniu būdu arba iš failo), o operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} padeda išvesti duomenis ekrane arba į failą.
+
+Išvadėlė\+: "{}\+Rule of three"{} taisyklė užtikrina, kad klasės objektai, kurie dirba su dinaminiais ištekliais, būtų teisingai kopijuojami, priskiriami ir sunaikinami, taip išvengiant atminties nutekėjimo ir kitų valdymo klaidų.
+
+\#\+Rezultatas -\/ Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#8 realisas(v1.\+5)\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} -\/ Vietoje turimos Studentas klasės sukurtos dvi\+: bazinė (abstrakti) klasė, skirta bendrai aprašyti žmogų ir tuomet iš jos išvestinė (derived) klasė -\/ Studentas.
+
+Abstrakčios klasės Žmogus realizavimas. Rezultatas\+: Turi bendrą informaciją apie žmogų (vardas, pavardė). Ji negali būti naudojama tiesiogiai objektų kūrimui. Vietoj to, ji veikia kaip bazinė klasė, kuria remiasi kitos išvestinės klasės. Mūsų atvėju -\/ Studentas. virtual \texorpdfstring{$\sim$}{\string~}zmogus() -\/ destruktorius yra virtualus, nes klasė paveldima. virtual void atvaizduoti() -\/ tai grynai virtuali funkcija, todėl kiekviena išvestinė klasė privalo ją įgyvendinti. Tai leidžia naudoti polimorfizmą, nes funkcijos implementacija priklauso nuo objekto tipo.
+
+Abstrakčios klasės Žmogus objektų kūrimas negalimas. Rezultatas\+: Metama klaida rodo, kad bandoma sukurti abstrakčios klasės zmogus objektą, o tai negalima, nes ji turi grynai virtualią funkciją.
+
+Studento klasė išvestinė (derived) iš Žmogaus, kuri palaiko 1.\+2 versijoje realizuotą trejų metodų taisyklę. Rezultatas\+: Klasė Studentas paveldi bazinę klasę žmogus ir įgyvendina jos metodus. Ji prideda studento specifinius duomenis. Ši klasė privalo įgyvendinti visus grynai virtualius metodus iš bazinės klasės. Taip pat ji įgyvendina metodą atvaizduoti(), kad galėtų parodyti visą informaciją apie studentą.
+
+Išvadėlė\+: Žmogus klasė suteikia bendrą šabloną, o Studentas prideda konkrečius duomenis ir funkcionalumą.
+
+\#\+Rezultatas -\/ Iš įvesties studentų duomenys nuskaitomi teisingai ir programa išveda studentų vardus, pavardes ir galutinį balą(medianos ir vidurkio pavidalu). Taip pat kai nuskaitomas failas, studentai surušiuojami į dvi grupes ir išvedami į naujus failus. Išvedime rodoma programos veikimo greičio analizė.
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#\#\+Visų iki šios v2.\+0 versijos atliktų releasu apibendrinimas\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\begin{DoxyItemize}
+\item 1 ir 2 releasai(v.\+pradinė ir v0.\+1) realizuoja programa pagal aprašytus užduoties reikalavimus nuskaito vartotojų įvedamus reikiamus duomenis ir pateikia studentu duomenis.
+\item 3 releasas(v0.\+2) -\/ Programa patobulinta, kad generuotu failus, surusiuotu nuskaitytus duomenis ir įrašytų į atskirus failus.
+\item 4 releasas(v0.\+3) -\/ Išmatuojama patobulintos v0.\+2 realizacijos veikimo spartą priklausomai nuo naudojamo vieno iš dvejų konteinerių(vector ir list)
+\item 5 releasas(v1.\+0) -\/ Optimizuota studentų rūšiavimo (dalijimo) į dvi kategorijas ("{}vargšiukų"{} ir "{}kietiakų"{}) realizacija (v0.\+3)
+\item 6 realisas(v1.\+1) -\/ Perėjimas iš struktūros į klasę.
+\item 7 realisas(v1.\+2) -\/ Realizuoti visi reikiami "{}\+Rule of three"{} ir įvesties/išvesties operatoriai turimai Studentas klasei.
+\item 8 realisas(v1.\+5) -\/ Vietoje turimos Studentas klasės sukurtos dvi\+: bazinė (abstrakti) klasė, skirta bendrai aprašyti žmogų ir tuomet iš jos išvestinė (derived) klasė -\/ Studentas.
+\end{DoxyItemize}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#\#\+Diegimas\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+Šis projektas naudoja {\bfseries{CMake}} kaip projektų valdymo įrankį ir gali būti sukurtas naudojant bet kurią operacinę sistemą, kuri palaiko CMake (Windows).
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#\+CMake\+Lists.\+txt sukūrimas\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+cmake\+\_\+minimum\+\_\+required(Version 3.\+10)
+
+project(\+Studentu\+\_\+duomenys)
+
+set(\+CMAKE\+\_\+\+CXX\+\_\+\+STANDART 17) set(\+CMAKE\+\_\+\+CXX\+\_\+\+STANDART\+\_\+\+REQUIRED ON)
+
+set(SOURCES \doxylink{_studentu__duomenys_8cpp}{Studentu\+\_\+duomenys.\+cpp} \doxylink{_stud_8cpp}{Stud.\+cpp} \doxylink{_failo_generavimas_8cpp}{Failo\+Generavimas.\+cpp} \doxylink{_failo_nuskaitymas_8cpp}{Failo\+Nuskaitymas.\+cpp} \doxylink{_mylib_8h}{Mylib.\+h} \doxylink{_stud_8h}{Stud.\+h} )
+
+add\+\_\+executable(studentai\+\_\+program \$\{SOURCES\})
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\#\#\+Sukūrimas naudojant cmake\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+
+\begin{DoxyEnumerate}
+\item Atidarykite Developer Command Prompt for Visual Studio
+\item Eikite į projekto katalogą\+: cd C\+:\textbackslash{}path\textbackslash{}to\textbackslash{}\+Studentu\+\_\+duomenys
+\item Sukurkite build katalogą\+: mkdir build cd build
+\item Paleiskite CMake, kad sugeneruotumėte Visual Studio projektą\+: cmake ..
+\item Paleiskite sukūrimo procesą\+: cmake --build .
+\item Po sėkmingo sukūrimo, galite rasti vykdomąjį failą studentai\+\_\+program.\+exe Release kataloge
+\end{DoxyEnumerate}
+
+\#\+Naudotos bibliotekos\+:
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}iostream\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}iomanip\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}string\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}vector\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}algorithm\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}random\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}fstream\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}sstream\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}chrono\texorpdfstring{$>$}{>}}
+\item {\ttfamily \texorpdfstring{$<$}{<}list\texorpdfstring{$>$}{>}} 
+\end{DoxyItemize}

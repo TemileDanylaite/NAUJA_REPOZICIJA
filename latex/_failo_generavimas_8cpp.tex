@@ -1,0 +1,120 @@
+\doxysection{Failo\+Generavimas.\+cpp File Reference}
+\hypertarget{_failo_generavimas_8cpp}{}\label{_failo_generavimas_8cpp}\index{FailoGeneravimas.cpp@{FailoGeneravimas.cpp}}
+
+
+Studentų duomenų generavimas į failą.  
+
+
+{\ttfamily \#include "{}Stud.\+h"{}}\newline
+{\ttfamily \#include "{}Mylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_failo_generavimas_8cpp_a27e4889bef3a654b4582d6f464a6aca4}{sugeneruoti\+Studento\+Faila}} (const string \&file\+Name, int student\+Count, int nd\+Count)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja studentų duomenų failą. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Studentų duomenų generavimas į failą. 
+
+Šiame faile įgyvendinamas atsitiktinių studentų duomenų generavimas ir išsaugojimas į tekstinį failą. Kiekvienam studentui sugeneruojami atsitiktiniai vardai, pavardės, namų darbų rezultatai, egzamino rezultatas, kurie vėliau įrašomi į tekstinį failą nurodytu formatu.
+
+Failas naudoja „mylib“ biblioteką ir susijusius metodus efektyviam duomenų rašymui. 
+
+Definition in file \mbox{\hyperlink{_failo_generavimas_8cpp_source}{Failo\+Generavimas.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_failo_generavimas_8cpp_a27e4889bef3a654b4582d6f464a6aca4}\index{FailoGeneravimas.cpp@{FailoGeneravimas.cpp}!sugeneruotiStudentoFaila@{sugeneruotiStudentoFaila}}
+\index{sugeneruotiStudentoFaila@{sugeneruotiStudentoFaila}!FailoGeneravimas.cpp@{FailoGeneravimas.cpp}}
+\doxysubsubsection{\texorpdfstring{sugeneruotiStudentoFaila()}{sugeneruotiStudentoFaila()}}
+{\footnotesize\ttfamily \label{_failo_generavimas_8cpp_a27e4889bef3a654b4582d6f464a6aca4} 
+void sugeneruoti\+Studento\+Faila (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name}{, }\item[{int}]{student\+Count}{, }\item[{int}]{nd\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja studentų duomenų failą. 
+
+Ši funkcija sukuria failą su studentų vardais, pavardėmis, jų namų darbų (ND) rezultatais ir egzamino rezultatais. Kiekvienam studentui sugeneruojami atsitiktiniai ND ir egzaminų balai, kurie įrašomi į nurodytą failą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Failo pavadinimas, kuriame bus išsaugoti studentų duomenys. \\
+\hline
+{\em student\+Count} & Kiek studentų duomenų turi būti sugeneruota. \\
+\hline
+{\em nd\+Count} & Kiek namų darbų rezultatų turi būti sugeneruota kiekvienam studentui. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_failo_generavimas_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_failo_generavimas_8cpp_source}{Failo\+Generavimas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{auto}\ pradzia\ =\ std::chrono::high\_resolution\_clock::now();\ \ \textcolor{comment}{//\ Laiko\ pradžia}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ ofstream\ outFile(fileName);\ \textcolor{comment}{//\ Sukuriame\ failą\ su\ nurodytu\ pavadinimu\ }}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (!outFile)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Nepavyko\ sukurti\ failo:\ "{}}\ <<\ fileName\ <<\ endl;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Pirmos\ eilutės\ su\ antraštėmis\ įrašymas\ į\ failą\ }}
+\DoxyCodeLine{00041\ \ \ \ \ outFile\ <<\ setw(25)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ <<\ setw(25)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Generuojame\ ND\ antraštes\ }}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ ndCount;\ i++)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ \textcolor{stringliteral}{"{}ND"{}}\ +\ std::to\_string(i);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ \textcolor{stringliteral}{"{}Egz."{}}\ <<\ endl;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Atsitiktinių\ skaičių\ generatorius(1\ -\/\ 10\ balai).\ }}
+\DoxyCodeLine{00053\ \ \ \ \ random\_device\ rd;\ \ \textcolor{comment}{//\ Atsitiktinių\ skaičių\ generatorius.\ }}
+\DoxyCodeLine{00054\ \ \ \ \ mt19937\ gen(rd());\ \ \textcolor{comment}{//\ Inicializuojame\ generatorių.\ }}
+\DoxyCodeLine{00055\ \ \ \ \ uniform\_int\_distribution<>\ dist(1,\ 10);\ \ \textcolor{comment}{//\ Skaičių\ intervalas\ nuo\ 1\ iki\ 10}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Generuojame\ duomenis\ kiekvienam\ studentui\ }}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ studentCount;\ ++i)\ \{}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sukuriame\ studentą\ su\ vardu\ ir\ pavarde\ }}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stud}{Stud}}\ studentas(\textcolor{stringliteral}{"{}Vardas"{}}\ +\ std::to\_string(i),\ \textcolor{stringliteral}{"{}Pavarde"{}}\ +\ std::to\_string(i));}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generuojame\ ND\ balus\ }}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ ndCount;\ ++j)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ studentas.addND(dist(gen));\ \textcolor{comment}{//\ Pridedame\ atsitiktinį\ ND\ balą\ }}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generuojame\ egzamino\ balą\ }}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ studentas.setEgz(dist(gen));}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Įrašome\ studento\ duomenis\ į\ failą\ }}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ outFile\ <<\ setw(25)\ <<\ left\ <<\ studentas.getVardas()}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(25)\ <<\ left\ <<\ studentas.getPavarde();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Įrašome\ ND\ rezultatus\ }}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ nd\ :\ studentas.getND())\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ nd;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Įrašome\ egzamino\ rezultatą\ }}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ outFile\ <<\ setw(10)\ <<\ right\ <<\ studentas.getEgz()\ <<\ endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//Uždaromas\ failas\ }}
+\DoxyCodeLine{00085\ \ \ \ \ outFile.close();}
+\DoxyCodeLine{00086\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failas\ sukurtas:\ "{}}\ <<\ fileName\ <<\ endl;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Apskaičiuojame\ ir\ išvedame\ failo\ kūrimo\ trukmę\ }}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{auto}\ pabaiga\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00090\ \ \ \ \ std::chrono::duration<double>\ elapsed\ =\ pabaiga\ -\/\ pradzia;}
+\DoxyCodeLine{00091\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failo\ kurimo\ trukme:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ elapsed.count()\ <<\ \textcolor{stringliteral}{"{}\ s"{}}\ <<\ endl;}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}

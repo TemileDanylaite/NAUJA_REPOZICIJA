@@ -1,0 +1,241 @@
+\doxysection{zmogus Class Reference}
+\hypertarget{classzmogus}{}\label{classzmogus}\index{zmogus@{zmogus}}
+
+
+Klasė, kuri aprašo žmogų su vardu ir pavarde.  
+
+
+
+
+{\ttfamily \#include $<$Stud.\+h$>$}
+
+Inheritance diagram for zmogus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classzmogus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classzmogus_aa95b0c8392d1c9fe783c70e554c3d023}{zmogus}} (std\+::string v="{}"{}, std\+::string p="{}"{})
+\begin{DoxyCompactList}\small\item\em Konstruktorius, kuriame nustatomi vardas ir pavardė. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classzmogus_a5f6e15327f06f030f180391c6171ca53}{\texorpdfstring{$\sim$}{\string~}zmogus}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtualus destruktorius (default). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1}{get\+Vardas}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina žmogaus vardą. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classzmogus_a802999a845a7fd3549a882f8b92a1381}{get\+Pavarde}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina žmogaus pavardę. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{set\+Vardas}} (const std\+::string \&v)
+\begin{DoxyCompactList}\small\item\em Nustato žmogaus vardą. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{set\+Pavarde}} (const std\+::string \&p)
+\begin{DoxyCompactList}\small\item\em Nustato žmogaus pavardę. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_a407ce326dc157d28cc2d94183dfb97d6}{atvaizduoti}} (std\+::ostream \&os) const =0
+\begin{DoxyCompactList}\small\item\em Grynoji virtuali funkcija, kuri turi būti implementuota paveldėtojų klasėse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classzmogus_a03ad9eaa5eb6121f9a456f5764a34ba2}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classzmogus}{zmogus}} \&zmog)
+\begin{DoxyCompactList}\small\item\em Draugiškas operatorius, kuris išveda žmogų į srautą. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasė, kuri aprašo žmogų su vardu ir pavarde. 
+
+Ši klasė suteikia pagrindines funkcijas, leidžiančias nustatyti ir gauti žmogaus vardą ir pavardę. 
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00041}{41}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classzmogus_aa95b0c8392d1c9fe783c70e554c3d023}\index{zmogus@{zmogus}!zmogus@{zmogus}}
+\index{zmogus@{zmogus}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{zmogus()}{zmogus()}}
+{\footnotesize\ttfamily \label{classzmogus_aa95b0c8392d1c9fe783c70e554c3d023} 
+zmogus\+::zmogus (\begin{DoxyParamCaption}\item[{std\+::string}]{v}{ = {\ttfamily "{}"{}}, }\item[{std\+::string}]{p}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktorius, kuriame nustatomi vardas ir pavardė. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Žmogaus vardas (numatytasis tuščias). \\
+\hline
+{\em p} & Žmogaus pavardė (numatytasis tuščias). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00051}{51}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ :\ vardas(v),\ pavarde(p)\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classzmogus_a5f6e15327f06f030f180391c6171ca53}\index{zmogus@{zmogus}!````~zmogus@{\texorpdfstring{$\sim$}{\string~}zmogus}}
+\index{````~zmogus@{\texorpdfstring{$\sim$}{\string~}zmogus}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}zmogus()}{\string~zmogus()}}
+{\footnotesize\ttfamily \label{classzmogus_a5f6e15327f06f030f180391c6171ca53} 
+virtual zmogus\+::\texorpdfstring{$\sim$}{\string~}zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtualus destruktorius (default). 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classzmogus_a407ce326dc157d28cc2d94183dfb97d6}\index{zmogus@{zmogus}!atvaizduoti@{atvaizduoti}}
+\index{atvaizduoti@{atvaizduoti}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{atvaizduoti()}{atvaizduoti()}}
+{\footnotesize\ttfamily \label{classzmogus_a407ce326dc157d28cc2d94183dfb97d6} 
+virtual void zmogus\+::atvaizduoti (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Grynoji virtuali funkcija, kuri turi būti implementuota paveldėtojų klasėse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_stud_ad783df099821241d65669ccfeb6f3edf}{Stud}}.
+
+\Hypertarget{classzmogus_a802999a845a7fd3549a882f8b92a1381}\index{zmogus@{zmogus}!getPavarde@{getPavarde}}
+\index{getPavarde@{getPavarde}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{getPavarde()}{getPavarde()}}
+{\footnotesize\ttfamily \label{classzmogus_a802999a845a7fd3549a882f8b92a1381} 
+std\+::string zmogus\+::get\+Pavarde (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grąžina žmogaus pavardę. 
+
+\begin{DoxyReturn}{Returns}
+Žmogaus pavardė. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00069}{69}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{\ \textcolor{keywordflow}{return}\ pavarde;\ \}\textcolor{comment}{//\ Pavardės\ grąžinimo\ funkcija}}
+
+\end{DoxyCode}
+\Hypertarget{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1}\index{zmogus@{zmogus}!getVardas@{getVardas}}
+\index{getVardas@{getVardas}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{getVardas()}{getVardas()}}
+{\footnotesize\ttfamily \label{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1} 
+std\+::string zmogus\+::get\+Vardas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grąžina žmogaus vardą. 
+
+\begin{DoxyReturn}{Returns}
+Žmogaus vardas. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00063}{63}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \{\ \textcolor{keywordflow}{return}\ vardas;\ \}\textcolor{comment}{//\ Vardo\ grąžinimo\ funkcija}}
+
+\end{DoxyCode}
+\Hypertarget{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}\index{zmogus@{zmogus}!setPavarde@{setPavarde}}
+\index{setPavarde@{setPavarde}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{setPavarde()}{setPavarde()}}
+{\footnotesize\ttfamily \label{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6} 
+virtual void zmogus\+::set\+Pavarde (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nustato žmogaus pavardę. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Žmogaus pavardė. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00082}{82}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{\ pavarde\ =\ p;\ \}\ \textcolor{comment}{//\ Pavardės\ nustatymo\ funkcija}}
+
+\end{DoxyCode}
+\Hypertarget{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}\index{zmogus@{zmogus}!setVardas@{setVardas}}
+\index{setVardas@{setVardas}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{setVardas()}{setVardas()}}
+{\footnotesize\ttfamily \label{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6} 
+virtual void zmogus\+::set\+Vardas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nustato žmogaus vardą. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Žmogaus vardas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00075}{75}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \{\ vardas\ =\ v;\ \}\textcolor{comment}{//\ Vardo\ nustatymo\ funkcija}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classzmogus_a03ad9eaa5eb6121f9a456f5764a34ba2}\index{zmogus@{zmogus}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classzmogus_a03ad9eaa5eb6121f9a456f5764a34ba2} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classzmogus}{zmogus}} \&}]{zmog}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Draugiškas operatorius, kuris išveda žmogų į srautą. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas. \\
+\hline
+{\em zmog} & Žmogaus objektas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Išvesties srautas su žmogaus duomenimis. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00096}{96}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ zmog.\mbox{\hyperlink{classzmogus_a407ce326dc157d28cc2d94183dfb97d6}{atvaizduoti}}(os);\textcolor{comment}{//\ Kvieciama\ atvaizduoti\ funkcija}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;\textcolor{comment}{//\ Grąžina\ išvesties\ srautą\ su\ žmogaus\ duomenimis}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_stud_8h}{Stud.\+h}}\end{DoxyCompactItemize}

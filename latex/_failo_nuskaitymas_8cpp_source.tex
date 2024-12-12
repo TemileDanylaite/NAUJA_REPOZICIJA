@@ -1,0 +1,92 @@
+\doxysection{Failo\+Nuskaitymas.\+cpp}
+\hypertarget{_failo_nuskaitymas_8cpp_source}{}\label{_failo_nuskaitymas_8cpp_source}\mbox{\hyperlink{_failo_nuskaitymas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_stud_8h}{Stud.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mylib_8h}{Mylib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00028}\mbox{\hyperlink{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07}{nuskaitytiIsFailo}}(std::vector<Stud>\&\ Vec1,\ \textcolor{keyword}{const}\ std::string\&\ failoVardas)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ std::ifstream\ inFile(failoVardas);\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inFile)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:"{}}\ +\ failoVardas);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inFile,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stud}{Stud}}\ temp;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}{clearData}}();\ \textcolor{comment}{//\ Išvalome\ ankstesnius\ duomenis\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ vardas,\ pavardė;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(ss\ >>\ vardas\ >>\ pavardė))\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Nepavyko\ nuskaityti\ studento\ vardo\ ir\ pavardės"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ vardo\ ir\ pavardės\ nuskaityti\ nepavyko,\ pereiname\ prie\ kitos\ eilutės\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{setVardas}}(vardas);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{setPavarde}}(pavardė);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nd;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ nd)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(nd);\ \textcolor{comment}{//\ Pridedame\ namų\ darbų\ balus\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().size()\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ ND\ trūksta,\ ignoruojame\ studentą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().back());\ \textcolor{comment}{//\ Paskutinį\ namų\ darbų\ balą\ priskiriame\ egzamino\ rezultatui\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().pop\_back();\ \ \textcolor{comment}{//\ Pašaliname\ paskutinį\ ND,\ kad\ liktų\ tik\ namų\ darbų\ rezultatai\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ Vec1.push\_back(temp);\ \textcolor{comment}{//\ Pridedame\ studentą\ į\ vektorių}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ inFile.close();\ \textcolor{comment}{//\ Uždaromas\ failas\ po\ nuskaitymo\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Klaida:\ "{}}\ <<\ e.what()\ <<\ endl;\ \textcolor{comment}{//\ Jei\ įvyko\ klaida,\ išvedame\ klaidos\ pranešimą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00081}\mbox{\hyperlink{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596}{nuskaitytiIsfailo}}(std::list<Stud>\&\ list1,\ \textcolor{keyword}{const}\ std::string\&\ failoVardas)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::ifstream\ inFile(failoVardas);\ \textcolor{comment}{//\ Atidarome\ failą\ su\ nurodytu\ pavadinimu\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inFile)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:"{}}\ +\ failoVardas);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inFile,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stud}{Stud}}\ temp;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}{clearData}}();\ \textcolor{comment}{//Išvalome\ ankstesnius\ duomenis\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ vardas,\ pavardė;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(ss\ >>\ vardas\ >>\ pavardė))\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Nepavyko\ nuskaityti\ studento\ vardo\ ir\ pavardės"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ vardo\ ir\ pavardės\ nuskaityti\ nepavyko,\ pereiname\ prie\ kitos\ eilutės\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{setVardas}}(vardas);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{setPavarde}}(pavardė);}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nd;}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ nd)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(nd);\ \textcolor{comment}{//\ Pridedame\ namų\ darbų\ balus\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().size()\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ ND\ trūksta,\ ignoruojame\ studentą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().back());\ \textcolor{comment}{//\ Paskutinį\ namų\ darbų\ balą\ priskiriame\ egzamino\ rezultatui\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().pop\_back();\ \ \textcolor{comment}{//\ Pašaliname\ paskutinį\ ND,\ kad\ liktų\ tik\ namų\ darbų\ rezultatai\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ list1.push\_back(temp);\ \textcolor{comment}{//\ Pridedame\ studentą\ į\ sąrašą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ inFile.close();\ \textcolor{comment}{//\ Uždaromas\ failas\ po\ nuskaitymo\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Klaida:\ "{}}\ <<\ e.what()\ <<\ endl;\ \textcolor{comment}{//\ Jei\ įvyko\ klaida,\ išvedame\ klaidos\ pranešimą\ }}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{_failo_nuskaitymas_8cpp_source_l00121}00121\ }
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\doxysection{Mylib.\+h}
+\hypertarget{_mylib_8h_source}{}\label{_mylib_8h_source}\mbox{\hyperlink{_mylib_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MYLIB\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MYLIB\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}\ \ \ \textcolor{comment}{//\ Apima\ įvesties/išvesties\ funkcionalumus.\ }}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iomanip>}\ \ \ \ \textcolor{comment}{//\ Apima\ funkcijas,\ susijusias\ su\ formatavimu\ (pvz.,\ nustatyti\ skaitmenų\ tikslumą).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}\ \ \ \ \ \textcolor{comment}{//\ Apima\ klasę\ std::string\ ir\ funkcijas\ dirbti\ su\ tekstu.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <vector>}\ \ \ \ \ \textcolor{comment}{//\ Apima\ std::vector\ konteinerį\ (dinamiškai\ valdomus\ masyvus).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <algorithm>}\ \ \textcolor{comment}{//\ Apima\ algoritmus,\ tokius\ kaip\ sort,\ find,\ ir\ kt.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <random>}\ \ \ \ \ \textcolor{comment}{//\ Apima\ atsitiktinių\ skaičių\ generavimo\ funkcijas.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <fstream>}\ \ \ \ \textcolor{comment}{//\ Apima\ failų\ įvesties/išvesties\ funkcijas.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <sstream>}\ \ \ \ \textcolor{comment}{//\ Apima\ srautų\ klasę,\ skirtą\ dirbti\ su\ eilutėmis.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <chrono>}\ \ \ \ \ \textcolor{comment}{//\ Apima\ laikrodžio\ funkcijas\ ir\ laiką.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <list>}\ \ \ \ \ \ \ \textcolor{comment}{//\ Apima\ std::list\ konteinerį\ (dviašius\ sąrašus).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00021}00021\ \ \textcolor{comment}{//\ Pagrindinių\ funkcijų\ naudojimo\ paprastinimas:}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00022}00022\ \textcolor{keyword}{using\ }std::endl;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::endl.}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00023}00023\ \textcolor{keyword}{using\ }std::cout;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::cout\ (standartinis\ išvesties\ srautas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00024}00024\ \textcolor{keyword}{using\ }std::cin;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::cin\ (standartinis\ įvesties\ srautas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00025}00025\ \textcolor{keyword}{using\ }std::left;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::left\ (kairiojo\ lygiavimo\ manipuliatorius).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00026}00026\ \textcolor{keyword}{using\ }std::right;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::right\ (dešiniojo\ lygiavimo\ manipuliatorius).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00027}00027\ \textcolor{keyword}{using\ }std::setw;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::setw\ (išvesties\ pločio\ nustatymas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00028}00028\ \textcolor{keyword}{using\ }std::setprecision;\ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::setprecision\ (tikslumo\ nustatymas\ skaičiams).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00029}00029\ \textcolor{keyword}{using\ }std::fixed;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::fixed\ (formatavimas,\ kad\ skaičiai\ būtų\ rodomi\ fiksuotu\ taškų\ tikslumu).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00030}00030\ \textcolor{keyword}{using\ }std::string;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::string\ (standartinė\ eilutės\ klasė).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00031}00031\ \textcolor{keyword}{using\ }std::vector;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::vector\ (dinaminis\ masyvas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00032}00032\ \textcolor{keyword}{using\ }std::random\_device;\ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::random\_device\ (atsitiktinių\ skaičių\ generatorius).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00033}00033\ \textcolor{keyword}{using\ }std::mt19937;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::mt19937\ (atsitiktinių\ skaičių\ generatorius).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00034}00034\ \textcolor{keyword}{using\ }std::uniform\_int\_distribution;\ \textcolor{comment}{//\ Leidžia\ naudoti\ std::uniform\_int\_distribution\ (atsitiktinių\ sveikųjų\ skaičių\ paskirstymas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00035}00035\ \textcolor{keyword}{using\ }std::fstream;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::fstream\ (failų\ srautai).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00036}00036\ \textcolor{keyword}{using\ }std::sort;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::sort\ (rūšiavimo\ funkcija).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00037}00037\ \textcolor{keyword}{using\ }std::runtime\_error;\ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::runtime\_error\ (klaidos\ tipas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00038}00038\ \textcolor{keyword}{using\ }std::ofstream;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::ofstream\ (išvesties\ failo\ srautas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00039}00039\ \textcolor{keyword}{using\ }std::list;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::list\ (dviašiai\ sąrašai).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00040}00040\ \textcolor{keyword}{using\ }std::remove\_if;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::remove\_if\ (elementų\ pašalinimas\ pagal\ sąlygą).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00041}00041\ \textcolor{keyword}{using\ }std::partition;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::partition\ (konteinerių\ dalijimas\ pagal\ sąlygą).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00042}00042\ \textcolor{keyword}{using\ }std::stable\_partition;\ \ \textcolor{comment}{//\ Leidžia\ naudoti\ std::stable\_partition\ (stabilus\ konteinerių\ dalijimas).}}
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_mylib_8h_source_l00045}00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MYLIB\_H\_INCLUDED}}
+
+\end{DoxyCode}

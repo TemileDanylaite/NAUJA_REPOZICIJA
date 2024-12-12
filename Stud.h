@@ -40,7 +40,7 @@
  */
 class zmogus {
 private:
-    std::string vardas, pavarde;
+    std::string vardas, pavarde;// Privatus kintamasis vardui ir pavardei saugoti
 
 public:
     /**
@@ -48,44 +48,44 @@ public:
      * @param v Žmogaus vardas (numatytasis tuščias).
      * @param p Žmogaus pavardė (numatytasis tuščias).
      */
-    zmogus(std::string v = "", std::string p = "")
+    zmogus(std::string v = "", std::string p = "")// Konstruktorius su numatytomis reikšmėmis
         : vardas(v), pavarde(p) {}
 
     /**
      * @brief Virtualus destruktorius (default).
      */
-    virtual ~zmogus() = default;
+    virtual ~zmogus() = default;// Numatytoji destrukcija
 
     /**
      * @brief Grąžina žmogaus vardą.
      * @return Žmogaus vardas.
      */
-    std::string getVardas() const { return vardas; }
+    std::string getVardas() const { return vardas; }// Vardo grąžinimo funkcija
 
     /**
      * @brief Grąžina žmogaus pavardę.
      * @return Žmogaus pavardė.
      */
-    std::string getPavarde() const { return pavarde; }
+    std::string getPavarde() const { return pavarde; }// Pavardės grąžinimo funkcija
 
     /**
      * @brief Nustato žmogaus vardą.
      * @param v Žmogaus vardas.
      */
-    virtual void setVardas(const std::string& v) { vardas = v; }
+    virtual void setVardas(const std::string& v) { vardas = v; }// Vardo nustatymo funkcija
 
 
     /**
      * @brief Nustato žmogaus pavardę.
      * @param p Žmogaus pavardė.
      */
-    virtual void setPavarde(const std::string& p) { pavarde = p; }
+    virtual void setPavarde(const std::string& p) { pavarde = p; } // Pavardės nustatymo funkcija
 
     /**
      * @brief Grynoji virtuali funkcija, kuri turi būti implementuota paveldėtojų klasėse.
      * @param os Išvesties srautas.
      */
-    virtual void atvaizduoti(std::ostream& os) const = 0;
+    virtual void atvaizduoti(std::ostream& os) const = 0;// Grynoji virtuali funkcija, kurią turi implementuoti paveldėtos klasės
 
     /**
      * @brief Draugiškas operatorius, kuris išveda žmogų į srautą.
@@ -94,8 +94,8 @@ public:
      * @return Išvesties srautas su žmogaus duomenimis.
      */
     friend std::ostream& operator <<(std::ostream& os, const zmogus& zmog) {
-        zmog.atvaizduoti(os);
-        return os;
+        zmog.atvaizduoti(os);// Kvieciama atvaizduoti funkcija
+        return os;// Grąžina išvesties srautą su žmogaus duomenimis
     }
 };
 
@@ -107,10 +107,10 @@ public:
  */
 class Stud : public zmogus {
 private:
-    std::vector<int> ND; ///< Namų darbų rezultatai.
-    double egz; ///< Egzamino rezultatas.
-    double GalutinisVid; ///< Galutinis įvertinimas (vidurkis).
-    double GalutinisMed; ///< Galutinis įvertinimas (mediana).
+    std::vector<int> ND; // Namų darbų rezultatai.
+    double egz; // Egzamino rezultatas.
+    double GalutinisVid; // Galutinis įvertinimas (vidurkis).
+    double GalutinisMed; // Galutinis įvertinimas (mediana).
 
 public:
     /**
@@ -120,7 +120,7 @@ public:
      * @param nd Namų darbų rezultatai.
      * @param e Egzamino rezultatas.
      */
-    Stud(std::string v = "", std::string p = "", std::vector<int> nd = {}, double e = 0.0)
+    Stud(std::string v = "", std::string p = "", std::vector<int> nd = {}, double e = 0.0)// Konstruktorius su parametrais
         : zmogus(v, p), ND(nd), egz(e), GalutinisVid(0), GalutinisMed(0) {}
 
     /**
@@ -128,7 +128,7 @@ public:
      * @param other Kitas studentas, kurio duomenys bus nukopijuoti.
      */
     Stud(const Stud& other) noexcept
-        : zmogus(other.getVardas(), other.getPavarde()),
+        : zmogus(other.getVardas(), other.getPavarde()),// Kopijavimo inicializacija iš zmogus klasės
         ND(other.ND),
         egz(other.egz),
         GalutinisVid(other.GalutinisVid),
@@ -140,36 +140,36 @@ public:
      * @return Nuoroda į šį objektą.
      */
     Stud& operator = (const Stud& other) noexcept {
-        if (this == &other) return *this;
-        zmogus::operator = (other);
-        ND = other.ND;
-        egz = other.egz;
-        GalutinisVid = other.GalutinisVid;
-        GalutinisMed = other.GalutinisMed;
-        return *this;
+        if (this == &other) return *this;// Patikrinimas, kad neatsitiktų savitarpio priskyrimas
+        zmogus::operator = (other);// Kviečiamas paveldėtas operatorius
+        ND = other.ND;// Priskiriame namų darbų rezultatus
+        egz = other.egz;// Priskiriame egzamino rezultatą
+        GalutinisVid = other.GalutinisVid;// Priskiriame galutinį vidurkį
+        GalutinisMed = other.GalutinisMed; // Priskiriame galutinę medianą
+        return *this;// Grąžiname šį objektą
     }
 
     /**
      * @brief Pridėti naują namų darbų rezultatą.
      * @param nd Namų darbų rezultatas.
      */
-    void addND(int nd) {
+    void addND(int nd) {// Pridedame naują namų darbų rezultatą į vektorių
         ND.push_back(nd);
     }
 
     /**
      * @brief Destruktorius, kuris išvalo duomenis.
      */
-    ~Stud() { clearData(); }
+    ~Stud() { clearData(); }// Destruktorius, kuris išvalo studento duomenis
 
     /**
      * @brief Išvalo studento duomenis.
      */
     void clearData() {
-        ND.clear();
-        egz = 0.0;
-        GalutinisVid = 0.0;
-        GalutinisMed = 0.0;
+        ND.clear();// Išvalome namų darbų rezultatus
+        egz = 0.0; // Nustatome egzamino rezultatą į 0
+        GalutinisVid = 0.0; // Nustatome galutinį vidurkį į 0
+        GalutinisMed = 0.0; // Nustatome galutinę medianą į 0
     }
 
     /**
@@ -211,13 +211,13 @@ public:
     /**
      * @brief Apskaičiuoja galutinius įvertinimus (vidurkį ir medianą).
      */
-    void apskaiciuotiGalutinius();
+    void apskaiciuotiGalutinius();// Apskaičiuoja galutinį įvertinimą (vidurkį ir medianą)
 
     /**
      * @brief Atvaizduoja studento duomenis.
      * @param os Išvesties srautas.
      */
-    void atvaizduoti(std::ostream& os) const;
+    void atvaizduoti(std::ostream& os) const;// Atvaizduoja studento duomenis
 
     /**
      * @brief Draugiškas operatorius, kuris įveda studentą iš srauto.
@@ -225,7 +225,7 @@ public:
      * @param stud Studentas.
      * @return Įvesties srautas su studento duomenimis.
      */
-    friend std::istream& operator>>(std::istream& is, Stud& stud);
+    friend std::istream& operator>>(std::istream& is, Stud& stud);// Draugiškas operatorius įvedimui
 
     /**
      * @brief Draugiškas operatorius, kuris išveda studentą į srautą.
@@ -233,7 +233,7 @@ public:
      * @param stud Studentas.
      * @return Išvesties srautas su studento duomenimis.
      */
-    friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
+    friend std::ostream& operator<<(std::ostream& os, const Stud& stud);// Draugiškas operatorius išvedimui
 };
 
 /**
@@ -241,14 +241,14 @@ public:
  * @param Vec1 Vektorius, kuriame bus saugomi studentai.
  * @param failoVardas Failo pavadinimas.
  */
-void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);
+void nuskaitytiIsFailo(std::vector<Stud>& Vec1, const std::string& failoVardas);// Nuskaityti studentus iš failo į vektorių
 
 /**
  * @brief Nuskaityti studentus iš failo ir įrašyti juos į sąrašą.
  * @param Vec1 Sąrašas, kuriame bus saugomi studentai.
  * @param failoVardas Failo pavadinimas.
  */
-void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas);
+void nuskaitytiIsfailo(std::list<Stud>& list1, const std::string& failoVardas);// Nuskaityti studentus iš failo į sąrašą
 
 /**
  * @brief Sugeneruoti studentų failą su atsitiktiniais duomenimis.
@@ -256,34 +256,34 @@ void nuskaitytiIsfailo(std::list<Stud>& Vec1, const std::string& failoVardas);
  * @param studentCount Kiek studentų bus sugeneruota.
  * @param ndCount Kiek namų darbų bus sugeneruota kiekvienam studentui.
  */
-void sugeneruotiStudentoFaila(const std::string& fileName, int studentCount, int ndCount);
+void sugeneruotiStudentoFaila(const std::string& fileName, int studentCount, int ndCount); // Sugeneruoti studentų failą su atsitiktiniais duomenimis
 
 /**
  * @brief Įrašyti "vargsiukus" į failą iš vektoriaus.
  * @param vargsiukai Vargsiukai (studentai).
  * @param failoPavadinimas Failo pavadinimas.
  */
-void irasytiVargsiukusVector(const std::vector<Stud>& vargsiukai, const std::string& failoPavadinimas);
+void irasytiVargsiukusVector(const std::vector<Stud>& vargsiukai, const std::string& failoPavadinimas); // Įrašyti "vargsiukus" į failą iš vektoriaus
 
 /**
  * @brief Įrašyti "vargsiukus" į failą iš sąrašo.
  * @param vargsiukai Vargsiukai (studentai).
  * @param failoPavadinimas Failo pavadinimas.
  */
-void irasytivargsiukusList(const std::list<Stud>& vargsiukai, const std::string& failoPavadinimas);
+void irasytivargsiukusList(const std::list<Stud>& vargsiukai, const std::string& failoPavadinimas); // Įrašyti "vargsiukus" į failą iš sąrašo
 
 /**
  * @brief Įrašyti "kietiakiai" į failą iš sąrašo.
  * @param kietiakiai Kietiakiai (studentai).
  * @param failoPavadinimas Failo pavadinimas.
  */
-void irasytikietiakiaiList(const std::list<Stud>& kietiakiai, const std::string& failoPavadinimas);
+void irasytikietiakiaiList(const std::list<Stud>& kietiakiai, const std::string& failoPavadinimas); // Įrašyti "kietiakiai" į failą iš sąrašo
 
 /**
  * @brief Įrašyti "kietiakiai" į failą iš vektoriaus.
  * @param kietiakiai Kietiakiai (studentai).
  * @param failoPavadinimas Failo pavadinimas.
  */
-void irasytiKietiakiaiVector(const std::vector<Stud>& kietiakiai, const std::string& failoPavadinimas);
+void irasytiKietiakiaiVector(const std::vector<Stud>& kietiakiai, const std::string& failoPavadinimas);// Įrašyti "kietiakiai" į failą iš vektoriaus
 
 #endif // ZMOGUS_H_INCLUDED;

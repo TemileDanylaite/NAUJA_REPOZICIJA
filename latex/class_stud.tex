@@ -1,0 +1,667 @@
+\doxysection{Stud Class Reference}
+\hypertarget{class_stud}{}\label{class_stud}\index{Stud@{Stud}}
+
+
+Klasė, kuri aprašo studentą, paveldintį iš žmogaus.  
+
+
+
+
+{\ttfamily \#include $<$Stud.\+h$>$}
+
+Inheritance diagram for Stud\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stud}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_stud_ab3a9efdeb05bc331c90aa1bd96fb4e3f}{Stud}} (std\+::string v="{}"{}, std\+::string p="{}"{}, std\+::vector$<$ int $>$ nd=\{\}, double e=0.\+0)
+\begin{DoxyCompactList}\small\item\em Konstruktorius, kuriame nustatomi studento vardas, pavardė, namų darbai ir egzaminas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stud_ab16de09efa3847caa96be66a8f8eb2d1}{Stud}} (const \mbox{\hyperlink{class_stud}{Stud}} \&other) noexcept
+\begin{DoxyCompactList}\small\item\em Kopijavimo konstruktorius. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stud}{Stud}} \& \mbox{\hyperlink{class_stud_a0a08e7d8ccad319e2951b87f466e6488}{operator=}} (const \mbox{\hyperlink{class_stud}{Stud}} \&other) noexcept
+\begin{DoxyCompactList}\small\item\em Kopijavimo priskyrimo operatorius. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{add\+ND}} (int nd)
+\begin{DoxyCompactList}\small\item\em Pridėti naują namų darbų rezultatą. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stud_aa1c38d670d1f269ebd48588c40ad58db}{\texorpdfstring{$\sim$}{\string~}\+Stud}} ()
+\begin{DoxyCompactList}\small\item\em Destruktorius, kuris išvalo duomenis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}{clear\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Išvalo studento duomenis. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{get\+ND}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina namų darbų rezultatus. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_stud_a0e73b9a86f3d9e0150fb336cab468632}{get\+Egz}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina egzamino rezultatą. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_stud_a9de5bd76a8017a01a350d87a728679fd}{get\+Galutinis\+Vid}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina galutinį įvertinimą (vidurkį). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_stud_a5d9a80eb05daa79580a12851968ba1b7}{get\+Galutinis\+Med}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina galutinį įvertinimą (medianą). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stud_a3bcf2656ad221f95ffe1e2b5520caa52}{set\+ND}} (const std\+::vector$<$ int $>$ \&nd)
+\begin{DoxyCompactList}\small\item\em Nustato namų darbų rezultatus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{set\+Egz}} (double e)
+\begin{DoxyCompactList}\small\item\em Nustato egzamino rezultatą. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stud_a56e24ee4cb9bf3f8fecdf0fdf424fea4}{apskaiciuoti\+Galutinius}} ()
+\begin{DoxyCompactList}\small\item\em Apskaičiuoja galutinius įvertinimus (vidurkį ir medianą). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stud_ad783df099821241d65669ccfeb6f3edf}{atvaizduoti}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Atvaizduoja studento duomenis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classzmogus}{zmogus}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classzmogus_aa95b0c8392d1c9fe783c70e554c3d023}{zmogus}} (std\+::string v="{}"{}, std\+::string p="{}"{})
+\begin{DoxyCompactList}\small\item\em Konstruktorius, kuriame nustatomi vardas ir pavardė. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classzmogus_a5f6e15327f06f030f180391c6171ca53}{\texorpdfstring{$\sim$}{\string~}zmogus}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtualus destruktorius (default). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1}{get\+Vardas}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina žmogaus vardą. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classzmogus_a802999a845a7fd3549a882f8b92a1381}{get\+Pavarde}} () const
+\begin{DoxyCompactList}\small\item\em Grąžina žmogaus pavardę. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{set\+Vardas}} (const std\+::string \&v)
+\begin{DoxyCompactList}\small\item\em Nustato žmogaus vardą. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{set\+Pavarde}} (const std\+::string \&p)
+\begin{DoxyCompactList}\small\item\em Nustato žmogaus pavardę. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_stud_a7b362c1cdb6ce0cafd8ff033d61f309e}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_stud}{Stud}} \&stud)
+\begin{DoxyCompactList}\small\item\em Draugiškas operatorius, kuris įveda studentą iš srauto. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_stud_ae87425e4cee67ec69e1d356fb1bca67a}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_stud}{Stud}} \&stud)
+\begin{DoxyCompactList}\small\item\em Draugiškas operatorius, kuris išveda studentą į srautą. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasė, kuri aprašo studentą, paveldintį iš žmogaus. 
+
+Ši klasė praplečia klasės {\ttfamily zmogus} funkcionalumą, kad apimtų studento pažymius, egzaminą ir galutinį įvertinimą. 
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00108}{108}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_stud_ab3a9efdeb05bc331c90aa1bd96fb4e3f}\index{Stud@{Stud}!Stud@{Stud}}
+\index{Stud@{Stud}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{Stud()}{Stud()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_stud_ab3a9efdeb05bc331c90aa1bd96fb4e3f} 
+Stud\+::\+Stud (\begin{DoxyParamCaption}\item[{std\+::string}]{v}{ = {\ttfamily "{}"{}}, }\item[{std\+::string}]{p}{ = {\ttfamily "{}"{}}, }\item[{std\+::vector$<$ int $>$}]{nd}{ = {\ttfamily \{\}}, }\item[{double}]{e}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktorius, kuriame nustatomi studento vardas, pavardė, namų darbai ir egzaminas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vardas. \\
+\hline
+{\em p} & Pavardė. \\
+\hline
+{\em nd} & Namų darbų rezultatai. \\
+\hline
+{\em e} & Egzamino rezultatas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00123}{123}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\},\ \textcolor{keywordtype}{double}\ e\ =\ 0.0)\textcolor{comment}{//\ Konstruktorius\ su\ parametrais}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classzmogus}{zmogus}}(v,\ p),\ ND(nd),\ egz(e),\ GalutinisVid(0),\ GalutinisMed(0)\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_ab16de09efa3847caa96be66a8f8eb2d1}\index{Stud@{Stud}!Stud@{Stud}}
+\index{Stud@{Stud}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{Stud()}{Stud()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_stud_ab16de09efa3847caa96be66a8f8eb2d1} 
+Stud\+::\+Stud (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_stud}{Stud}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Kopijavimo konstruktorius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Kitas studentas, kurio duomenys bus nukopijuoti. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00130}{130}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classzmogus_aa95b0c8392d1c9fe783c70e554c3d023}{zmogus}}(other.\mbox{\hyperlink{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1}{getVardas}}(),\ other.\mbox{\hyperlink{classzmogus_a802999a845a7fd3549a882f8b92a1381}{getPavarde}}()),\textcolor{comment}{//\ Kopijavimo\ inicializacija\ iš\ zmogus\ klasės}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ ND(other.ND),}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ egz(other.egz),}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ GalutinisVid(other.GalutinisVid),}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ GalutinisMed(other.GalutinisMed)\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_aa1c38d670d1f269ebd48588c40ad58db}\index{Stud@{Stud}!````~Stud@{\texorpdfstring{$\sim$}{\string~}Stud}}
+\index{````~Stud@{\texorpdfstring{$\sim$}{\string~}Stud}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Stud()}{\string~Stud()}}
+{\footnotesize\ttfamily \label{class_stud_aa1c38d670d1f269ebd48588c40ad58db} 
+Stud\+::\texorpdfstring{$\sim$}{\string~}\+Stud (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruktorius, kuris išvalo duomenis. 
+
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00163}{163}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \{\ \mbox{\hyperlink{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}{clearData}}();\ \}\textcolor{comment}{//\ Destruktorius,\ kuris\ išvalo\ studento\ duomenis}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}\index{Stud@{Stud}!addND@{addND}}
+\index{addND@{addND}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{addND()}{addND()}}
+{\footnotesize\ttfamily \label{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea} 
+void Stud\+::add\+ND (\begin{DoxyParamCaption}\item[{int}]{nd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pridėti naują namų darbų rezultatą. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & Namų darbų rezultatas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00156}{156}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//\ Pridedame\ naują\ namų\ darbų\ rezultatą\ į\ vektorių}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ ND.push\_back(nd);}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a56e24ee4cb9bf3f8fecdf0fdf424fea4}\index{Stud@{Stud}!apskaiciuotiGalutinius@{apskaiciuotiGalutinius}}
+\index{apskaiciuotiGalutinius@{apskaiciuotiGalutinius}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{apskaiciuotiGalutinius()}{apskaiciuotiGalutinius()}}
+{\footnotesize\ttfamily \label{class_stud_a56e24ee4cb9bf3f8fecdf0fdf424fea4} 
+void Stud\+::apskaiciuoti\+Galutinius (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Apskaičiuoja galutinius įvertinimus (vidurkį ir medianą). 
+
+Apskaičiuoja galutinius balus pagal vidurkį ir medianą.
+
+Ši funkcija apskaičiuoja studento galutinį balą naudojant namų darbų vidurkį ir mediana, pridedant egzaminų balą su nustatytais svoriais\+:
+\begin{DoxyItemize}
+\item 40\% vidurkis arba mediana iš namų darbų
+\item 60\% egzamino balas. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_studentu__duomenys_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_studentu__duomenys_8cpp_source}{Studentu\+\_\+duomenys.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (ND.empty())\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nd\ yra\ tuscias,\ negalima\ suskaiciuoti\ galutinio\ balo"{}}\ <<\ endl;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ GalutinisVid\ =\ 0.0;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ GalutinisMed\ =\ 0.0;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ vidutinis\ =\ 0.0;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ nd\ :\ ND)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ vidutinis\ +=\ nd;\textcolor{comment}{//\ Skaičiuojame\ namų\ darbų\ vidurkį.\ }}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ vidutinis\ /=\ ND.size();}
+\DoxyCodeLine{00069\ \ \ \ \ GalutinisVid\ =\ 0.4\ *\ vidutinis\ +\ 0.6\ *\ egz;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{double}\ mediana\ =\ \mbox{\hyperlink{_studentu__duomenys_8cpp_a1de02e6ed5d20fbda8568905036d2125}{apskaiciuotiMediana}}(ND);\textcolor{comment}{//\ Skaičiuojame\ namų\ darbų\ medianą.\ }}
+\DoxyCodeLine{00072\ \ \ \ \ GalutinisMed\ =\ 0.4\ *\ mediana\ +\ 0.6\ *\ egz;}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_ad783df099821241d65669ccfeb6f3edf}\index{Stud@{Stud}!atvaizduoti@{atvaizduoti}}
+\index{atvaizduoti@{atvaizduoti}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{atvaizduoti()}{atvaizduoti()}}
+{\footnotesize\ttfamily \label{class_stud_ad783df099821241d65669ccfeb6f3edf} 
+void Stud\+::atvaizduoti (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Atvaizduoja studento duomenis. 
+
+Atvaizduoja studento informaciją į srautą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas.\\
+\hline
+\end{DoxyParams}
+Ši funkcija išveda studento vardą, pavardę, galutinį vidurkį ir galutinį mediana į srautą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas, į kurį bus rašoma informacija apie studentą. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classzmogus_a407ce326dc157d28cc2d94183dfb97d6}{zmogus}}.
+
+
+
+Definition at line \mbox{\hyperlink{_stud_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_stud_8cpp_source}{Stud.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//\ Išvedame\ studento\ vardą,\ pavardę,\ galutinį\ vidurkį\ ir\ galutinę\ medianą\ į\ išvesties\ srautą}}
+\DoxyCodeLine{00033\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Vardas:"{}}\ <<\ \mbox{\hyperlink{classzmogus_aa1272275f7aa39ee724a4d3d8223e3b1}{getVardas}}()\ <<\ \textcolor{stringliteral}{"{},\ Pavarde:"{}}\ <<\ \mbox{\hyperlink{classzmogus_a802999a845a7fd3549a882f8b92a1381}{getPavarde}}()\ <<\ \textcolor{stringliteral}{"{},\ GalutinisVid:"{}}\ <<\ GalutinisVid}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ GalutinisMed:"{}}\ <<\ GalutinisMed\ <<\ endl;}
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}\index{Stud@{Stud}!clearData@{clearData}}
+\index{clearData@{clearData}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{clearData()}{clearData()}}
+{\footnotesize\ttfamily \label{class_stud_af9ae93aa8c99933a4f9e450cee6564ab} 
+void Stud\+::clear\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Išvalo studento duomenis. 
+
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00168}{168}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ ND.clear();\textcolor{comment}{//\ Išvalome\ namų\ darbų\ rezultatus}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ egz\ =\ 0.0;\ \textcolor{comment}{//\ Nustatome\ egzamino\ rezultatą\ į\ 0}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ GalutinisVid\ =\ 0.0;\ \textcolor{comment}{//\ Nustatome\ galutinį\ vidurkį\ į\ 0}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ GalutinisMed\ =\ 0.0;\ \textcolor{comment}{//\ Nustatome\ galutinę\ medianą\ į\ 0}}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a0e73b9a86f3d9e0150fb336cab468632}\index{Stud@{Stud}!getEgz@{getEgz}}
+\index{getEgz@{getEgz}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{getEgz()}{getEgz()}}
+{\footnotesize\ttfamily \label{class_stud_a0e73b9a86f3d9e0150fb336cab468632} 
+double Stud\+::get\+Egz (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grąžina egzamino rezultatą. 
+
+\begin{DoxyReturn}{Returns}
+Egzamino rezultatas. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00185}{185}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185\ \{\ \textcolor{keywordflow}{return}\ egz;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a5d9a80eb05daa79580a12851968ba1b7}\index{Stud@{Stud}!getGalutinisMed@{getGalutinisMed}}
+\index{getGalutinisMed@{getGalutinisMed}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{getGalutinisMed()}{getGalutinisMed()}}
+{\footnotesize\ttfamily \label{class_stud_a5d9a80eb05daa79580a12851968ba1b7} 
+double Stud\+::get\+Galutinis\+Med (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grąžina galutinį įvertinimą (medianą). 
+
+\begin{DoxyReturn}{Returns}
+Galutinis įvertinimas (mediana). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00197}{197}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \{\ \textcolor{keywordflow}{return}\ GalutinisMed;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a9de5bd76a8017a01a350d87a728679fd}\index{Stud@{Stud}!getGalutinisVid@{getGalutinisVid}}
+\index{getGalutinisVid@{getGalutinisVid}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{getGalutinisVid()}{getGalutinisVid()}}
+{\footnotesize\ttfamily \label{class_stud_a9de5bd76a8017a01a350d87a728679fd} 
+double Stud\+::get\+Galutinis\+Vid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grąžina galutinį įvertinimą (vidurkį). 
+
+\begin{DoxyReturn}{Returns}
+Galutinis įvertinimas (vidurkis). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00191}{191}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00191\ \{\ \textcolor{keywordflow}{return}\ GalutinisVid;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_aab62707548846fe1cd3db6e80c67bdee}\index{Stud@{Stud}!getND@{getND}}
+\index{getND@{getND}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{getND()}{getND()}}
+{\footnotesize\ttfamily \label{class_stud_aab62707548846fe1cd3db6e80c67bdee} 
+std\+::vector$<$ int $>$ Stud\+::get\+ND (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grąžina namų darbų rezultatus. 
+
+\begin{DoxyReturn}{Returns}
+Namų darbų rezultatai. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00179}{179}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179\ \{\ \textcolor{keywordflow}{return}\ ND;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a0a08e7d8ccad319e2951b87f466e6488}\index{Stud@{Stud}!operator=@{operator=}}
+\index{operator=@{operator=}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_stud_a0a08e7d8ccad319e2951b87f466e6488} 
+\mbox{\hyperlink{class_stud}{Stud}} \& Stud\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_stud}{Stud}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Kopijavimo priskyrimo operatorius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Kitas studentas, kurio duomenys bus priskiriami. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nuoroda į šį objektą. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00142}{142}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\textcolor{comment}{//\ Patikrinimas,\ kad\ neatsitiktų\ savitarpio\ priskyrimas}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ zmogus::operator\ =\ (other);\textcolor{comment}{//\ Kviečiamas\ paveldėtas\ operatorius}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ ND\ =\ other.ND;\textcolor{comment}{//\ Priskiriame\ namų\ darbų\ rezultatus}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ egz\ =\ other.egz;\textcolor{comment}{//\ Priskiriame\ egzamino\ rezultatą}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ GalutinisVid\ =\ other.GalutinisVid;\textcolor{comment}{//\ Priskiriame\ galutinį\ vidurkį}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ GalutinisMed\ =\ other.GalutinisMed;\ \textcolor{comment}{//\ Priskiriame\ galutinę\ medianą}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\textcolor{comment}{//\ Grąžiname\ šį\ objektą}}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a0561928e14df15b7a4fe8546c4cc8656}\index{Stud@{Stud}!setEgz@{setEgz}}
+\index{setEgz@{setEgz}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{setEgz()}{setEgz()}}
+{\footnotesize\ttfamily \label{class_stud_a0561928e14df15b7a4fe8546c4cc8656} 
+void Stud\+::set\+Egz (\begin{DoxyParamCaption}\item[{double}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nustato egzamino rezultatą. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Egzamino rezultatas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00209}{209}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209\ \{\ egz\ =\ e;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a3bcf2656ad221f95ffe1e2b5520caa52}\index{Stud@{Stud}!setND@{setND}}
+\index{setND@{setND}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{setND()}{setND()}}
+{\footnotesize\ttfamily \label{class_stud_a3bcf2656ad221f95ffe1e2b5520caa52} 
+void Stud\+::set\+ND (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{nd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nustato namų darbų rezultatus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & Namų darbų rezultatai. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_stud_8h_source_l00203}{203}} of file \mbox{\hyperlink{_stud_8h_source}{Stud.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00203\ \{\ ND\ =\ nd;\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_stud_ae87425e4cee67ec69e1d356fb1bca67a}\index{Stud@{Stud}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_stud_ae87425e4cee67ec69e1d356fb1bca67a} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_stud}{Stud}} \&}]{stud}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Draugiškas operatorius, kuris išveda studentą į srautą. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas. \\
+\hline
+{\em stud} & Studentas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Išvesties srautas su studento duomenimis.
+\end{DoxyReturn}
+Ši funkcija leidžia atvaizduoti visus studento duomenis naudojant {\ttfamily \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} operatorių.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas, į kurį bus rašoma informacija apie studentą. \\
+\hline
+{\em stud} & Studentas, kurio informacija bus atvaizduota. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& Nuoroda į išvesties srautą. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_stud_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{_stud_8cpp_source}{Stud.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ stud.\mbox{\hyperlink{class_stud_ad783df099821241d65669ccfeb6f3edf}{atvaizduoti}}(os);\textcolor{comment}{//\ Kviečiama\ funkciją,\ kuri\ atvaizduoja\ studento\ duomenis}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ os;\textcolor{comment}{//\ Grąžinamas\ išvesties\ srautas}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_stud_a7b362c1cdb6ce0cafd8ff033d61f309e}\index{Stud@{Stud}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Stud@{Stud}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_stud_a7b362c1cdb6ce0cafd8ff033d61f309e} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_stud}{Stud}} \&}]{stud}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Draugiškas operatorius, kuris įveda studentą iš srauto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Įvesties srautas. \\
+\hline
+{\em stud} & Studentas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Įvesties srautas su studento duomenimis.
+\end{DoxyReturn}
+Šis operatorius leidžia įvesti studento duomenis, tokius kaip vardas, pavardė, namų darbų rezultatai ir egzamino rezultatas. Duomenys gali būti įvedami tiek atsitiktinai, tiek rankiniu būdu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Įvesties srautas, iš kurio bus nuskaityti duomenys. \\
+\hline
+{\em stud} & Objektas, į kurį bus saugomi nuskaityti duomenys. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::istream\& Nuoroda į įvesties srautą. 
+\end{DoxyReturn}
+Paprašo vartotojo įvesti vardą ir pavardę. Šie duomenys priskiriami studento objektui.
+
+Nustato įvestą vardą ir pavardę studento objektui.
+
+Patikrina, ar rezultatai turėtų būti generuojami atsitiktinai.
+
+Inicijuojamas atsitiktinių skaičių generatorius. Naudojamas sugeneruoti namų darbų ir egzamino balams.
+
+Generuoja nurodyto dydžio atsitiktinius namų darbų balus. Balai priskiriami studento objektui.
+
+Sugeneruojamas atsitiktinis egzamino balas ir priskiriamas studentui.
+
+Vartotojas įveda konkrečių namų darbų skaičių ir rezultatus. Visi rezultatai pridedami prie studento objekto
+
+Naudotojas įveda dinamiškai namų darbų rezultatus. Įvedimas baigiamas įvedus -\/1. Kiekvienas rezultatas pridedamas prie studento objekto
+
+Definition at line \mbox{\hyperlink{_stud_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_stud_8cpp_source}{Stud.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivesti\ varda\ ir\ pavarde:\ "{}};\textcolor{comment}{//\ Prašome\ vartotojo\ įvesti\ vardą\ ir\ pavardę}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{string}\ vardas,\ pavarde;}
+\DoxyCodeLine{00056\ \ \ \ \ is\ >>\ vardas\ >>\ pavarde;\textcolor{comment}{//\ Nuskaitomas\ vardas\ ir\ pavarde}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \textcolor{comment}{//\ Nustatomas\ įvestas\ vardas\ ir\ pavarde\ studento\ objektui}}
+\DoxyCodeLine{00062\ \ \ \ \ stud.\mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{setVardas}}(vardas);}
+\DoxyCodeLine{00063\ \ \ \ \ stud.\mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{setPavarde}}(pavarde);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Konstruktoriu:\ Objekto\ "{}}\ <<\ vardas\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ pavarde\ <<\ \textcolor{stringliteral}{"{}\ sukurimas"{}}\ <<\ endl;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{string}\ pasirinkimas;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ar\ reikia\ namu\ darbu\ ir\ egzamino\ rezultatus\ generuoti\ atsitiktinai?(taip/ne)\ "{}};\textcolor{comment}{//\ Patikriname,\ ar\ rezultatai\ turi\ būti\ generuojami\ atsitiktinai}}
+\DoxyCodeLine{00073\ \ \ \ \ is\ >>\ pasirinkimas;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (pasirinkimas\ ==\ \textcolor{stringliteral}{"{}taip"{}})\ \{}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicijuojamas\ atsitiktinių\ skaičių\ generatorius}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ random\_device\ rd;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ mt19937\ gen(rd());}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ uniform\_int\_distribution<>\ dist(1,\ 10);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ndCount;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivesti\ namu\ darbu\ skaiciu:\ "{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ is\ >>\ ndCount;\textcolor{comment}{//\ Nuskaityti\ namų\ darbų\ skaičių}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sugeneruojame\ nurodyto\ dydžio\ atsitiktinius\ namų\ darbų\ balus}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ndCount;\ ++i)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ stud.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(dist(gen));\textcolor{comment}{//\ Sugeneruojame\ ir\ pridedame\ atsitiktinį\ namų\ darbų\ balą}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sugeneruojamas\ atsitiktinis\ egzamino\ balas\ ir\ priskiriamas\ studentui}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ stud.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(dist(gen));}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ stud.\mbox{\hyperlink{class_stud_a56e24ee4cb9bf3f8fecdf0fdf424fea4}{apskaiciuotiGalutinius}}();\textcolor{comment}{//\ Apskaičiuojamas\ galutinis\ įvertinimas}}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ar\ zinai,\ koks\ yra\ namu\ darbu\ skaicius?(taip/ne):\ "{}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ is\ >>\ pasirinkimas;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pasirinkimas\ ==\ \textcolor{stringliteral}{"{}taip"{}})\ \{}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vartotojas\ įveda\ konkrečių\ namų\ darbų\ skaičių\ ir\ rezultatus}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ndCount;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivesti\ namu\ darbu\ skaiciu:\ "{}};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ is\ >>\ ndCount;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivesti\ namu\ darbu\ rezultatus(10-\/baleje\ sistemoje):\ "{}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ndCount;\ ++i)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nd;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\ >>\ nd;\textcolor{comment}{//\ Vartotojas\ įveda\ kiekvieną\ namų\ darbų\ rezultatą}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stud.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(nd);\textcolor{comment}{//\ Pridedamas\ rezultatas\ prie\ studento\ objekto}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pasirinkimas\ ==\ \textcolor{stringliteral}{"{}ne"{}})\ \{}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Naudotojas\ įveda\ dinamiškai\ namų\ darbų\ rezultatus}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nd;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivesti\ namu\ darbu\ rezultatus(ivesti\ '-\/1',kad\ baigti):"{}}\ <<\ endl;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\ >>\ nd;\textcolor{comment}{//\ Vartotojas\ įveda\ kiekvieną\ namų\ darbų\ rezultatą}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nd\ ==\ -\/1)\ \{\textcolor{comment}{//\ Baigiasi\ įvedimas,\ jei\ įvedama\ -\/1}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stud.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(nd);\textcolor{comment}{//\ Pridedamas\ rezultatas\ prie\ studento\ objekto}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Naudotojas\ įveda\ egzamino\ rezultatą\ ir\ priskiria\ jį\ studento\ objektui.}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivesti\ egzamino\ rezultata:\ "{}};}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ egz;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ is\ >>\ egz;\ \textcolor{comment}{//\ Vartotojas\ įveda\ egzamino\ rezultatą}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ stud.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(egz);\textcolor{comment}{//\ Priskiriamas\ egzamino\ rezultatas\ studentui}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ is;\textcolor{comment}{//\ Grąžinamas\ įvesties\ srautas}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_stud_8h}{Stud.\+h}}\item 
+\mbox{\hyperlink{_stud_8cpp}{Stud.\+cpp}}\item 
+\mbox{\hyperlink{_studentu__duomenys_8cpp}{Studentu\+\_\+duomenys.\+cpp}}\end{DoxyCompactItemize}

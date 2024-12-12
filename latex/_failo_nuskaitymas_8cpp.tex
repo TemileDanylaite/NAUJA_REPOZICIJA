@@ -1,0 +1,169 @@
+\doxysection{Failo\+Nuskaitymas.\+cpp File Reference}
+\hypertarget{_failo_nuskaitymas_8cpp}{}\label{_failo_nuskaitymas_8cpp}\index{FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}}
+
+
+Studentų duomenų nuskaitymas iš failo.  
+
+
+{\ttfamily \#include "{}Stud.\+h"{}}\newline
+{\ttfamily \#include "{}Mylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07}{nuskaityti\+Is\+Failo}} (std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&Vec1, const std\+::string \&failo\+Vardas)
+\begin{DoxyCompactList}\small\item\em Nuskaityti studentų duomenis iš failo ir įkelti į vektorių. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596}{nuskaityti\+Isfailo}} (std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&list1, const std\+::string \&failo\+Vardas)
+\begin{DoxyCompactList}\small\item\em Nuskaityti studentų duomenis iš failo ir įkelti į sąrašą. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Studentų duomenų nuskaitymas iš failo. 
+
+Šiame faile apdorojamas tekstinio failo nuskaitymas, kuriame saugomi studentų duomenys. Nuskaityti duomenys apdorojami ir įrašomi į atitinkamus struktūrų konteinerius (pvz., vektorius arba sąrašus), kuriuose saugomi studentų vardai, pavardės, namų darbų ir egzamino rezultatai.
+
+Failas naudoja „mylib“ biblioteką. 
+
+Definition in file \mbox{\hyperlink{_failo_nuskaitymas_8cpp_source}{Failo\+Nuskaitymas.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07}\index{FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}!nuskaitytiIsFailo@{nuskaitytiIsFailo}}
+\index{nuskaitytiIsFailo@{nuskaitytiIsFailo}!FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiIsFailo()}{nuskaitytiIsFailo()}}
+{\footnotesize\ttfamily \label{_failo_nuskaitymas_8cpp_a2776c7be31cf2693c1cc6362a0dd9d07} 
+void nuskaityti\+Is\+Failo (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{Vec1}{, }\item[{const std\+::string \&}]{failo\+Vardas}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaityti studentų duomenis iš failo ir įkelti į vektorių. 
+
+Nuskaityti studentus iš failo ir įrašyti juos į vektorių.
+
+Ši funkcija atidaro nurodytą failą, nuskaito kiekvieną eilutę ir iš jos sukuria studento objektą, kurio vardas, pavardė, namų darbai ir egzamino rezultatai yra įrašomi ir perduodami į {\ttfamily std\+::vector}. Jeigu duomenų eilutėje yra klaida arba trūksta reikalingų duomenų, studentas ignoruojamas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Vec1} & Nuoroda į {\ttfamily std\+::vector}, kuriame bus saugomi nuskaityti studentų duomenys. \\
+\hline
+{\em failo\+Vardas} & Failo, iš kurio bus nuskaityti studentų duomenys, pavadinimas. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Atidarome failą su nurodytu pavadinimu
+
+Definition at line \mbox{\hyperlink{_failo_nuskaitymas_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_failo_nuskaitymas_8cpp_source}{Failo\+Nuskaitymas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::ifstream\ inFile(failoVardas);\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inFile)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:"{}}\ +\ failoVardas);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inFile,\ line))\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stud}{Stud}}\ temp;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}{clearData}}();\ \textcolor{comment}{//\ Išvalome\ ankstesnius\ duomenis\ }}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ vardas,\ pavardė;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(ss\ >>\ vardas\ >>\ pavardė))\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Nepavyko\ nuskaityti\ studento\ vardo\ ir\ pavardės"{}}\ <<\ endl;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ vardo\ ir\ pavardės\ nuskaityti\ nepavyko,\ pereiname\ prie\ kitos\ eilutės\ }}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{setVardas}}(vardas);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{setPavarde}}(pavardė);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nd;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ nd)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(nd);\ \textcolor{comment}{//\ Pridedame\ namų\ darbų\ balus\ }}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().size()\ <\ 1)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ ND\ trūksta,\ ignoruojame\ studentą\ }}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().back());\ \textcolor{comment}{//\ Paskutinį\ namų\ darbų\ balą\ priskiriame\ egzamino\ rezultatui\ }}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().pop\_back();\ \ \textcolor{comment}{//\ Pašaliname\ paskutinį\ ND,\ kad\ liktų\ tik\ namų\ darbų\ rezultatai\ }}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ Vec1.push\_back(temp);\ \textcolor{comment}{//\ Pridedame\ studentą\ į\ vektorių}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ inFile.close();\ \textcolor{comment}{//\ Uždaromas\ failas\ po\ nuskaitymo\ }}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Klaida:\ "{}}\ <<\ e.what()\ <<\ endl;\ \textcolor{comment}{//\ Jei\ įvyko\ klaida,\ išvedame\ klaidos\ pranešimą\ }}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596}\index{FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}!nuskaitytiIsfailo@{nuskaitytiIsfailo}}
+\index{nuskaitytiIsfailo@{nuskaitytiIsfailo}!FailoNuskaitymas.cpp@{FailoNuskaitymas.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiIsfailo()}{nuskaitytiIsfailo()}}
+{\footnotesize\ttfamily \label{_failo_nuskaitymas_8cpp_a30e0b78fc57a8378833e2765a0dd6596} 
+void nuskaityti\+Isfailo (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{list1}{, }\item[{const std\+::string \&}]{failo\+Vardas}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaityti studentų duomenis iš failo ir įkelti į sąrašą. 
+
+Nuskaityti studentus iš failo ir įrašyti juos į sąrašą.
+
+Ši funkcija atidaro nurodytą failą, nuskaito kiekvieną eilutę ir iš jos sukuria studento objektą, kurio vardas, pavardė, namų darbai ir egzamino rezultatai yra įrašomi ir perduodami {\ttfamily std\+::list}. Jeigu duomenų eilutėje yra klaida arba trūksta reikalingų duomenų, studentas ignoruojamas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list1} & Nuoroda į {\ttfamily std\+::list}, kuriame bus saugomi nuskaityti studentų duomenys. \\
+\hline
+{\em failo\+Vardas} & Failo, iš kurio bus nuskaityti studentų duomenys, pavadinimas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_failo_nuskaitymas_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_failo_nuskaitymas_8cpp_source}{Failo\+Nuskaitymas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::ifstream\ inFile(failoVardas);\ \textcolor{comment}{//\ Atidarome\ failą\ su\ nurodytu\ pavadinimu\ }}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!inFile)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:"{}}\ +\ failoVardas);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inFile,\ line))\ \{}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stud}{Stud}}\ temp;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_af9ae93aa8c99933a4f9e450cee6564ab}{clearData}}();\ \textcolor{comment}{//Išvalome\ ankstesnius\ duomenis\ }}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ vardas,\ pavardė;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(ss\ >>\ vardas\ >>\ pavardė))\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Nepavyko\ nuskaityti\ studento\ vardo\ ir\ pavardės"{}}\ <<\ endl;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ vardo\ ir\ pavardės\ nuskaityti\ nepavyko,\ pereiname\ prie\ kitos\ eilutės\ }}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_a5fe6d173c5e82e2a227a1d9412354df6}{setVardas}}(vardas);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{classzmogus_aa297b9ab8d328a33713a8ad4ad01a9a6}{setPavarde}}(pavardė);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nd;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ nd)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a9fb022c1d1ed5dde5fad6cc19a53a6ea}{addND}}(nd);\ \textcolor{comment}{//\ Pridedame\ namų\ darbų\ balus\ }}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().size()\ <\ 1)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Jei\ ND\ trūksta,\ ignoruojame\ studentą\ }}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_a0561928e14df15b7a4fe8546c4cc8656}{setEgz}}(temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().back());\ \textcolor{comment}{//\ Paskutinį\ namų\ darbų\ balą\ priskiriame\ egzamino\ rezultatui\ }}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ temp.\mbox{\hyperlink{class_stud_aab62707548846fe1cd3db6e80c67bdee}{getND}}().pop\_back();\ \ \textcolor{comment}{//\ Pašaliname\ paskutinį\ ND,\ kad\ liktų\ tik\ namų\ darbų\ rezultatai\ }}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ list1.push\_back(temp);\ \textcolor{comment}{//\ Pridedame\ studentą\ į\ sąrašą\ }}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ inFile.close();\ \textcolor{comment}{//\ Uždaromas\ failas\ po\ nuskaitymo\ }}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Klaida:\ "{}}\ <<\ e.what()\ <<\ endl;\ \textcolor{comment}{//\ Jei\ įvyko\ klaida,\ išvedame\ klaidos\ pranešimą\ }}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \}}
+
+\end{DoxyCode}

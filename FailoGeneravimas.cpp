@@ -28,20 +28,20 @@
  * @param ndCount Kiek namų darbų rezultatų turi būti sugeneruota kiekvienam studentui.
  */
 void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCount) {
-    auto pradzia = std::chrono::high_resolution_clock::now();  ///< Laiko pradžia
+    auto pradzia = std::chrono::high_resolution_clock::now();  // Laiko pradžia
 
     
-    ofstream outFile(fileName); /**< Sukuriame failą su nurodytu pavadinimu */
+    ofstream outFile(fileName); // Sukuriame failą su nurodytu pavadinimu 
     if (!outFile) {
         std::cerr << "Nepavyko sukurti failo: " << fileName << endl;
         return;
     }
 
-    /** Pirmos eilutės su antraštėmis įrašymas į failą */
+    // Pirmos eilutės su antraštėmis įrašymas į failą 
     outFile << setw(25) << left << "Vardas"
         << setw(25) << left << "Pavarde";
 
-    /** Generuojame ND antraštes */
+    // Generuojame ND antraštes 
     for (int i = 1; i <= ndCount; i++) {
         outFile << setw(10) << right << "ND" + std::to_string(i);
     }
@@ -49,43 +49,43 @@ void sugeneruotiStudentoFaila(const string& fileName, int studentCount, int ndCo
 
 
 
-    /** Atsitiktinių skaičių generatorius(1 - 10 balai). */
-    random_device rd;  /**< Atsitiktinių skaičių generatorius. */
-    mt19937 gen(rd());  /**< Inicializuojame generatorių. */
-    uniform_int_distribution<> dist(1, 10);  /**< Skaičių intervalas nuo 1 iki 10 */
+    // Atsitiktinių skaičių generatorius(1 - 10 balai). 
+    random_device rd;  // Atsitiktinių skaičių generatorius. 
+    mt19937 gen(rd());  // Inicializuojame generatorių. 
+    uniform_int_distribution<> dist(1, 10);  // Skaičių intervalas nuo 1 iki 10
 
-    /** Generuojame duomenis kiekvienam studentui */
+    // Generuojame duomenis kiekvienam studentui 
     for (int i = 1; i <= studentCount; ++i) {
 
-        /** Sukuriame studentą su vardu ir pavarde */
+        // Sukuriame studentą su vardu ir pavarde 
         Stud studentas("Vardas" + std::to_string(i), "Pavarde" + std::to_string(i));
 
-        /** Generuojame ND balus */
+        // Generuojame ND balus 
         for (int j = 0; j < ndCount; ++j) {
-            studentas.addND(dist(gen)); /**< Pridedame atsitiktinį ND balą */
+            studentas.addND(dist(gen)); // Pridedame atsitiktinį ND balą 
         }
 
-        /** Generuojame egzamino balą */
+        // Generuojame egzamino balą 
         studentas.setEgz(dist(gen));
 
-        /** Įrašome studento duomenis į failą */
+        // Įrašome studento duomenis į failą 
         outFile << setw(25) << left << studentas.getVardas()
             << setw(25) << left << studentas.getPavarde();
 
-        /** Įrašome ND rezultatus */
+        // Įrašome ND rezultatus 
         for (int nd : studentas.getND()) {
             outFile << setw(10) << right << nd;
         }
 
-        /** Įrašome egzamino rezultatą */
+        // Įrašome egzamino rezultatą 
         outFile << setw(10) << right << studentas.getEgz() << endl;
     }
 
-    /** Uždaromas failas */
+    //Uždaromas failas 
     outFile.close();
     cout << "Failas sukurtas: " << fileName << endl;
 
-    /** Apskaičiuojame ir išvedame failo kūrimo trukmę */
+    // Apskaičiuojame ir išvedame failo kūrimo trukmę 
     auto pabaiga = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = pabaiga - pradzia;
     cout << "Failo kurimo trukme: " << fixed << setprecision(5) << elapsed.count() << " s" << endl;
