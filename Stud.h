@@ -1,4 +1,15 @@
-﻿#ifndef ZMOGUS_H_INCLUDED
+﻿/**
+ * @file stud.h
+ * @brief Studentų klasės antraštinis failas.
+ *
+ * Šiame faile aprašoma studentų duomenų struktūra, jos
+ * kintamieji ir pagrindiniai metodai, kurie bus naudojami
+ * „stud.cpp“ faile.
+ */
+
+
+
+#ifndef ZMOGUS_H_INCLUDED
 #define ZMOGUS_H_INCLUDED
 #include "Mylib.h"
 

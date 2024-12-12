@@ -1,4 +1,13 @@
-﻿#include "Mylib.h"
+﻿/**
+ * @file Studentu_duomenys.cpp
+ * @brief Pagrindinis programos vykdymo failas.
+ *
+ * Šis failas sujungia visas bibliotekas ir paleidžia programą. Jame
+ * vykdomas studentų duomenų apdorojimas: duomenų generavimas,
+ * nuskaitymas ir apdorojimas.
+ */
+
+#include "Mylib.h"
 #include "Stud.h"
 
 /**

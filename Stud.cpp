@@ -1,4 +1,12 @@
-﻿#include "Stud.h"
+﻿/**
+ * @file Stud.cpp
+ * @brief Studentų objektų realizacija.
+ *
+ * Šiame faile įgyvendinamos studento duomenų struktūros ir metodai,
+ * tokie kaip duomenų įvedimas, išvedimas ir skaičiavimai.
+ */
+
+#include "Stud.h"
 #include "Mylib.h"
 
 

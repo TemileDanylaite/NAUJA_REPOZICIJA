@@ -1,4 +1,15 @@
-﻿#include "Stud.h"
+﻿/**
+ * @file FailoGeneravimas.cpp
+ * @brief Studentų duomenų generavimas į failą.
+ *
+ * Šiame faile įgyvendinamas atsitiktinių studentų duomenų
+ * generavimas ir išsaugojimas į tekstinį failą.
+ *
+ * @details Failas naudoja „mylib“ biblioteką ir susijusius metodus
+ * efektyviam duomenų rašymui.
+ */
+
+#include "Stud.h"
 #include "Mylib.h"
 
 

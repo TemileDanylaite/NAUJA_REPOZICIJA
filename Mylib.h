@@ -6,8 +6,6 @@
  * @brief Ši biblioteka apima pagrindines C++ standartines bibliotekas ir prideda aliasus.
  *
  * Ši antraštė suteikia naudotojui prieigą prie populiarių C++ funkcionalumų, tokių kaip įvesties/išvesties srautai, konteineriai (pvz., std::vector), atsitiktinių skaičių generavimas ir failų įvedimas/istrynimas.
- *
- * Tai supaprastina kodo rašymą ir leidžia naudoti dažnai pasikartojančias funkcijas be papildomų kvalifikatorių.
  */
 
 
